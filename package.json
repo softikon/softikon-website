@@ -1,0 +1,24 @@
+{
+  "name": "softikon-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-replace": "^2.3.1",
+    "rollup": "^2.6.1",
+    "rollup-plugin-svelte": "^5.2.1",
+    "sapper": "^0.27.12",
+    "svelte": "^3.20.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sirv": "^0.4.2"
+  }
+}
