@@ -1,3 +1,6 @@
-<h1>
-  Hello, this is an index page of Softikon website
-</h1>
+<svelte:head>
+  <title>Softikon.eu - Home Page</title>
+</svelte:head>
+
+<h1>HELLO!</h1>
+<p>This should be an index page.</p>
