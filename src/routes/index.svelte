@@ -4,6 +4,7 @@
   import Card from '../components/Card.svelte'
   import Animation from '../components/Animation.svelte'
   import Animation2 from '../components/Animation2.svelte'
+  import Button from '../components/Button.svelte'
 </script>
 
 <svelte:head>
@@ -42,7 +43,7 @@
             <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12">
               <span class="c-line-ln hidden lg:block"></span>
               <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Pro nás je každý zákazník, který vyznává stejné hodnoty, vždy vítanou výzvou a zároveň možností dokázat, že v digitálním světě není nic nemožné.</p>
-              <a href="/#" class="font-semibold text-xl">let's design better products</a>
+              <Button href="/#test">let's design better products</Button>
             </div>    
           </div>
           <div class="flex hidden lg:block">
@@ -86,7 +87,7 @@
             <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12">
               <span class="c-line-ln hidden lg:block"></span>
               <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
-              <a href="/#" class="font-semibold text-xl">let's design better products</a>
+              <Button href="test/pointer">let's design better products</Button>
             </div>    
           </div>
           <div class="flex items-center justify-center" style="min-width: 45%;transform:rotate(-30deg);">
