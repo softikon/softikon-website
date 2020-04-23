@@ -2,15 +2,16 @@
   export let background = 'https://digitalbro.net/wp-content/uploads/2020/02/THUMB-BLUE@2x.jpg'
   export let mode = 'light'
 </script>
+<div class="card--anmation-wrapper" {...$$restProps}>
+  <div class="card card--{mode} flex flex-col">
+    <div class="card-wrap" style="background-image: url({background})">
+      <div class="card-overlay"></div>
+      <div class="card-inner">
+        <div class="card__sub"><slot name="sub"></slot></div>
+        <div class="card__title"><slot name="title"></slot></div>
 
-<div class="card card--{mode} flex flex-col">
-  <div class="card-wrap" style="background-image: url({background})">
-    <div class="card-overlay"></div>
-    <div class="card-inner">
-      <div class="card__sub"><slot name="sub"></slot></div>
-      <div class="card__title"><slot name="title"></slot></div>
-
-      <slot></slot>
+        <slot></slot>
+      </div>
     </div>
   </div>
 </div>

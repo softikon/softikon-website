@@ -1,10 +1,14 @@
 <script>
   import { onMount } from 'svelte'
   import anime from 'animejs'
+  import observer, { isIntersecting } from '../helpers/intersectionObserver'
 
   let ref
 
   onMount(() => {
+    observer().observe(ref)
+    const interval = setInterval(() => isIntersecting(ref) ? staggersAnimation.play() : staggersAnimation.pause(), 100)
+
     const fragment = document.createDocumentFragment();
     const grid = [12, 12];
     const col = grid[0];
@@ -18,7 +22,7 @@
     ref.appendChild(fragment);
 
     const staggersAnimation = anime.timeline({
-      targets: '.stagger-visualizer div',
+      targets: '.animation1 div',
       easing: 'easeInOutSine',
       delay: anime.stagger(50),
       loop: true,
@@ -72,13 +76,17 @@
     })
 
     staggersAnimation.play();
+
+    return () => {
+      clearInterval(interval)
+    }
   })
 </script>
 
-<div class="stagger-visualizer" bind:this={ref}></div>
+<div class="animation1" bind:this={ref}></div>
 
 <style>
-  .stagger-visualizer {
+  .animation1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -86,18 +94,9 @@
     width: 48rem;
     height: 48rem;
     animation: rotate 120s infinite
-  }
+}
 
-  @keyframes rotate {
-    0% {
-      transform: rotate(0)
-    }
-    100% {
-      transform: rotate(360deg)
-    }
-  }
-
-  :global(.stagger-visualizer div) {
+  :global(.animation1 div) {
     width: 4rem;
     height: 4rem;
     background-color: #e74c3c;

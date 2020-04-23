@@ -51,13 +51,14 @@
   const setTarget = coords => {
     if (!coords) return
     const { x, y } = coords
+    if (!x || !y) return
     const t = document.elementFromPoint(x, y)
     if (t !== target) target = t
   }
 
   const setClasses = target => {
     const c = []
-    if (!target) return
+    if (!target || !target.parentElement) return
     if (Array.from(target.parentElement.querySelectorAll('a, a *')).some(e => e === target)) {
       c.push('pointer__link')
     }

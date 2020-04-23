@@ -4,19 +4,19 @@
 
 <div class="burger-bar relative" class:active>
   <span class="burger-bar-1 absolute top-0"></span>
-  <span class="burger-bar-2 absolute bottom-0"></span>
+  <span class="burger-bar-2 absolute" style="top: calc(50% - 0.2rem);"></span>
+  <span class="burger-bar-3 absolute bottom-0"></span>
 </div>
 
 <style>
   .burger-bar {
-    margin-top: 1rem;
-    width: 4rem;
+    width: 3rem;
     height: 2rem;
   }
 
   .burger-bar > span {
     display: block;
-    height: 0.4rem;
+    height: 0.3rem;
     background-color: black;
     left: 0;
     right: 0;
@@ -24,6 +24,10 @@
     transform-origin: 50% 50%;
     transform: translateY(0) rotate(0);
   }
+
+  .burger-bar .burger-bar-2 {
+    left: 0;
+  } 
 
   .burger-bar.active > span {
     background-color: #fff;
@@ -35,6 +39,10 @@
   }
 
   .active .burger-bar-2 {
+    transform: scale(0);
+  }  
+
+  .active .burger-bar-3 {
     transform: translateY(50%) rotate(-45deg);
     bottom: 50%;
   }

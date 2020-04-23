@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   let browser = false
   let ref, ref2
+  let animated = false
 
   const prepare = () => {
     Array.from(ref.childNodes).forEach(node => {
@@ -41,9 +42,14 @@
     els.forEach(group => {
       const el = document.createElement('span')
       el.classList.add('revealable')
+      if (!animated) {
+        el.classList.add('animate')
+      }
       ref2.appendChild(el)
       group.forEach(e => el.appendChild(e.cloneNode(true)))
     })
+
+    animated = true
 
     ref2.style.display = 'inline-block'
     ref.style.display = 'none'    
@@ -54,7 +60,7 @@
 
     const observer = new window.ResizeObserver(process)
     prepare()
-
+    // process()
     observer.observe(document.body)
   })
 </script>
@@ -74,7 +80,7 @@
 
   }
 
-  :global(.is-browser .revealable:after) {
+  :global(.is-browser .revealable.animate:after) {
     content:"";
     position:absolute;
     top:0;
