@@ -60,7 +60,7 @@
 
       animation = anime.timeline({
         easing: 'easeInOutQuad',
-        complete: play
+        complete: () => !paused && play()
       })
       .add({
         targets: cursor,
@@ -106,6 +106,7 @@
     play()
 
     return () => {
+      paused = true
       clearInterval(interval)
     }
   })

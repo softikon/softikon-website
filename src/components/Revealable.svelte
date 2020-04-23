@@ -62,6 +62,8 @@
     prepare()
     // process()
     observer.observe(document.body)
+
+    return () => observer.disconnect()
   })
 </script>
 
