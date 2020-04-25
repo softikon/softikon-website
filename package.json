@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "sapper dev",
+    "export": "sapper export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
