@@ -2,6 +2,7 @@ import replace from '@rollup/plugin-replace'
 import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import json from '@rollup/plugin-json'
 
 // csstailwind related plugins (postcss)
 import sveltePreprocess from 'svelte-preprocess'
@@ -50,6 +51,7 @@ export default {
         hydratable: true,
         emitCss: true
       }),
+      json(),
       resolve({
         browser: true,
         dedupe: ['svelte']
@@ -74,6 +76,7 @@ export default {
         dev,
         generate: 'ssr'
       }),
+      json(),
       resolve({
         dedupe: ['svelte']
       }),
