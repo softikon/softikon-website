@@ -4,12 +4,11 @@
 </script>
 <div class="card--anmation-wrapper" {...$$restProps}>
   <div class="card card--{mode} flex flex-col">
-    <div class="card-wrap" style="background-image: url({background})">
+    <div class="card-wrap" style="background-size: cover; background-position: center; background-image: url({background})">
       <div class="card-overlay"></div>
       <div class="card-inner">
         <div class="card__sub"><slot name="sub"></slot></div>
         <div class="card__title"><slot name="title"></slot></div>
-
         <slot></slot>
       </div>
     </div>
@@ -79,11 +78,7 @@
     margin-left: 5%;
     font-size: 1.5rem;
     font-weight: 700;
-  }
-
-  .card--dark :global(.card__link) {
-    border-color: #fff;
-    color: #fff;
+    text-decoration: underline;
   }
 
   .card--dark .card__title {

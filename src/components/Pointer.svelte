@@ -172,7 +172,6 @@
 .pointer__link .pointer-outline {
   width: 64px;
   height: 64px;
-  mix-blend-mode: overlay;
 }
 
 .pointer__text .pointer-outline {

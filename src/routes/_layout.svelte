@@ -1,10 +1,12 @@
 <script>
   import { onMount } from 'svelte'
   import AOS from 'aos'
-  import { slide, fly } from 'svelte/transition'
   import Pointer from '../components/Pointer.svelte'
   import BurgerBar from '../components/BurgerBar.svelte'
   import Logo from '../components/Logo.svelte'
+  import Button from '../components/Button.svelte'
+  import Footer from '../components/Footer.svelte'
+  import Menu from '../components/Menu.svelte'
   import { animate } from '../helpers/intersectionObserver'
 
   import 'aos/dist/aos.css'
@@ -21,8 +23,7 @@
 
 <svelte:window bind:scrollY={y}></svelte:window>
 {#if menuActive}
-  <div id="menu" class="bg-gray-900 fixed inset-0 flex items-center justify-center z-10" transition:slide>
-  </div>
+  <Menu />
 {/if}
 
 <Pointer />
@@ -38,7 +39,7 @@
       </div>
     </a>
 
-    <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="flex items-center p-16 pt-28 fixed right-0 top-0 z-20">
+    <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
       <div class="menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
           <span class="menu--text__anim">menu</span>
           <span>zavřít</span>
@@ -51,27 +52,19 @@
     <slot></slot>
   </main>
 
-  <section class="relative" data-aos="fade-up" data-aos-duration="3000" style="padding-top: 18rem; padding-bottom: 18rem; color: #fff;">
-    <div class="section-bg gradient-green" use:animate data-animate="slideScaleLeft"></div>
+  <section class="relative py-64 text-white">
+    <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
     <div class="w-10/12 mx-auto">
       <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__dark">
         <span class="c-line-ln hidden lg:block"></span>
-        <p class="mb-16 leading-loose" style="font-size: 1.635rem; font-weight: 700; color: rgba(255, 255, 255, 0.95);">Make it happen</p>
-        <a href="/#" class="font-semibold text-xl">let's design better products</a>
+        <p class="mb-8 text-2xl text-white font-bold uppercase">Máte svůj vysněný projekt?</p>
+        <p class="mb-16 leading-loose text-4xl">Pomůžeme vám dosáhnout vytyčených cílů a nakopnout tak svůj byznys jako nikdy předtím. Přesvědčíme zákazníky, aby si vybrali právě Vás.</p>
+        <Button class="border-white" href="/#">SAY HELLO!</Button>
       </div>
     </div>
   </section>
 
-  <footer class="relative py-64 min-h-screen">
-    <div class="section-bg black" use:animate data-animate="slideScaleLeft"></div>
-    <div class="w-10/12 mx-auto">
-      <div class="c-line c-line__dark">
-        <span class="c-line-ln hidden lg:block"></span>
-        <p class="mb-16 leading-loose" style="font-size: 1.635rem; font-weight: 700; color: rgba(255, 255, 255, 0.95);">Make it happen</p>
-        <a href="/#" class="font-semibold text-xl">let's design better products</a>
-      </div>
-    </div>
-  </footer>  
+  <Footer />
 </div>
 
 <style global>
@@ -86,6 +79,13 @@
 
   * {
     -webkit-font-smoothing: antialiased;
+  }
+
+  
+  .outlined {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
   }
 
   .section-bg {
@@ -154,6 +154,14 @@
     background: linear-gradient(180deg, #24ca7a 0%,#29d8ac 100%);
   }
 
+  .gradient-cool {
+    background-image: radial-gradient( circle farthest-corner at -3.1% -4.3%,  rgba(57,255,186,1) 0%, rgba(21,38,82,1) 90% );
+  }
+
+  .gradient-red {
+    background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+  }
+
   .c-line {
     position: relative;
   }
@@ -170,8 +178,16 @@
     width: 8rem;
     height: 1px;
     background-color: rgba(17, 17, 17, 0.6);
+    top: 1rem;
+  }
+
+  .c-line__lg .c-line-ln {
     top: 1.3rem;
   }
+
+  .c-line__xl .c-line-ln {
+    top: 1.6rem;
+  }  
 
   .c-line__dark .c-line-ln {
     background-color: rgba(255, 255, 255, 0.8);
@@ -201,6 +217,16 @@
     h2 {
       font-size: 7rem;
     }
+  }
+
+  .arrow {
+    width: 60px;
+  }
+
+  .arrow path {
+    stroke: #111;
+    fill: transparent;
+    stroke-width: 1px;
   }
 
   @keyframes rotate {

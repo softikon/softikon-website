@@ -25,16 +25,16 @@
   const process = () => {
     ref.style.display = 'inline-block'
     ref2.style.display = 'none'
-    const els = Array.from(ref.childNodes).reduce(([current, nodes, complete], node, i, ref) => {
+    const els = Array.from(ref.childNodes).reduce(([{ x, y }, nodes, complete], node, i, ref) => {
       let res
-      if (current > node.offsetLeft) {
-        res = [node.offsetLeft, [node], [...complete, nodes]]
+      if (x > node.offsetLeft || y < node.offsetTop - 20) {
+        res = [{ x: node.offsetLeft, y: node.offsetTop }, [node], [...complete, nodes]]
       } else {
-        res = [node.offsetLeft, [...nodes, node], complete]
+        res = [{ x: node.offsetLeft, y: node.offsetTop }, [...nodes, node], complete]
       }
 
       return ref.length - 1 === i ? [...res[2], res[1]] : res
-    }, [0, [], []])
+    }, [{ x: 0, y: 0 }, [], []])
 
     Array.from(ref2.childNodes).forEach(child => child.remove())
 
@@ -46,7 +46,18 @@
         el.classList.add('animate')
       }
       ref2.appendChild(el)
-      group.forEach(e => el.appendChild(e.cloneNode(true)))
+      group.forEach(e => {
+        if (group.length === 1) {
+          const { display } = window.getComputedStyle(e)
+          if (display === 'block') {
+            const wrapper = document.createElement('span')
+            wrapper.style.display = display
+            el.parentNode.insertBefore(wrapper, el)
+            wrapper.appendChild(el)
+          }
+        }
+        el.appendChild(e.cloneNode(true))
+      })
     })
 
     animated = true
@@ -79,7 +90,6 @@
   :global(.revealable) {
     position: relative;
     display: inline-block;
-
   }
 
   :global(.is-browser .revealable.animate:after) {

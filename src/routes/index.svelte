@@ -8,10 +8,10 @@
 </script>
 
 <svelte:head>
-  <title>Softikon.eu - Home Page</title>
+  <title>Inteligentní digitální řešení | Softikon.eu</title>
 </svelte:head>
 
-<article class="pt-64 lg:pt-64" style="box-sizing: border-box;">
+<article class="pt-64 lg:pt-64">
   <section class="w-10/12 pt-20 lg:pr-48 lg:pt-0 mx-auto pb-48">
     <h1>
       <div>
@@ -37,14 +37,14 @@
       <div class="relative w-10/12 lg:w-11/12 pt-48">
         <div class="flex flex-col lg:flex-row">
           <div class="flex flex-col">
-            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-48 lg:w-10/12">
+            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12">
               <span class="outlined">perfektní</span> digitální zážitek
             </h2>
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12">
+            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12 c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
               <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Pro nás je každý zákazník, který vyznává stejné hodnoty, vždy vítanou výzvou a zároveň možností dokázat, že v digitálním světě není nic nemožné.</p>
-              <Button href="/#test">let's design better products</Button>
-            </div>    
+              <Button href="softikon">jak to funguje?</Button>
+            </div>
           </div>
           <div class="flex hidden lg:block">
             <Animation />
@@ -58,17 +58,17 @@
     <div class="flex justify-center lg:justify-end">
       <div class="flex flex-wrap lg:w-10/12">
         <div class="w-full md:w-6/12" style="margin-top: -30rem;">
-          <Card data-aos="zoom-out-right" data-aos-duration="2000" background="https://w-dog.net/wallpapers/1/12/521374674606063.jpg">
+          <Card data-aos="zoom-out-right" data-aos-duration="2000" background="img/autopublisher.jpg">
             <span slot="sub">Autopublisher</span>
             <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
             <a class="card__link" href="/#">Přejít na web</a>
           </Card>
         </div>
       <div class="w-full md:w-6/12" style="margin-top: -30rem;">
-          <Card data-aos="zoom-out-left" data-aos-duration="2000" mode="dark" background="https://www.analyticsinsight.net/wp-content/uploads/2019/11/Next-for-Big-Data-1024x576.jpg">
+          <Card data-aos="zoom-out-left" data-aos-duration="2000" mode="dark" background="img/bigdata.jpg">
             <span slot="sub">Betsense</span>
-            <span slot="title">Vytvořili jsme SaaS službu pro sázkové kanceláře.</span>
-            <p>Lorem ipsum dolor sit amet...</p>
+            <span slot="title">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
+            <span class="card__link text-gray-500" href="/#">Spouštíme Q3/2020</span>
           </Card>
         </div>
       </div>
@@ -81,22 +81,22 @@
       <div class="relative w-10/12 lg:w-11/12 pt-48">
         <div class="flex flex-col lg:flex-row items-stretch">
           <div class="flex flex-col">
-            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-48 lg:w-9/12">
-              jdeme s dobou a <span class="outlined">ještě dál</span>
+            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-9/12">
+              jděte s dobou a <span class="outlined">ještě dál</span>
             </h2>
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12">
+            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12 c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
               <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
-              <Button href="test/pointer">let's design better products</Button>
+              <Button href="test/pointer">kontaktujte nás</Button>
             </div>    
           </div>
-          <div class="flex items-center justify-center" style="min-width: 45%;transform:rotate(-30deg);">
+          <div id="animation2" class="flex items-center justify-center">
             <Animation2 />      
           </div>
         </div> 
       </div>
     </div>
-  </section>  
+  </section>
 </article>
 
 <style>
@@ -107,10 +107,18 @@
   font-weight: 800;
 }
 
-.outlined {
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #000;
+#animation2 {
+  min-height: 400px;
+  transform: rotate(0);
+}
+
+@media(min-width: 1024px) {
+  #animation2 {
+    flex-grow: unset;
+    min-width: 45%;
+    min-height: 45%;
+    transform: rotate(-30deg);
+  }  
 }
 
 .c-circle {

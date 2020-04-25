@@ -4,7 +4,9 @@
     'px-8',
     'py-4',
     'font-semibold',
-    'text-xl'
+    'text-xl',
+    'bg-transparent',
+    'rounded'
   ]
 
   let classes
@@ -13,6 +15,6 @@
   $: classes = [...new Set([...defaultClasses, ...className.split(' ')])].join(' ')
 </script>
 
-<a href="/#" {...$$restProps} class="{classes}">
+<a rel="prefetch" href="/#" {...$$restProps} class="{classes}">
   <slot></slot>
 </a>
