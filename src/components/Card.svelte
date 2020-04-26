@@ -72,7 +72,7 @@
     font-size: 2.4rem;
   }
 
-  :global(.card__link) {
+  .card :global(.card__link) {
     display: inline-block;
     margin-top: 10%;
     margin-left: 5%;

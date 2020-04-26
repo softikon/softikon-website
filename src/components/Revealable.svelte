@@ -91,12 +91,12 @@
 
 
 <style>
-  :global(.revealable) {
+  .is-browser :global(.revealable) {
     position: relative;
     display: inline-block;
   }
 
-  :global(.is-browser .revealable.animate:after) {
+  .is-browser :global(.revealable.animate:after) {
     content:"";
     position:absolute;
     top:0;
@@ -108,7 +108,7 @@
     animation-delay:inherit;
   }
 
-  :global(.is-browser .revealable.animate > span) {
+  .is-browser :global(.revealable.animate > span) {
     visibility: hidden;
   }
 </style>

@@ -93,10 +93,10 @@
     align-items: center;
     width: 48rem;
     height: 48rem;
-    animation: rotate 120s infinite
+    animation: rotate 120s infinite;
 }
 
-  :global(.animation1 div) {
+  .animation1 :global(div) {
     width: 4rem;
     height: 4rem;
     background-color: #e74c3c;

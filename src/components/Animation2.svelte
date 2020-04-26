@@ -138,7 +138,7 @@
     align-items: center;
   }
 
-  :global(.stagger-visualizer .dot) {
+  .stagger-visualizer :global(.dot) {
     position: relative;
     z-index: 1;
     width: 23px;
