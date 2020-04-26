@@ -47,6 +47,10 @@
       }
       ref2.appendChild(el)
       group.forEach(e => {
+        const cloned = e.cloneNode(true)
+        setTimeout(() => {
+          cloned.style.visibility = 'visible'
+        }, 1000)
         if (group.length === 1) {
           const { display } = window.getComputedStyle(e)
           if (display === 'block') {
@@ -56,7 +60,7 @@
             wrapper.appendChild(el)
           }
         }
-        el.appendChild(e.cloneNode(true))
+        el.appendChild(cloned)
       })
     })
 
@@ -102,5 +106,9 @@
     background: #24ca7a;
     animation:fx-in 2s cubic-bezier(.19,1,.22,1) forwards;
     animation-delay:inherit;
+  }
+
+  :global(.is-browser .revealable.animate > span) {
+    visibility: hidden;
   }
 </style>
