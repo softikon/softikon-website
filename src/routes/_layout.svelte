@@ -88,6 +88,10 @@
     -webkit-text-stroke-color: #000;
   }
 
+  .outlined.white {
+    -webkit-text-stroke-color: #fff;
+  }
+
   .section-bg {
     position: absolute;
     top: 0;
