@@ -104,7 +104,7 @@
   }
 
   #process {
-    min-height: 400px;
+    min-height: 500px;
   }
 
   #process .charts {

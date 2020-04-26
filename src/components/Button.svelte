@@ -1,5 +1,6 @@
 <script>
   const defaultClasses = [
+    'inline-block',
     'border-4',
     'px-8',
     'py-4',
