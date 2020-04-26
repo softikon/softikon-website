@@ -3,6 +3,7 @@ import svelte from 'rollup-plugin-svelte'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
+import { terser } from 'rollup-plugin-terser'
 
 // csstailwind related plugins (postcss)
 import sveltePreprocess from 'svelte-preprocess'
@@ -16,19 +17,29 @@ const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
+const purgecss = require('@fullhuman/postcss-purgecss')({
+  content: ['./src/**/*.html', './src/**/*.svelte'],
+  extractors: [
+    {
+      extractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+      extensions: ['svelte'],
+    },
+  ],
+  whitelist: ['html', 'body']
+})
+
 const postcssPlugins = {
   dev: [
     require('tailwindcss')(tailwindConfig)
   ],
   prod: [
-    require('tailwindcss')(tailwindConfig)
-    // require('tailwindcss')(tailwind),
+    require('tailwindcss')(tailwindConfig),
     // require('postcss-import')(),
     // require('postcss-url')(),
     // require('autoprefixer'),
     // require('postcss-preset-env'),
-    // purgecss,
-    // cssnano,
+    purgecss,
+    require('cssnano')({ preset: 'default' })
   ]
 }
 
@@ -44,7 +55,7 @@ export default {
       svelte({
         preprocess: [sveltePreprocess({
           postcss: {
-            plugins: postcssPlugins.dev
+            plugins: dev ? postcssPlugins['dev'] : postcssPlugins['prod']
           }
         })],
         dev,
@@ -56,7 +67,10 @@ export default {
         browser: true,
         dedupe: ['svelte']
       }),
-      commonjs()
+      commonjs(),
+      !dev && terser({
+        module: true
+      })
     ]
   },
   server: {
@@ -70,7 +84,7 @@ export default {
       svelte({
         preprocess: [sveltePreprocess({
           postcss: {
-            plugins: postcssPlugins.dev
+            plugins: dev ? postcssPlugins['dev'] : postcssPlugins['prod']
           }
         })],
         dev,
