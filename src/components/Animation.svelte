@@ -99,6 +99,6 @@
   .animation1 :global(div) {
     width: 4rem;
     height: 4rem;
-    background-color: #e74c3c;
+    background-color: lightcoral;
   }
 </style>

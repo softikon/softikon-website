@@ -22,49 +22,51 @@
 </script>
 
 <svelte:window bind:scrollY={y}></svelte:window>
-{#if menuActive}
-  <Menu />
-{/if}
+<div id="container" class="font-body">
+  {#if menuActive}
+    <Menu />
+  {/if}
 
-<Pointer />
+  <Pointer />
 
-<div class="font-body overflow-hidden">
-  <header>
-    <a href="/" id="logo" class="p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={menuActive}>
-      <Logo />
-      
-      <div class="softikon flex">
-        <span>S</span><span>O</span><span>F</span><span>T</span>
-        <span>I</span><span>K</span><span>O</span><span>N</span>
+  <div class="overflow-hidden">
+    <header>
+      <a href="/" id="logo" class="p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={menuActive}>
+        <Logo />
+        
+        <div class="softikon flex">
+          <span>S</span><span>O</span><span>F</span><span>T</span>
+          <span>I</span><span>K</span><span>O</span><span>N</span>
+        </div>
+      </a>
+
+      <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
+        <div class="menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
+            <span class="menu--text__anim">menu</span>
+            <span>zavřít</span>
+        </div>
+        <BurgerBar active={menuActive} />
+      </a>
+    </header>
+
+    <main>
+      <slot></slot>
+    </main>
+
+    <section class="relative py-64 text-white">
+      <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
+      <div class="w-10/12 mx-auto">
+        <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__dark">
+          <span class="c-line-ln hidden lg:block"></span>
+          <p class="mb-8 text-2xl text-white font-bold uppercase">Máte svůj vysněný projekt?</p>
+          <p class="mb-16 leading-loose text-4xl">Pomůžeme vám dosáhnout vytyčených cílů a nakopnout tak svůj byznys jako nikdy předtím. Přesvědčíme zákazníky, aby si vybrali právě Vás.</p>
+          <Button class="border-white" href="/#">SAY HELLO!</Button>
+        </div>
       </div>
-    </a>
+    </section>
 
-    <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
-      <div class="menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
-          <span class="menu--text__anim">menu</span>
-          <span>zavřít</span>
-      </div>
-      <BurgerBar active={menuActive} />
-    </a>
-  </header>
-
-  <main>
-    <slot></slot>
-  </main>
-
-  <section class="relative py-64 text-white">
-    <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
-    <div class="w-10/12 mx-auto">
-      <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__dark">
-        <span class="c-line-ln hidden lg:block"></span>
-        <p class="mb-8 text-2xl text-white font-bold uppercase">Máte svůj vysněný projekt?</p>
-        <p class="mb-16 leading-loose text-4xl">Pomůžeme vám dosáhnout vytyčených cílů a nakopnout tak svůj byznys jako nikdy předtím. Přesvědčíme zákazníky, aby si vybrali právě Vás.</p>
-        <Button class="border-white" href="/#">SAY HELLO!</Button>
-      </div>
-    </div>
-  </section>
-
-  <Footer />
+    <Footer />
+  </div>
 </div>
 
 <style global>
@@ -75,6 +77,10 @@
   html, body, #root {
     font-size: 10px;
     position: relative;
+  }
+
+  ::selection {
+    background: #87FFA9;
   }
 
   * {
@@ -198,19 +204,20 @@
   }  
 
   h1 {
-    font-size: calc(100vw / 13);
+    font-size: 5rem;
     position: relative;
     line-height: 1.2em;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   @media (min-width: 1024px) {
     h1 {
-      font-size: calc(100vw / 18);
+      font-size: 8rem;
     }
   }
 
   h2 {
+    @apply tracking-tight;
     font-size: 4.8rem;
     line-height: 1em;
     font-weight: 800;

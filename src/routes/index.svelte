@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import { animate } from '../helpers/intersectionObserver'
   import Revealable from '../components/Revealable.svelte'
   import Card from '../components/Card.svelte'
   import Animation from '../components/Animation.svelte'
@@ -13,16 +14,22 @@
 
 <article class="pt-64 lg:pt-64">
   <section class="w-10/12 pt-20 lg:pr-48 lg:pt-0 mx-auto pb-48">
-    <h1>
-      <div>
-        <Revealable>inteligentní digitální řešení, která pomohou vašemu byznysu růst<span class="dot">.</span></Revealable>
+    <div class="flex flex-wrap">
+      <div class="w-full lg:w-3/6">
+        <h1 class="tracking-tighter">
+          <Revealable>Great design is a force of nature<span class="dot">.</span></Revealable>
+        </h1>
       </div>
-    </h1>
+      <div class="w-full lg:w-3/6 text-gray-600 font-medium text-3xl lg:text-4xl">
+        <p class="tracking-tight pt-16 lg:pt-48 leading-loose">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.</p>
+        <Button class="mt-16" href="softikon">naše filozofie</Button>
+      </div>
+    </div>
   </section>
 
   <section class="relative" style="min-height: 1100px;">
-    <div class="section-bg light"></div>
-    <div class="c-circle" data-aos="fade-up" data-aos-duration="2000">
+    <div class="section-bg light" use:animate data-animate="slideScaleLeft"></div>
+    <div class="c-circle">
       <svg class="c-circle-svg" viewBox="0 0 1820 1230" style="opacity: 1;">
         <circle class="c-circle-item" cx="535.8" cy="535.8" r="529.5" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="535.7999877929688 535.7999877929688" transform="matrix(-0.17364,-0.9848,0.9848,-0.17364,101.18069722481926,1156.5006613095434)"></circle>
         <circle class="c-circle-item" cx="1284.8" cy="694.8" r="529" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="1284.800048828125 694.7999877929688" transform="matrix(-0.17364,-0.9848,0.9848,-0.17364,823.6588212022089,2080.731788672624)"></circle>
@@ -38,11 +45,11 @@
         <div class="flex flex-col lg:flex-row">
           <div class="flex flex-col">
             <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12">
-              <span class="outlined">perfektní</span> digitální zážitek
+              <span class="outlined">inteligentní</span> digitální řešení
             </h2>
             <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12 c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
-              <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Pro nás je každý zákazník, který vyznává stejné hodnoty, vždy vítanou výzvou a zároveň možností dokázat, že v digitálním světě není nic nemožné.</p>
+              <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.</p>
               <Button href="softikon">jak to funguje?</Button>
             </div>
           </div>
@@ -90,7 +97,7 @@
               <Button href="test/pointer">kontaktujte nás</Button>
             </div>    
           </div>
-          <div id="animation2" class="flex items-center justify-center">
+          <div id="animation2" class="flex items-center justify-center pt-12 lg:pt-0">
             <Animation2 />      
           </div>
         </div> 
@@ -102,7 +109,7 @@
 <style>
 .dot {
   display: inline-block;
-  color: #e74c3c;
+  color: lightcoral;
   animation: blink 1000ms steps(5, start) infinite;
   font-weight: 800;
 }

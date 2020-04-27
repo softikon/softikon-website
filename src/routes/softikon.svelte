@@ -14,9 +14,9 @@
     <div class="flex justify-center lg:justify-end">
       <div class="relative w-10/12 lg:w-11/12 pt-64 lg:pt-48">
         <div class="flex flex-col">
-          <h1 class="mb-24 lg:w-10/12">
+          <h1 class="mb-24 lg:w-10/12 tracking-tighter">
             <Revealable>
-              <span class="block font-bold">úspěch</span> není dílem náhody<span class="font-bold text-teal-400">.</span>
+              <span class="block font-normal">Úspěch</span> není dílem náhody<span class="font-normal text-teal-400">.</span>
             </Revealable>
           </h1>
 

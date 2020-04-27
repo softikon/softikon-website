@@ -155,7 +155,7 @@
     width: 37px;
     height: 37px;
     margin: 9px;
-    background-color: #e74c3c;
+    background-color: lightcoral;
     border-radius: 50%;
   }
 </style>

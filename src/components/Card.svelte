@@ -70,6 +70,7 @@
     padding-right: 5%;
     font-weight: 700;
     font-size: 2.4rem;
+    @apply tracking-tight;
   }
 
   .card :global(.card__link) {

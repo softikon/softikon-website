@@ -158,7 +158,7 @@
   height: 32px;
   border-radius: 50%;
   border-width: 0;
-  background-color: aquamarine;
+  background-color: lightcoral;
 }
 
 :global(.c2 .pointer-outline) {
@@ -174,6 +174,7 @@
 .pointer__link .pointer-outline {
   width: 64px;
   height: 64px;
+  mix-blend-mode: screen;
 }
 
 .pointer__text .pointer-outline {
