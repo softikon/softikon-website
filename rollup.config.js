@@ -46,6 +46,7 @@ const postcssPlugins = {
 export default {
   client: {
     input: config.client.input(),
+    preserveEntrySignatures: false,
     output: config.client.output(),
     plugins: [
       replace({
