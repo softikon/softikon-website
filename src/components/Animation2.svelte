@@ -121,19 +121,29 @@
 
 </script>
 
-<div class="stagger-visualizer" pointer="{paused ? 'play' : 'stop'}" bind:this={root} on:click={toggle}>
-  <div class="cursor" bind:this={cursor}></div>
-  <div class="dots-wrapper" bind:this={dots}></div>
-</div>
+  <div class="stagger-visualizer" pointer="{paused ? 'play' : 'stop'}" bind:this={root} on:click={toggle}>
+    <div class="wrapper">
+      <div class="cursor" bind:this={cursor}></div>
+      <div class="dots-wrapper" bind:this={dots}></div>
+    </div>
+  </div>
 
 <style>
+  .wrapper {
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: rotate 300s infinite;
+  }
   .stagger-visualizer {
     cursor: none;
-    position: absolute;
+    position: relative;
     width: 550px;
     height: 550px;
-    transform-origin: center center;
-    animation: rotate 300s infinite;
+    transform-origin: center left;
   }
 
   .stagger-visualizer .dots-wrapper {
