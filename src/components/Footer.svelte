@@ -20,11 +20,11 @@
 <footer class="relative py-64 min-h-screen">
   <div class="section-bg black" use:animate data-animate="slideScaleLeft"></div>
   <div class="w-10/12 mx-auto">
-    <p class="text-4xl lg:text-6xl text-white mb-24">
+    <p class="text-2xl lg:text-4xl text-white mb-24">
       <span class="block font-regular">jsme zde, abychom společně</span>
       {#each slides as slide, index}
       {#if slideIndex === index}
-          <div in:fly|local={{x: -500, duration: 1000}} class="block font-bold">{slides[index]}</div>
+          <div in:fly|local={{x: -500, duration: 1000}} class="block font-bold text-4xl lg:text-6xl">{slides[index]}</div>
       {/if}
       {/each}
     </p>
@@ -37,11 +37,11 @@
     <div class="c-line c-line__dark">
       <span class="c-line-ln hidden lg:block"></span>
       <p class="mb-8 text-2xl font-semibold text-gray-100 uppercase">Explore</p>
-      <ul class="font-semibold flex flex-row items-center">
+      <ul class="font-semibold flex flex-col md:flex-row flex-wrap items-start md:items-center">
         <li><a class="text-gray-600 text-xl" href="#/index">Domů</a></li>
-        <li><span class="text-gray-900 mx-20">|</span></li>
+        <li class="hidden md:block"><span class="text-gray-900 mx-20">|</span></li>
         <li><a class="text-gray-600 text-xl" href="#/test">Služby</a></li>
-        <li><span class="text-gray-900 mx-20">|</span></li>
+        <li class="hidden md:block"><span class="text-gray-900 mx-20">|</span></li>
         <li><a class="text-gray-600 text-xl" href="#/test">Autopublisher</a></li>
       </ul>
     </div>

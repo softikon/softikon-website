@@ -58,8 +58,9 @@
       <div class="w-10/12 mx-auto">
         <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__dark">
           <span class="c-line-ln hidden lg:block"></span>
-          <p class="mb-8 text-2xl text-white font-bold uppercase">Máte svůj vysněný projekt?</p>
-          <p class="mb-16 leading-loose text-4xl">Pomůžeme vám dosáhnout vytyčených cílů a nakopnout tak svůj byznys jako nikdy předtím. Přesvědčíme zákazníky, aby si vybrali právě Vás.</p>
+          <p class="mb-8 text-2xl text-white font-bold uppercase">Make it happen</p>
+          <h3 class="mb-0 font-bold text-4xl lg:text-6xl">let’s design better</h3>
+          <h3 class="mb-16 font-bold">let’s work together</h3>
           <Button class="border-white" href="/#">SAY HELLO!</Button>
         </div>
       </div>
@@ -210,7 +211,20 @@ h1 {
   font-weight: 700;
 }
 
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.4rem;
+  }
+}
+
 @media (min-width: 1024px) {
+  h1 {
+    font-size: 6.5rem;
+  }
+}
+
+
+@media (min-width: 1280px) {
   h1 {
     font-size: 8.5rem;
   }
@@ -224,7 +238,7 @@ h2 {
   position: relative;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   h2 {
     font-size: 8rem;
   }

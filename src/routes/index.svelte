@@ -15,13 +15,13 @@
 <article class="pt-64 lg:pt-64">
   <section class="w-10/12 pt-20 lg:pr-48 lg:pt-0 mx-auto pb-48">
     <div class="flex flex-wrap">
-      <div class="w-full lg:w-3/6">
+      <div class="w-full md:w-3/6 md:pr-16">
         <h1 class="tracking-tighter">
           <Revealable>Great design is a force of nature<span class="dot">.</span></Revealable>
         </h1>
       </div>
-      <div class="w-full lg:w-3/6">
-        <p class="tracking-tight pt-16 lg:pt-48 leading-loose font-medium text-3xl lg:text-4xl text-gray-600">
+      <div class="w-full md:w-3/6">
+        <p class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
           Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.
         </p>
         <Button class="mt-16" href="softikon">naše filozofie</Button>
@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <section class="relative" style="min-height: 1000px;">
+  <section class="relative" id="section-about">
     <div class="section-bg light" use:animate data-animate="slideScaleLeft"></div>
     <div class="c-circle">
       <svg class="c-circle-svg" viewBox="0 0 1820 1230" style="opacity: 1;">
@@ -55,8 +55,8 @@
               <Button href="softikon">jak to funguje?</Button>
             </div>
           </div>
-          <div class="hidden lg:flex lg:justify-end w-4/6 ">
-            <div class="w-4/6" style="transform: translateY(-10rem);">
+          <div class="hidden lg:flex items-end lg:justify-end lg:w-4/6">
+            <div class="lg:w-4/6 animation">
               <Animation2 />
             </div>
           </div>
@@ -73,8 +73,8 @@
   </section>
 
   <section id="showcase">
-    <div class="w-10/12 mx-auto flex flex-col">
-      <Card to="#/" image="img/autopublisher-mock.png">
+    <div class="w-full lg:w-10/12 mx-auto flex flex-col">
+      <Card to="#/" background="#3d399f" image="img/autopublisher-mock.png">
         <span slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
         <Button href="/#">Přejít na web</Button>
@@ -114,6 +114,20 @@
 </article>
 
 <style>
+#section-about {
+  min-height: 720px;
+}
+
+@media(min-width: 1024px) {
+  #section-about {
+    min-height: 1000px;
+  }
+
+  #section-about .animation {
+    transform: translateY(-10rem);
+  }
+}
+
 .dot {
   display: inline-block;
   color: lightcoral;
@@ -135,7 +149,7 @@
   left: 50%;
   transform: translateX(-50%);
   margin-left: 5vw;
-  width: 90rem;
+  width: 120rem;
 }
 
 @media(min-width: 1024px) {
