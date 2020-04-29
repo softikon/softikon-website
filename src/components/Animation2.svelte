@@ -20,17 +20,72 @@
   }
 
   let root, dots, cursor
+  let animation;
+  let paused = true;
+
+  const grid = [10, 10];
+  const cell = 55;
+  const numberOfElements = grid[0] * grid[1];
+
+  let index = anime.random(0, numberOfElements-1);
+  let nextIndex = 0;
+
+  function play() {
+    paused = false;
+    if (animation) animation.pause();
+
+    nextIndex = anime.random(0, numberOfElements-1);
+
+    animation = anime.timeline({
+      easing: 'easeInOutQuad',
+      complete: () => !paused && play()
+    })
+    .add({
+      targets: cursor,
+      keyframes: [
+        { scale: .75, duration: 120}, 
+        { scale: 2.5, duration: 220},
+        { scale: 1.5, duration: 450},
+      ],
+      duration: 300
+    })
+    .add({
+      targets: '.stagger-visualizer .dot',
+      keyframes: [
+        {
+          translateX: anime.stagger('-2px', {grid: grid, from: index, axis: 'x'}),
+          translateY: anime.stagger('-2px', {grid: grid, from: index, axis: 'y'}),
+          duration: 100
+        }, {
+          translateX: anime.stagger('4px', {grid: grid, from: index, axis: 'x'}),
+          translateY: anime.stagger('4px', {grid: grid, from: index, axis: 'y'}),
+          scale: anime.stagger([2.6, 1], {grid: grid, from: index}),
+          duration: 225
+        }, {
+          translateX: 0,
+          translateY: 0,
+          scale: 1,
+          duration: 1200,
+        }
+      ],
+      delay: anime.stagger(80, {grid: grid, from: index})
+    }, 30)
+    .add({
+      targets: cursor,
+      translateX: { value: anime.stagger(-cell, {grid: grid, from: nextIndex, axis: 'x'}) },
+      translateY: { value: anime.stagger(-cell, {grid: grid, from: nextIndex, axis: 'y'}) },
+      scale: 1.5,
+      easing: 'cubicBezier(.075, .2, .165, 1)'
+    }, '-=800')
+
+    index = nextIndex;
+  }
 
   onMount(() => {
     observer().observe(root)
-    const interval = setInterval(() => isIntersecting(root) ? animation.play() : animation.pause(), 100)
+    const interval = setInterval(() => isIntersecting(root) ? (!paused && animation.play()) : animation.pause(), 100)
 
     const dotsFragment = document.createDocumentFragment();
-    const grid = [10, 10];
-    const cell = 55;
-    const numberOfElements = grid[0] * grid[1];
-    let animation;
-    let paused = true;
 
     fitElementToParent(root, 0);
 
@@ -42,66 +97,12 @@
 
     dots.appendChild(dotsFragment);
 
-    let index = anime.random(0, numberOfElements-1);
-    let nextIndex = 0;
-
     anime.set(cursor, {
       translateX: anime.stagger(-cell, {grid: grid, from: index, axis: 'x'}),
       translateY: anime.stagger(-cell, {grid: grid, from: index, axis: 'y'}),
       translateZ: 0,
       scale: 1.5,
     });
-
-    function play() {
-      paused = false;
-      if (animation) animation.pause();
-
-      nextIndex = anime.random(0, numberOfElements-1);
-
-      animation = anime.timeline({
-        easing: 'easeInOutQuad',
-        complete: () => !paused && play()
-      })
-      .add({
-        targets: cursor,
-        keyframes: [
-          { scale: .75, duration: 120}, 
-          { scale: 2.5, duration: 220},
-          { scale: 1.5, duration: 450},
-        ],
-        duration: 300
-      })
-      .add({
-        targets: '.stagger-visualizer .dot',
-        keyframes: [
-          {
-            translateX: anime.stagger('-2px', {grid: grid, from: index, axis: 'x'}),
-            translateY: anime.stagger('-2px', {grid: grid, from: index, axis: 'y'}),
-            duration: 100
-          }, {
-            translateX: anime.stagger('4px', {grid: grid, from: index, axis: 'x'}),
-            translateY: anime.stagger('4px', {grid: grid, from: index, axis: 'y'}),
-            scale: anime.stagger([2.6, 1], {grid: grid, from: index}),
-            duration: 225
-          }, {
-            translateX: 0,
-            translateY: 0,
-            scale: 1,
-            duration: 1200,
-          }
-        ],
-        delay: anime.stagger(80, {grid: grid, from: index})
-      }, 30)
-      .add({
-        targets: cursor,
-        translateX: { value: anime.stagger(-cell, {grid: grid, from: nextIndex, axis: 'x'}) },
-        translateY: { value: anime.stagger(-cell, {grid: grid, from: nextIndex, axis: 'y'}) },
-        scale: 1.5,
-        easing: 'cubicBezier(.075, .2, .165, 1)'
-      }, '-=800')
-
-      index = nextIndex;
-    }
 
     play()
 
@@ -110,19 +111,29 @@
       clearInterval(interval)
     }
   })
+
+  const toggle = () => {
+    paused = !paused
+
+    if(!paused) animation.play()
+    else animation.pause()
+  }
+
 </script>
 
-<div class="stagger-visualizer" bind:this={root}>
+<div class="stagger-visualizer" pointer="{paused ? 'play' : 'stop'}" bind:this={root} on:click={toggle}>
   <div class="cursor" bind:this={cursor}></div>
   <div class="dots-wrapper" bind:this={dots}></div>
 </div>
 
 <style>
   .stagger-visualizer {
+    cursor: none;
     position: absolute;
     width: 550px;
     height: 550px;
     transform-origin: center center;
+    animation: rotate 300s infinite;
   }
 
   .stagger-visualizer .dots-wrapper {
@@ -155,7 +166,7 @@
     width: 37px;
     height: 37px;
     margin: 9px;
-    background-color: lightcoral;
     border-radius: 50%;
+    background-color: crimson;
   }
 </style>

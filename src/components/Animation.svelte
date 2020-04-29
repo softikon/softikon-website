@@ -4,13 +4,15 @@
   import observer, { isIntersecting } from '../helpers/intersectionObserver'
 
   let ref
+  let animation
+  let paused
 
   onMount(() => {
     observer().observe(ref)
-    const interval = setInterval(() => isIntersecting(ref) ? staggersAnimation.play() : staggersAnimation.pause(), 100)
+    const interval = setInterval(() => isIntersecting(ref) ? !paused && animation.play() : animation.pause(), 100)
 
     const fragment = document.createDocumentFragment();
-    const grid = [12, 12];
+    const grid = [20, 5];
     const col = grid[0];
     const row = grid[1];
     const numberOfElements = col * row;
@@ -21,7 +23,7 @@
 
     ref.appendChild(fragment);
 
-    const staggersAnimation = anime.timeline({
+    animation = anime.timeline({
       targets: '.animation1 div',
       easing: 'easeInOutSine',
       delay: anime.stagger(50),
@@ -37,24 +39,22 @@
         {value: anime.stagger('-.1rem', {grid: grid, from: 'center', axis: 'y'}) },
         {value: anime.stagger('.1rem', {grid: grid, from: 'center', axis: 'y'}) }
       ],
-      duration: 1000,
+      duration: 2000,
       scale: .5,
       delay: anime.stagger(150, {grid: grid, from: 'center'})
     })
     .add({
-      translateX: () => anime.random(-15, 15),
-      translateY: () => anime.random(-15, 15),
-      borderRadius: '50%',
-      delay: anime.stagger(10, {from: 'last'})
+      translateX: () => anime.random(-10, 10),
+      translateY: () => anime.random(-10, 10),
+      delay: anime.stagger(20, {from: 'last'}),
     })
     .add({
-      borderRadius: '0',
       translateX: anime.stagger('.25rem', {grid: grid, from: 'center', axis: 'x'}),
       translateY: anime.stagger('.25rem', {grid: grid, from: 'center', axis: 'y'}),
       rotate: 0,
       scaleX: 2.5,
       scaleY: .25,
-      delay: anime.stagger(15, {from: 'center'})
+      delay: anime.stagger(20, {from: 'center'})
     })
     .add({
       rotate: anime.stagger([90, 0], {grid: grid, from: 'center'}),
@@ -67,23 +67,30 @@
       scaleX: 1,
       rotate: 180,
       duration: 1000,
-      delay: anime.stagger(100, {grid: grid, from: 'center'})
+      delay: anime.stagger(125, {grid: grid, from: 'center'})
     })
     .add({
       scaleY: 1,
       scale: 1,
-      delay: anime.stagger(50, {grid: grid, from: 'center'})
+      delay: anime.stagger(65, {grid: grid, from: 'center'})
     })
 
-    staggersAnimation.play();
+    animation.play();
 
     return () => {
       clearInterval(interval)
     }
   })
+
+  const toggle = () => {
+    paused = !paused
+    
+    if (!paused) animation.play()
+    else animation.pause()
+  }
 </script>
 
-<div class="animation1" bind:this={ref}></div>
+<div class="animation1" bind:this={ref} pointer="{paused ? 'play' : 'stop'}" on:click={toggle}></div>
 
 <style>
   .animation1 {
@@ -91,14 +98,12 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 48rem;
-    height: 48rem;
-    animation: rotate 120s infinite;
+    height: 200px;
 }
 
   .animation1 :global(div) {
-    width: 4rem;
-    height: 4rem;
-    background-color: lightcoral;
+    width: 5%;
+    height: 40px;
+    background-color: crimson;
   }
 </style>
