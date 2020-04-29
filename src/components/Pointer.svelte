@@ -16,6 +16,7 @@
     if (typeof window !== 'undefined') {
       window.addEventListener('mousemove', mouseMoveHandler)
       window.addEventListener('scroll', scrollHandler)
+      document.addEventListener('click', scrollHandler)
     }
 
     // Cleanup. But this unsubscribe method is probably never been called due to the context="module"
@@ -23,6 +24,7 @@
       if (typeof window !== 'undefined') {
          window.removeEventListener('mousemove', mouseMoveHandler)
          window.removeEventListener('scroll', scrollHandler)
+         document.removeEventListener('click', scrollHandler)
       }
     }
   })
@@ -54,7 +56,8 @@
     const { x, y } = coords
     if (!x || !y) return
     const t = document.elementFromPoint(x, y)
-    if (t !== target) target = t
+    // if (t !== target) target = t
+    target = t
   }
 
   const setClasses = target => {
@@ -64,8 +67,12 @@
       c.push('pointer__link')
     }
 
-    if (Array.from(target.parentElement.querySelectorAll('[pointer="play"]')).some(e => e === target)) {
+    if (Array.from(target.parentElement.querySelectorAll('[pointer="play"], [pointer="play"] *')).some(e => e === target)) {
       c.push('pointer__play')
+    }
+
+    if (Array.from(target.parentElement.querySelectorAll('[pointer="stop"], [pointer="stop"] *')).some(e => e === target)) {
+      c.push('pointer__stop')
     }
 
     classes.set(c)
@@ -161,16 +168,6 @@
   background-color: lightcoral;
 }
 
-:global(.c2 .pointer-outline) {
-  background-color: darkgoldenrod !important;
-}
-
-:global(.c2 .pointer__play .pointer-outline) {
-  background-color: #1a146f !important;
-  opacity: 0.9;
-  mix-blend-mode: multiply;
-}
-
 .pointer__link .pointer-outline {
   width: 64px;
   height: 64px;
@@ -184,17 +181,34 @@
 
 .pointer__play .pointer-base {
   clip-path: polygon(0 0,0 100%,100% 50%,100% 50%,70% 50%,70% 50%,100% 50%,100% 50%,70% 50%,70% 50%,100% 50%,100% 50%);
-  width: 0.5rem;
-  height: 0.75rem;
+  width: .75rem;
+  height: 1rem;
+  display: block;
+  background-color: #fff;
+  z-index: 1000
+}
+
+.pointer__stop .pointer-base {
+  clip-path: polygon(0 0,33% 0,33% 50%,66% 50%,66% 0,100% 0%,100% 100%,66% 100%,66% 50%,33% 50%,33% 100%,0% 100%);
+  width: 1rem;
+  height: 1rem;
   display: block;
   background-color: #fff;
   z-index: 1000
 }
 
 .pointer__play .pointer-outline {
-  width: 7.5rem;
-  height: 7.5rem;
+  width: 10rem;
+  height: 10rem;
   background-color: darkslategrey;
+  opacity: 1;
+  mix-blend-mode: multiply;
+}
+
+.pointer__stop .pointer-outline {
+  width: 10rem;
+  height: 10rem;
+  background-color: crimson;
   opacity: 1;
   mix-blend-mode: multiply;
 }
