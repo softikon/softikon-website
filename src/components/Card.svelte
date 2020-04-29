@@ -1,88 +1,79 @@
 <script>
-  export let background = 'https://digitalbro.net/wp-content/uploads/2020/02/THUMB-BLUE@2x.jpg'
-  export let mode = 'light'
+  export let background = '#1d2b2a'
+  export let image = 'https://digitalbro.net/wp-content/uploads/2020/02/THUMB-BLUE@2x.jpg'
+  export let to
 </script>
-<div class="card--anmation-wrapper" {...$$restProps}>
-  <div class="card card--{mode} flex flex-col">
-    <div class="card-wrap" style="background-size: cover; background-position: center; background-image: url({background})">
-      <div class="card-overlay"></div>
-      <div class="card-inner">
-        <div class="card__sub"><slot name="sub"></slot></div>
-        <div class="card__title"><slot name="title"></slot></div>
-        <slot></slot>
-      </div>
+<div class="card flex flex-col align-end justify-end">
+  <a href="{to}" class="card__link">
+    <div
+      class="card__bg-container"
+      style="background-color: {background};"
+    ></div>
+    <div class="card__sub text-gray-200">
+      <slot name="sub"></slot>
     </div>
-  </div>
+    <div class="card__title text-gray-500 leading-relaxed">
+      <slot name="title"></slot>
+    </div>
+    <div class="card__more">
+      <slot></slot>
+    </div>
+    <img class="card__img" src="{image}" alt="" />
+  </a>
 </div>
 
 <style>
   .card {
-    min-height: 1px;
-    box-sizing: border-box;
-    transition: all 0.5s;
+    height: 74rem;
+    clip-path: inset(0 0 0 0);
   }
 
-  .card-overlay {
+  .card__link {
+    height: 62rem;
+    position: relative;
+    display: block;
+  }
+
+  .card__bg-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: transparent;
-  }
-
-  .card--light .card-overlay {
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 82%);
-  }
-
-  .card--dark .card-overlay {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 82%);
-  }
-
-  .card:hover {
-    padding: 1rem;
-  }
-
-  .card-wrap {
-    overflow: hidden;
-    position: relative;
-    flex-grow: 1;
-    width: 100%;
-    background-size: cover;  
-  }
-
-  .card-inner {
-    position: relative;
-    padding-top: 65%;
-    padding-bottom: 15%;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-50%) translateY(-50%);
+    clip-path: inset(calc(((100vh - 62rem) / 2)) 200px calc(((100vh - 42rem) / 2)) 0);    
   }
 
   .card__sub {
-    padding: 5%;
-    padding-top: 0;
-    color: #585858;
-    font-weight: 600;
-    font-size: 1.8rem;
+    position: absolute;
+    top: 85px;
+    left: 85px;
+    font-weight: 500;
+    font-size: 1.5rem;
   }
 
   .card__title {
-    padding-left: 5%;
-    padding-right: 5%;
-    font-weight: 700;
+    position: absolute;
+    left: 85px;
+    top: 50%;
+    transform: translateY(calc(-50% - 5rem));
+    font-weight: 400;
     font-size: 2.4rem;
-    @apply tracking-tight;
+    max-width: 420px;
+    @apply tracking-tight;    
   }
 
-  .card :global(.card__link) {
-    display: inline-block;
-    margin-top: 10%;
-    margin-left: 5%;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: underline;
+  .card__img {
+    position: absolute;
+    max-height: 49rem;
+    max-width: 70rem;
+    bottom: 0;
+    right: 0;
   }
 
-  .card--dark .card__title {
-    color: #fff;
+  .card__more {
+    position: absolute;
+    bottom: 9rem;
+    left: 85px;   
   }
 </style>
