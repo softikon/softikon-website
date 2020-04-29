@@ -20,7 +20,7 @@
 <footer class="relative py-64 min-h-screen">
   <div class="section-bg black" use:animate data-animate="slideScaleLeft"></div>
   <div class="w-10/12 mx-auto">
-    <p class="leading-none text-4xl lg:text-6xl leading-none text-white mb-24">
+    <p class="text-4xl lg:text-6xl text-white mb-24">
       <span class="block font-regular">jsme zde, abychom společně</span>
       {#each slides as slide, index}
       {#if slideIndex === index}

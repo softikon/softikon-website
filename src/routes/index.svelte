@@ -20,14 +20,16 @@
           <Revealable>Great design is a force of nature<span class="dot">.</span></Revealable>
         </h1>
       </div>
-      <div class="w-full lg:w-3/6 text-gray-600 font-medium text-3xl lg:text-4xl">
-        <p class="tracking-tight pt-16 lg:pt-48 leading-loose">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.</p>
+      <div class="w-full lg:w-3/6">
+        <p class="tracking-tight pt-16 lg:pt-48 leading-loose font-medium text-3xl lg:text-4xl text-gray-600">
+          Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.
+        </p>
         <Button class="mt-16" href="softikon">naše filozofie</Button>
       </div>
     </div>
   </section>
 
-  <section class="relative" style="min-height: 1100px;">
+  <section class="relative" style="min-height: 1000px;">
     <div class="section-bg light" use:animate data-animate="slideScaleLeft"></div>
     <div class="c-circle">
       <svg class="c-circle-svg" viewBox="0 0 1820 1230" style="opacity: 1;">
@@ -42,63 +44,68 @@
     </div>
     <div class="flex justify-center lg:justify-end">
       <div class="relative w-10/12 lg:w-11/12 pt-48">
+        <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+          <span class="outlined">inteligentní</span><br />digitální řešení
+        </h2>
         <div class="flex flex-col lg:flex-row">
-          <div class="flex flex-col">
-            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12">
-              <span class="outlined">inteligentní</span> digitální řešení
-            </h2>
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12 c-line__lg">
+          <div class="flex flex-col lg:w-2/6 lg:mr-48">
+            <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
-              <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.</p>
+              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">No story told is better than the one you live by yourself. That's why we want your users to create their own stories through a user experience that meets their needs and fits their motivations and expectations. Our UX methodology and UI designs improve your product's perception of value and your audience's satisfaction.</p>
               <Button href="softikon">jak to funguje?</Button>
             </div>
           </div>
-          <div class="flex hidden lg:block">
-            <Animation />
+          <div class="hidden lg:flex lg:justify-end w-4/6 ">
+            <div class="w-4/6" style="transform: translateY(-10rem);">
+              <Animation2 />
+            </div>
           </div>
         </div> 
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="flex justify-center lg:justify-end">
-      <div class="flex flex-wrap lg:w-10/12">
-        <div class="w-full md:w-6/12" style="margin-top: -30rem;">
-          <Card data-aos="zoom-out-right" data-aos-duration="2000" background="img/autopublisher.jpg">
-            <span slot="sub">Autopublisher</span>
-            <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
-            <a class="card__link" href="/#">Přejít na web</a>
-          </Card>
-        </div>
-      <div class="w-full md:w-6/12" style="margin-top: -30rem;">
-          <Card data-aos="zoom-out-left" data-aos-duration="2000" mode="dark" background="img/bigdata.jpg">
-            <span slot="sub">Betsense</span>
-            <span slot="title">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
-            <span class="card__link text-gray-500" href="/#">Spouštíme Q3/2020</span>
-          </Card>
-        </div>
-      </div>
+  <section class="w-10/12 pt-48 pb-24 mx-auto">
+    <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__xl">
+      <span class="c-line-ln hidden lg:block"></span>
+      <h3 style="text-rendering: optimizeLegibility;">Projekty, na které jsme hrdí</h3>
     </div>
   </section>
 
-  <section class="relative pb-64">
-    <div class="section-bg white"></div>
+  <section id="showcase">
+    <div class="w-10/12 mx-auto flex flex-col">
+      <Card to="#/" image="img/autopublisher-mock.png">
+        <span slot="sub">Autopublisher</span>
+        <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
+        <Button href="/#">Přejít na web</Button>
+      </Card>
+
+      <Card to="#/" background="#d2dae5" image="img/betsense-mock.png">
+        <span slot="sub" class="text-gray-600">Betsense</span>
+        <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
+        <Button className="bg-none text-gray-500" href="/#">Spouštíme Q3/2020</Button>
+      </Card>
+    </div>
+  </section>
+
+  <section class="relative pb-48">
     <div class="flex justify-center lg:justify-end">
       <div class="relative w-10/12 lg:w-11/12 pt-48">
-        <div class="flex flex-col lg:flex-row items-stretch">
-          <div class="flex flex-col">
-            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-9/12">
-              jděte s dobou a <span class="outlined">ještě dál</span>
-            </h2>
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12 c-line__lg">
+        <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+          bouráme hranice<br />a tvoříme <span class="outlined">historii</span>
+        </h2>
+        <div class="flex flex-col lg:flex-row">
+          <div class="flex flex-col lg:w-2/6 lg:mr-48">
+            <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
-              <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
-              <Button href="test/pointer">kontaktujte nás</Button>
-            </div>    
+              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
+              <Button href="softikon">projekty</Button>
+            </div>
           </div>
-          <div id="animation2" class="flex items-center justify-center pt-12 lg:pt-0">
-            <Animation2 />      
+          <div class="hidden lg:flex flex-1">
+            <div class="w-full">
+              <Animation />
+            </div>
           </div>
         </div> 
       </div>
@@ -112,20 +119,6 @@
   color: lightcoral;
   animation: blink 1000ms steps(5, start) infinite;
   font-weight: 800;
-}
-
-#animation2 {
-  min-height: 400px;
-  transform: rotate(0);
-}
-
-@media(min-width: 1024px) {
-  #animation2 {
-    flex-grow: unset;
-    min-width: 45%;
-    min-height: 45%;
-    transform: rotate(-30deg);
-  }  
 }
 
 .c-circle {
@@ -142,7 +135,13 @@
   left: 50%;
   transform: translateX(-50%);
   margin-left: 5vw;
-  width: 180rem;
+  width: 90rem;
+}
+
+@media(min-width: 1024px) {
+  .c-circle-svg {
+    width: 180rem;
+  } 
 }
 
 .c-circle-item {
