@@ -1,5 +1,10 @@
 import * as sapper from '@sapper/app'
+import loadPolyfills from './helpers/loadPolyfills'
 
-sapper.start({
-  target: document.getElementById('root')
-})
+function start() {
+  sapper.start({
+    target: document.getElementById('root')
+  })
+}
+
+loadPolyfills().then(start)
