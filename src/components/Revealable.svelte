@@ -44,8 +44,7 @@
       el.classList.add('revealable')
       !animated && setTimeout(() => {
         el.classList.add('animate')
-        animated = true
-      }, 100)
+      }, 50) || el.classList.add('show')
 
       ref2.appendChild(el)
       group.forEach(e => {
@@ -62,6 +61,8 @@
         el.appendChild(cloned)
       })
     })
+
+    animated = true
 
     ref2.style.display = 'inline-block'
     ref.style.display = 'none'    
@@ -107,6 +108,10 @@
 
   .is-browser :global(.revealable > span) {
     visibility: hidden;
+  }
+
+  .is-browser :global(.revealable.show > span) {
+    visibility: visible;
   }
 
   .is-browser :global(.revealable.animate > span) {
