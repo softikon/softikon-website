@@ -31,7 +31,8 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
 
 const postcssPlugins = {
   dev: [
-    require('tailwindcss')(tailwindConfig)
+    require('tailwindcss')(tailwindConfig),
+    require('autoprefixer')
   ],
   prod: [
     require('tailwindcss')(tailwindConfig),

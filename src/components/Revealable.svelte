@@ -2,7 +2,6 @@
   import { onMount } from 'svelte'
   let browser = false
   let ref, ref2
-  let animated = false
 
   const prepare = () => {
     Array.from(ref.childNodes).forEach(node => {
@@ -42,15 +41,13 @@
     els.forEach(group => {
       const el = document.createElement('span')
       el.classList.add('revealable')
-      if (!animated) {
+      setTimeout(() => {
         el.classList.add('animate')
-      }
+      }, 100)
+
       ref2.appendChild(el)
       group.forEach(e => {
         const cloned = e.cloneNode(true)
-        setTimeout(() => {
-          cloned.style.visibility = 'visible'
-        }, 1000)
         if (group.length === 1) {
           const { display } = window.getComputedStyle(e)
           if (display === 'block') {
@@ -63,8 +60,6 @@
         el.appendChild(cloned)
       })
     })
-
-    animated = true
 
     ref2.style.display = 'inline-block'
     ref.style.display = 'none'    
@@ -84,7 +79,7 @@
 </script>
 
 <span class:is-browser={browser}>
-  <span style="display: inline-block;" bind:this={ref}>
+  <span class="invisible" style="display: inline-block;" bind:this={ref}>
     <slot></slot>
   </span>
   <span bind:this={ref2}></span>
@@ -109,7 +104,14 @@
     animation-delay:inherit;
   }
 
-  .is-browser :global(.revealable.animate > span) {
+  .is-browser :global(.revealable > span) {
     visibility: hidden;
+    opacity: 0;
   }
+
+  .is-browser :global(.revealable.animate > span) {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s;
+  }  
 </style>
