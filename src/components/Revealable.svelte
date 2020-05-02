@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   let browser = false
   let ref, ref2
+  let animated = false
 
   const prepare = () => {
     Array.from(ref.childNodes).forEach(node => {
@@ -41,8 +42,9 @@
     els.forEach(group => {
       const el = document.createElement('span')
       el.classList.add('revealable')
-      setTimeout(() => {
+      !animated && setTimeout(() => {
         el.classList.add('animate')
+        animated = true
       }, 100)
 
       ref2.appendChild(el)
@@ -97,21 +99,34 @@
     position:absolute;
     top:0;
     left:0;
-    width:101.5%;
-    height:100%;
     background: #87FFA9;
-    animation:fx-in 2s cubic-bezier(.19,1,.22,1) forwards;
+    animation:fx-in 2s cubic-bezier(.19,1,.22,1);
+    animation-fill-mode: forwards;
     animation-delay:inherit;
   }
 
   .is-browser :global(.revealable > span) {
     visibility: hidden;
-    opacity: 0;
   }
 
   .is-browser :global(.revealable.animate > span) {
     visibility: visible;
-    opacity: 1;
-    transition: opacity 2s;
-  }  
+    animation: opacity 2s linear;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    50.1% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 </style>

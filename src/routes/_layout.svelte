@@ -273,6 +273,8 @@ h3 {
 
 @keyframes fx-in {
   0% {
+      width:101.5%;
+      height:100%;
       transform: translateX(-100px) scaleX(0) skewX(80deg);
       transform-origin:left;
   }
@@ -280,11 +282,13 @@ h3 {
       transform: translateX(0) scaleX(1) skewX(0);
       transform-origin: left;
   }
-  50.1% {
+  50.1% { 
       transform: translateX(0) scaleX(1);
       transform-origin: right;
   }
   to {
+      width:101.5%;
+      height:100%;
       transform: translateX(0) scaleX(0);
       transform-origin: right;
   }
