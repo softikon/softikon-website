@@ -83,7 +83,7 @@
       <Card to="#/" background="#d2dae5" image="img/betsense-mock.png">
         <span slot="sub" class="text-gray-600">Betsense</span>
         <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
-        <Button className="bg-none text-gray-500" href="/#">Spouštíme Q3/2020</Button>
+        <Button href="/#">Spouštíme Q3/2020</Button>
       </Card>
     </div>
   </section>

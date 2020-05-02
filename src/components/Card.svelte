@@ -34,7 +34,12 @@
     display: block;
   }
 
+  .card__link:hover .card__bg-container {
+    clip-path: inset(calc(((100vh - 59rem) / 2)) 5% calc(((100vh - 49rem) / 2)) 5%);
+  }
+
   .card__bg-container {
+    transition: clip-path 1s;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -66,6 +71,7 @@
   .card__img {
     position: absolute;
     max-width: 85vw;
+    max-height: 300px;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -73,8 +79,8 @@
 
   .card__more {
     position: absolute;
-    bottom: 9rem;
-    left: 85px;   
+    left: 85px;
+    bottom: 10rem;
   }
 
   @media(min-width: 768px) {
@@ -84,6 +90,7 @@
     }
 
     .card__img {
+      max-height: unset;
       right: 0;
       left: 45%;
       transform: unset;
@@ -105,6 +112,11 @@
     .card__link {
       height: 62rem;
     }
+
+    .card__link:hover .card__bg-container {
+      clip-path: inset(calc(((100vh - 59rem) / 2)) 200px calc(((100vh - 39rem) / 2)) 0);
+    }
+
     .card__bg-container {
       clip-path: inset(calc(((100vh - 62rem) / 2)) 200px calc(((100vh - 42rem) / 2)) 0);    
     }
@@ -127,7 +139,7 @@
     .card__img {
       transform: unset;
       max-height: 49rem;
-      max-width: 70rem;
+      max-width: calc(100vw / 2.15);
       bottom: 0;
       right: 0;
       left: unset;

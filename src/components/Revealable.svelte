@@ -73,12 +73,13 @@
   onMount(() => {
     browser = true
 
-    const observer = new window.ResizeObserver(process)
+    window.addEventListener('resize', process)
     prepare()
-    // process()
-    observer.observe(document.body)
+    process()
 
-    return () => observer.disconnect()
+    return () => {
+      window.removeEventListener('resize', process)
+    }
   })
 </script>
 
