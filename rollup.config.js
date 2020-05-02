@@ -93,7 +93,8 @@ export default {
         ],
       }),
       !dev && terser({
-        module: true
+        module: true,
+        safari10: true
       })
     ]
   },
