@@ -1,9 +1,13 @@
+import EventEmitter from 'events'
+
 const opts = {
   root: null,
   threshold: 0
 }
 
 const map = new WeakMap()
+
+const emitter = new EventEmitter()
 
 const createObserver = () => {
   let observer
@@ -12,6 +16,7 @@ const createObserver = () => {
     observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         map.set(e.target, e.isIntersecting)
+        emitter.emit('intersectionChange', e.target)
       })
     }, opts)
 
@@ -20,7 +25,14 @@ const createObserver = () => {
 }
 
 export default createObserver()
-export const isIntersecting = el => map.get(el)
+export const isIntersecting = el => cb => {
+  const handler = target => {
+    target === el && cb(map.get(target))
+  }
+  emitter.on('intersectionChange', handler)
+
+  return () => emitter.off('intersectionChange', handler)
+}
 export const animate = node => {
   const observer = new IntersectionObserver(entries => {
     entries[0].isIntersecting && node.classList.add('animate')

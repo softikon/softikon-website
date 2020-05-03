@@ -9,7 +9,7 @@
 
   onMount(() => {
     observer().observe(ref)
-    const interval = setInterval(() => isIntersecting(ref) ? !paused && animation.play() : animation.pause(), 100)
+    const unsubscribe = isIntersecting(ref)(state => state ? !paused && animation.play() : animation.pause())
 
     const fragment = document.createDocumentFragment();
     const grid = [20, 8];
@@ -77,9 +77,7 @@
 
     // animation.play();
 
-    return () => {
-      clearInterval(interval)
-    }
+    return unsubscribe
   })
 
   const toggle = () => {

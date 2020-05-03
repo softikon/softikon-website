@@ -1,0 +1,2 @@
+- Service worker
+- Parallax action 
