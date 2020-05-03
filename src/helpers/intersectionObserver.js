@@ -34,10 +34,18 @@ export const isIntersecting = el => cb => {
   return () => emitter.removeListener('intersectionChange', handler)
 }
 export const animate = node => {
+  let opts
+  try {
+    opts = JSON.parse(node.dataset.opts)
+  } catch (e) {
+    opts = {}
+  }
+
   const observer = new IntersectionObserver(entries => {
     entries[0].isIntersecting && node.classList.add('animate')
   }, {
-    threshold: 0.05
+    threshold: 0.05,
+    ...opts
   })
 
   observer.observe(node)
