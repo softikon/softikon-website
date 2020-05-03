@@ -1,4 +1,6 @@
 <script>
+  import { animate } from '../helpers/intersectionObserver'
+
   export let background = '#1d2b2a'
   export let image = 'https://digitalbro.net/wp-content/uploads/2020/02/THUMB-BLUE@2x.jpg'
   export let to
@@ -8,11 +10,15 @@
     <div
       class="card__bg-container"
       style="background-color: {background};"
-    ></div>
+      use:animate
+      data-animate="clipSlideLeft"
+      data-opts="{JSON.stringify({threshold: 0})}"
+    >
+    </div>
     <div class="card__sub text-gray-200">
       <slot name="sub"></slot>
     </div>
-    <div class="card__title text-gray-500 leading-relaxed">
+    <div class="card__title text-gray-500 text-4xl leading-relaxed">
       <slot name="title"></slot>
     </div>
     <div class="card__more hidden md:block">
@@ -39,7 +45,6 @@
   }
 
   .card__bg-container {
-    transition: clip-path 1s;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -63,7 +68,6 @@
     top: 50%;
     transform: translateY(calc(-50% - 6rem));
     font-weight: 400;
-    font-size: 2rem;
     max-width: calc(100vw - 30%);
     @apply tracking-tight;    
   }
@@ -75,6 +79,8 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    transition: all 1.5s;
+    will-change: auto;
   }
 
   .card__more {
@@ -100,7 +106,6 @@
     .card__title {
       top: 50%;
       transform: translateY(calc(-50% - 5rem));
-      font-size: 2rem;
     }
   }
 
@@ -132,7 +137,6 @@
       left: 85px;
       top: 50%;
       transform: translateY(calc(-50% - 5rem));
-      font-size: 2.4rem;
       max-width: 420px;
     }
 
@@ -144,6 +148,10 @@
       right: 0;
       left: unset;
       top: unset;
+    }
+
+    .card__link:hover .card__img {
+      bottom: 2rem;
     }
   }
 

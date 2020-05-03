@@ -119,6 +119,15 @@ html, body, #root {
   transform: scaleX(1);
 }
 
+[data-animate="clipSlideLeft"] {
+  transition: clip-path 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+[data-animate="clipSlideLeft"]:not(.animate) {
+  clip-path: inset(0 90% 0 0) !important;
+  will-change: clip-path;
+}
+
 .invert {
   filter: invert(1);
 }  
