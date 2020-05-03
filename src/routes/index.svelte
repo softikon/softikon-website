@@ -17,7 +17,7 @@
     <div class="flex flex-wrap">
       <div class="w-full md:w-3/6 md:pr-16">
         <h1 class="tracking-tighter">
-          <Revealable>Great design is a force of nature<span class="dot">.</span></Revealable>
+          <Revealable>Great design is a force of nature<span><span class="dot">.</span></span></Revealable>
         </h1>
       </div>
       <div class="w-full md:w-3/6">

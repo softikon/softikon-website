@@ -102,7 +102,6 @@
     left:0;
     background: #87FFA9;
     animation:fx-in 2s cubic-bezier(.19,1,.22,1);
-    animation-fill-mode: forwards;
     animation-delay:inherit;
   }
 
