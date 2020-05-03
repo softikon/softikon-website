@@ -47,16 +47,16 @@
         <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12" style="text-rendering: optimizeLegibility;">
           <span class="outlined">inteligentní</span><br />digitální řešení
         </h2>
-        <div class="flex flex-col lg:flex-row">
-          <div class="flex flex-col lg:w-2/6 lg:mr-48">
+        <div class="flex flex-col md:flex-row">
+          <div class="flex md:w-3/6 lg:pr-24">
             <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">No story told is better than the one you live by yourself. That's why we want your users to create their own stories through a user experience that meets their needs and fits their motivations and expectations. Our UX methodology and UI designs improve your product's perception of value and your audience's satisfaction.</p>
               <Button href="softikon">jak to funguje?</Button>
             </div>
           </div>
-          <div class="hidden lg:flex items-end lg:justify-end lg:w-4/6">
-            <div class="lg:w-4/6 animation">
+          <div class="hidden md:flex items-end md:justify-end md:w-3/6">
+            <div class="md:w-full lg:w-5/6 animation">
               <Animation2 />
             </div>
           </div>
@@ -65,7 +65,7 @@
     </div>
   </section>
 
-  <section class="w-10/12 pt-48 pb-24 mx-auto">
+  <section class="w-10/12 pt-48 pb-12 mx-auto">
     <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__xl">
       <span class="c-line-ln hidden lg:block"></span>
       <h3 style="text-rendering: optimizeLegibility;">Projekty, na které jsme hrdí</h3>
@@ -102,7 +102,7 @@
               <Button href="softikon">projekty</Button>
             </div>
           </div>
-          <div class="hidden lg:flex flex-1">
+          <div class="lg:flex flex-1 py-40 lg:py-0">
             <div class="w-full">
               <Animation />
             </div>
