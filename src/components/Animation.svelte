@@ -99,14 +99,14 @@
     justify-content: center;
     align-items: center;
     height: 200px;
-}
-
-@media(max-width: 1023px) {
-  .animation1 {
-    transform: scale(1.1);
-    transform-origin: 50% 50%;
   }
-}
+
+  @media(max-width: 767px) {
+    .animation1 {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+  }
 
   .animation1 :global(div) {
     width: 5%;

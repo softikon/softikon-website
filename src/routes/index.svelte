@@ -89,20 +89,20 @@
   </section>
 
   <section class="relative pb-48">
-    <div class="flex justify-center lg:justify-end">
-      <div class="relative w-10/12 lg:w-11/12 pt-48">
+    <div class="flex justify-center md:justify-end">
+      <div class="relative w-10/12 md:w-11/12 pt-48">
         <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12" style="text-rendering: optimizeLegibility;">
           bouráme hranice<br />a tvoříme <span class="outlined">historii</span>
         </h2>
-        <div class="flex flex-col lg:flex-row">
-          <div class="flex flex-col lg:w-2/6 lg:mr-48">
+        <div class="flex flex-col md:flex-row">
+          <div class="flex md:w-2/6 md:mr-48">
             <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__lg">
               <span class="c-line-ln hidden lg:block"></span>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
               <Button href="softikon">projekty</Button>
             </div>
           </div>
-          <div class="lg:flex flex-1 py-40 lg:py-0">
+          <div class="md:flex md:w-4/6 flex-1 py-40 md:py-0">
             <div class="w-full">
               <Animation />
             </div>
