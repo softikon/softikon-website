@@ -31,7 +31,7 @@ export const isIntersecting = el => cb => {
   }
   emitter.on('intersectionChange', handler)
 
-  return () => emitter.off('intersectionChange', handler)
+  return () => emitter.removeListener('intersectionChange', handler)
 }
 export const animate = node => {
   const observer = new IntersectionObserver(entries => {
