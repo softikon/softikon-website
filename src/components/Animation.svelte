@@ -12,7 +12,7 @@
     const interval = setInterval(() => isIntersecting(ref) ? !paused && animation.play() : animation.pause(), 100)
 
     const fragment = document.createDocumentFragment();
-    const grid = [20, 5];
+    const grid = [20, 8];
     const col = grid[0];
     const row = grid[1];
     const numberOfElements = col * row;
@@ -101,9 +101,16 @@
     height: 200px;
 }
 
+@media(max-width: 1023px) {
+  .animation1 {
+    transform: scale(1.1);
+    transform-origin: 50% 50%;
+  }
+}
+
   .animation1 :global(div) {
     width: 5%;
-    height: 40px;
+    height: 25px;
     background-color: crimson;
   }
 </style>

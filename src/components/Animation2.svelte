@@ -143,7 +143,7 @@
     position: relative;
     width: 550px;
     height: 550px;
-    transform-origin: center left;
+    transform-origin: center top;
   }
 
   .stagger-visualizer .dots-wrapper {
