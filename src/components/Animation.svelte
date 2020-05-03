@@ -75,7 +75,7 @@
       delay: anime.stagger(65, {grid: grid, from: 'center'})
     })
 
-    animation.play();
+    // animation.play();
 
     return () => {
       clearInterval(interval)

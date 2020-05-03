@@ -45,6 +45,11 @@ const postcssPlugins = {
   ]
 }
 
+const onwarn = (warning, onwarn) =>
+  (warning.code === 'CIRCULAR_DEPENDENCY' &&
+    /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  onwarn(warning)
+
 export default {
   client: {
     input: config.client.input(),
@@ -97,7 +102,8 @@ export default {
         module: true,
         safari10: true
       })
-    ]
+    ],
+    onwarn
   },
   server: {
     input: config.server.input(),
@@ -125,7 +131,8 @@ export default {
     external: [
       ...Object.keys(pkg.dependencies),
       ...require('module').builtinModules
-    ]
+    ],
+    onwarn
   },
   serviceworker: {
     input: config.serviceworker.input(),
@@ -137,6 +144,7 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(mode)
       }),
       commonjs()
-    ]
+    ],
+    onwarn
   }
 }

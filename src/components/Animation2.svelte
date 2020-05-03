@@ -83,7 +83,7 @@
 
   onMount(() => {
     observer().observe(root)
-    const interval = setInterval(() => isIntersecting(root) ? (!paused && animation.play()) : animation.pause(), 100)
+    const interval = setInterval(() => isIntersecting(root) ? (!animation ? play() : !paused && animation.play()) : (animation && animation.pause()), 100)
 
     const dotsFragment = document.createDocumentFragment();
 
@@ -104,7 +104,7 @@
       scale: 1.5,
     });
 
-    play()
+    // play()
 
     return () => {
       paused = true
