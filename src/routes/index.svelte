@@ -65,25 +65,33 @@
     </div>
   </section>
 
-  <section class="w-10/12 pt-48 pb-12 mx-auto">
+  <section class="w-10/12 py-48 mx-auto">
     <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__xl">
       <span class="c-line-ln hidden lg:block"></span>
-      <h3 style="text-rendering: optimizeLegibility;">Projekty, na které jsme hrdí</h3>
+      <h3 style="text-rendering: optimizeLegibility;">Práce, na kterou jsme hrdí</h3>
     </div>
   </section>
 
   <section id="showcase">
-    <div class="w-full lg:w-10/12 mx-auto flex flex-col">
-      <Card to="#/" background="#3d399f" image="img/autopublisher-mock.png">
-        <span slot="sub">Autopublisher</span>
+    <div class="w-full xl:w-10/12 mx-auto flex flex-col">
+      <Card to="#/" background="#0f041b" image="img/autopublisher-mock.png">
+        <span class="text-white" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
-        <Button href="/#">Přejít na web</Button>
+        <a class="text-3xl text-white font-bold underline" href="/#">Přejít na web</a>
+        <ul slot="labels">
+          <li>Idea, Direction</li>
+          <li>Electron App + Website</li>      
+        </ul>
       </Card>
 
       <Card to="#/" background="#d2dae5" image="img/betsense-mock.png">
         <span slot="sub" class="text-gray-600">Betsense</span>
         <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
-        <Button href="/#">Spouštíme Q3/2020</Button>
+        <div class="text-xl text-gray-500">Spouštíme Q3/2020</div>
+        <ul slot="labels" class="text-gray-900">
+          <li>Idea, Direction</li>
+          <li>Electron App + Website</li>      
+        </ul>
       </Card>
     </div>
   </section>

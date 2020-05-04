@@ -124,7 +124,7 @@ html, body, #root {
 }
 
 [data-animate="clipSlideLeft"]:not(.animate) {
-  clip-path: inset(0 90% 0 0) !important;
+  clip-path: inset(0 99.9% 0 0) !important;
   will-change: clip-path;
 }
 
@@ -243,7 +243,7 @@ h2 {
   @apply tracking-tight;
   font-size: 4.8rem;
   line-height: 1.15em;
-  font-weight: 800;
+  font-weight: 700;
   position: relative;
 }
 
@@ -255,9 +255,9 @@ h2 {
 
 h3 {
   @apply tracking-tight;
-  font-size: 3.65rem;
+  font-size: 3.2rem;
   line-height: 1.15em;
-  font-weight: 700;
+  font-weight: 500;
   position: relative;
 }
 
