@@ -1,13 +1,12 @@
 <script>
   const defaultClasses = [
     'inline-block',
-    'border-0',
-    'px-8',
-    'py-4',
+    'border',
+    'border-current',
+    'px-12',
+    'py-6',
     'font-semibold',
-    'text-xl',
-    'bg-black',
-    'text-white'
+    'text-2xl'
   ]
 
   let classes
