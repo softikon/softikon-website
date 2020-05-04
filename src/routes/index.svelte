@@ -20,7 +20,7 @@
         <h1 class="tracking-tighter">
           <Revealable>Perfection is made up of small things<span><span class="dot">.</span></span></Revealable>
         </h1>
-        <LineBlock class="mt-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1650" grey sm>
+        <LineBlock class="mt-16 hidden md:block uppercase font-medium" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="1550" grey sm>
           <p class="text-gray-500 text-lg" style="text-rendering: optimizeLegibility;">Just not too many!</p>
         </LineBlock>
       </div>
@@ -28,7 +28,7 @@
         <p class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
           Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.
         </p>
-        <Button class="mt-16" href="softikon">naše filozofie</Button>
+        <Button class="mt-16" href="softikon">náš přístup</Button>
       </div>
     </div>
   </section>
@@ -48,18 +48,18 @@
     </div>
     <div class="flex justify-center lg:justify-end">
       <div class="relative w-10/12 lg:w-11/12 pt-48">
-        <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+        <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
           <span class="outlined">inteligentní</span><br />digitální řešení
         </h2>
         <div class="flex flex-col md:flex-row">
-          <div class="flex md:w-3/6 lg:pr-24">
-            <LineBlock class="mt-16" data-aos="fade-up" data-aos-duration="2000" lg>
+          <div class="flex md:w-3/6 lg:pr-48 self-center">
+            <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">No story told is better than the one you live by yourself. That's why we want your users to create their own stories through a user experience that meets their needs and fits their motivations and expectations. Our UX methodology and UI designs improve your product's perception of value and your audience's satisfaction.</p>
               <Button href="softikon">jak to funguje?</Button>
             </LineBlock>
           </div>
           <div class="hidden md:flex items-end md:justify-end md:w-3/6">
-            <div class="md:w-full lg:w-5/6 animation">
+            <div class="md:w-full lg:w-5/6">
               <Animation2 />
             </div>
           </div>
@@ -131,10 +131,6 @@
   #section-about {
     min-height: 1000px;
   }
-
-  #section-about .animation {
-    transform: translateY(-10rem);
-  }
 }
 
 .dot {
@@ -150,14 +146,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
 }
 
 .c-circle-svg {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin-left: 5vw;
+  margin-left: 8vw;
   width: 120rem;
 }
 

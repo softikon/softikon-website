@@ -164,10 +164,6 @@ html, body, #root {
 
 .section-bg.black {
   background-color: #111;
-}  
-
-.section-bg.white {
-  background-color: #fff;
 }
 
 .gradient-green {
