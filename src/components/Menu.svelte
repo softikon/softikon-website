@@ -1,21 +1,28 @@
 <script>
+  import { onMount } from 'svelte'
   import { slide } from 'svelte/transition'
+  import { stores } from '@sapper/app'
+
+  const { page } = stores()
+
+  const items = [
+    { title: 'Domů', path: '/' },
+    { title: 'Náš přístup', path: '/softikon' },
+    { title: 'Projekty', path: '/projekty' },
+    { title: 'Kontakt', path: '/kontakt' }
+  ]
+
+  $: currentItem = items.find(i => i.path === $page.path) || {}
+
 </script>
 
 <div id="menu" class="fixed inset-0 flex flex-col items-center justify-center z-10 text-white" style="background: #111;" transition:slide>
   <div class="w-9/12 lg:w-7/12 flex flex-col align-start">
-    <div class="block menu-item font-bold" data-aos="fade-up" data-aos-delay="500">
-      <a class="outlined white" href="/">Domů</a>
-    </div>
-    <div class="block menu-item font-bold" data-aos="fade-up" data-aos-delay="400">
-      Náš přístup
-    </div>
-    <div class="block menu-item font-bold" data-aos="fade-up" data-aos-delay="300">
-      Projekty
-    </div>
-    <div class="block menu-item font-bold" data-aos="fade-up" data-aos-delay="200">
-      Kontakt
-    </div>
+    {#each items as item, index}
+      <div class="block menu-item font-bold" data-aos="fade-up" data-aos-delay="{200 + (items.length - index - 1) * 100}">
+        <a class="white" class:outlined={currentItem.path === item.path} href="{item.path}">{item.title}</a>
+      </div>
+    {/each}
     <div class="block text-xl font-bold flex flex-row mt-16" data-aos="fade-left" data-aos-delay="100">
       <a class="mr-8 text-gray-700" href="#/">CZ</a>
       <a href="#/">EN</a>
