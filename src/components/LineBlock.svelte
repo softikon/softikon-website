@@ -8,7 +8,7 @@
 
 <div {...$$restProps}>
   <div class="c-line" class:c-line__sm={sm} class:c-line__lg={lg} class:c-line__xl={xl} class:c-line__dark={dark} class:c-line__grey={grey}>
-    <span class="c-line-ln hidden lg:block"></span>
+    <span class="c-line-ln hidden md:block"></span>
     <slot></slot>
   </div>
 </div>
@@ -18,19 +18,42 @@
     position: relative;
   }
 
-  @media (min-width: 1024px) {
-    .c-line {
-      padding-left: 12rem;
-    }
-  }
-
   .c-line-ln {
     position: absolute;
     left: 0;
-    width: 8rem;
     height: 1px;
     background-color: rgba(17, 17, 17, 0.6);
     top: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .c-line {
+      padding-left: 4rem;
+    }
+
+    .c-line-ln {
+      width: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .c-line {
+      padding-left: 6rem;
+    }
+
+    .c-line-ln {
+      width: 4rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .c-line {
+      padding-left: 11rem;
+    }
+
+    .c-line-ln {
+      width: 8rem;
+    }
   }
 
   .c-line__sm .c-line-ln {
