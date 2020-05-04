@@ -24,7 +24,7 @@
 <svelte:window bind:scrollY={y}></svelte:window>
 <div id="container" class="font-body">
   {#if menuActive}
-    <Menu />
+    <Menu on:close={() => menuActive = false } />
   {/if}
 
   <Pointer />
