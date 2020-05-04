@@ -2,47 +2,65 @@
   import { animate } from '../helpers/intersectionObserver'
 
   export let background = '#1d2b2a'
-  export let image = 'https://digitalbro.net/wp-content/uploads/2020/02/THUMB-BLUE@2x.jpg'
+  export let image
   export let to
+
+  let link
 </script>
-<div class="card flex flex-col align-end justify-end">
-  <a href="{to}" class="card__link">
+<div 
+  class="card flex flex-col align-center justify-center"
+  use:animate
+  data-animate="clipSlideLeft"
+  data-opts="{JSON.stringify({threshold: 0 })}"
+  data-selector=".card__link"
+>
+  <a bind:this={link} href="{to}" class="card__link">
     <div
       class="card__bg-container"
       style="background-color: {background};"
-      use:animate
-      data-animate="clipSlideLeft"
-      data-opts="{JSON.stringify({threshold: 0})}"
     >
     </div>
     <div class="card__sub text-gray-200">
       <slot name="sub"></slot>
     </div>
-    <div class="card__title text-gray-500 text-4xl leading-relaxed">
+    <div class="card__title text-gray-500 text-3xl leading-relaxed">
       <slot name="title"></slot>
     </div>
     <div class="card__more hidden md:block">
       <slot></slot>
     </div>
-    <img class="card__img" src="{image}" alt="" />
+    {#if image}
+      <div class="card__img">
+        <img class="card__img__inner" src="{image}" alt="" />
+      </div>
+    {/if}
+    <div class="card__labels pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
+      <slot name="labels"></slot>
+    </div>
   </a>
 </div>
 
 <style>
   .card {
-    height: 74rem;
+    height: 55rem;
     clip-path: inset(0 0 0 0);
   }
 
   .card__link {
-    height: 62rem;
+    height: 40rem;
     position: relative;
     display: block;
+    box-shadow: 0 10px 54px 0 rgba(0,0,0,.15);
+    transition: box-shadow 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  .card__link:hover {
+    box-shadow: none;
   }
 
   .card__link:hover .card__bg-container {
-    clip-path: inset(calc(((100vh - 59rem) / 2)) 5% calc(((100vh - 49rem) / 2)) 5%);
-  }
+    clip-path: inset(calc(((100vh - 38rem) / 2)) 0 calc(((100vh - 38rem) / 2)) 0);
+  }  
 
   .card__bg-container {
     position: absolute;
@@ -51,111 +69,82 @@
     width: 100vw;
     height: 100vh;
     transform: translateX(-50%) translateY(-50%);
-    clip-path: inset(calc(((100vh - 62rem) / 2)) 5% calc(((100vh - 52rem) / 2)) 5%);
+    clip-path: inset(calc(((100vh - 40rem) / 2)) 0 calc(((100vh - 40rem) / 2)) 0);
+    transition: clip-path 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
 
   .card__sub {
     position: absolute;
     top: 85px;
-    left: 15%;
+    left: 85px;
     font-weight: 500;
     font-size: 1.5rem;
   }
 
   .card__title {
     position: absolute;
-    left: 15%;
+    left: 85px;
     top: 50%;
-    transform: translateY(calc(-50% - 6rem));
+    transform: translateY(-50%);
     font-weight: 400;
-    max-width: calc(100vw - 30%);
+    max-width: 300px;
     @apply tracking-tight;    
   }
 
   .card__img {
     position: absolute;
-    max-width: 85vw;
-    max-height: 300px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
     transition: all 1.5s;
-    will-change: auto;
+    will-change: transform;
+  }
+
+  .card__img__inner {
+    display: block;
+    margin: 0 auto;
+    transform: scale(1);
+    transition: transform 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    will-change: transform;
+    max-width: 75vw;
+  }
+
+  .card__link:hover .card__img__inner {
+    transform: scale(0.95)
   }
 
   .card__more {
     position: absolute;
     left: 85px;
-    bottom: 10rem;
+    bottom: 85px;
+  }
+
+  .card__labels {
+    position: absolute;
+    transform: translateX(100%) rotate(90deg) translateZ(1px);
+    transform-origin: left top;
+    right: 0;
+    top: 0;
+  }
+
+  @media(max-width: 1023px) {
+    .card__title, .card__sub, .card__more {
+      display: none;
+    }
   }
 
   @media(min-width: 768px) {
-    .card__sub, .card__title {
-      left: 85px;
-      max-width: calc(100vw - 60%);
-    }
-
-    .card__img {
-      max-height: unset;
-      right: 0;
-      left: 45%;
-      transform: unset;
-      bottom: -2rem;
-    }
-
-    .card__title {
-      top: 50%;
-      transform: translateY(calc(-50% - 5rem));
-    }
   }
 
   @media(min-width: 1024px) {
-    .card {
-      height: 74rem;
-    }
-
-    .card__link {
-      height: 62rem;
-    }
-
-    .card__link:hover .card__bg-container {
-      clip-path: inset(calc(((100vh - 59rem) / 2)) 200px calc(((100vh - 39rem) / 2)) 0);
-    }
-
-    .card__bg-container {
-      clip-path: inset(calc(((100vh - 62rem) / 2)) 200px calc(((100vh - 42rem) / 2)) 0);    
-    }
-
-    .card__sub {
-      top: 85px;
-      left: 85px;
-      font-weight: 500;
-      font-size: 1.5rem;
-    }
-
-    .card__title {
-      left: 85px;
-      top: 50%;
-      transform: translateY(calc(-50% - 5rem));
-      max-width: 420px;
-    }
-
     .card__img {
-      transform: unset;
-      max-height: 49rem;
-      max-width: calc(100vw / 2.15);
-      bottom: 0;
-      right: 0;
-      left: unset;
-      top: unset;
-    }
-
-    .card__link:hover .card__img {
-      bottom: 2rem;
-    }
+      transform: translateY(-60%);
+      right: 3rem;
+      left: auto;
+    }    
   }
 
   @media(min-width: 1280px) {
-
   }
 </style>
