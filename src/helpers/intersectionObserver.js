@@ -48,7 +48,7 @@ export const animate = node => {
     ...opts
   })
 
-  observer.observe(node)
+  observer.observe(node.dataset.selector ? node.querySelector(node.dataset.selector) : node)
 
   return {
     destroy() {
