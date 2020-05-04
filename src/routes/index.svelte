@@ -6,6 +6,7 @@
   import Animation from '../components/Animation.svelte'
   import Animation2 from '../components/Animation2.svelte'
   import Button from '../components/Button.svelte'
+  import LineBlock from '../components/LineBlock.svelte'
 </script>
 
 <svelte:head>
@@ -13,12 +14,15 @@
 </svelte:head>
 
 <article class="pt-64 lg:pt-64">
-  <section class="w-10/12 pt-20 lg:pr-48 lg:pt-0 mx-auto pb-48">
+  <section class="w-10/12 pt-20 lg:pt-0 mx-auto pb-48">
     <div class="flex flex-wrap">
-      <div class="w-full md:w-3/6 md:pr-16">
+      <div class="flex flex-col w-full md:w-3/6 md:pr-16"> 
         <h1 class="tracking-tighter">
-          <Revealable>Great design is a force of nature<span><span class="dot">.</span></span></Revealable>
+          <Revealable>Perfection is made up of small things<span><span class="dot">.</span></span></Revealable>
         </h1>
+        <LineBlock class="mt-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1650" grey sm>
+          <p class="text-gray-500 text-lg" style="text-rendering: optimizeLegibility;">Just not too many!</p>
+        </LineBlock>
       </div>
       <div class="w-full md:w-3/6">
         <p class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
@@ -49,11 +53,10 @@
         </h2>
         <div class="flex flex-col md:flex-row">
           <div class="flex md:w-3/6 lg:pr-24">
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__lg">
-              <span class="c-line-ln hidden lg:block"></span>
+            <LineBlock class="mt-16" data-aos="fade-up" data-aos-duration="2000" lg>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">No story told is better than the one you live by yourself. That's why we want your users to create their own stories through a user experience that meets their needs and fits their motivations and expectations. Our UX methodology and UI designs improve your product's perception of value and your audience's satisfaction.</p>
               <Button href="softikon">jak to funguje?</Button>
-            </div>
+            </LineBlock>
           </div>
           <div class="hidden md:flex items-end md:justify-end md:w-3/6">
             <div class="md:w-full lg:w-5/6 animation">
@@ -66,10 +69,9 @@
   </section>
 
   <section class="w-10/12 py-48 mx-auto">
-    <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__xl">
-      <span class="c-line-ln hidden lg:block"></span>
+    <LineBlock data-aos="fade-up" data-aos-duration="2000" xl>
       <h3 style="text-rendering: optimizeLegibility;">Práce, na kterou jsme hrdí</h3>
-    </div>
+    </LineBlock>
   </section>
 
   <section id="showcase">
@@ -104,11 +106,10 @@
         </h2>
         <div class="flex flex-col md:flex-row">
           <div class="flex md:w-2/6 md:mr-48">
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__lg">
-              <span class="c-line-ln hidden lg:block"></span>
+            <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
               <Button href="softikon">projekty</Button>
-            </div>
+            </LineBlock>
           </div>
           <div class="md:flex md:w-4/6 flex-1 py-40 md:py-0">
             <div class="w-full">

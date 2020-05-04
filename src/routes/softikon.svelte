@@ -3,6 +3,7 @@
   import dataPoints from '../components/dataPoints.json'
   import Revealable from '../components/Revealable.svelte'
   import Button from '../components/Button.svelte'
+  import LineBlock from '../components/LineBlock.svelte'
 </script>
 
 <svelte:head>
@@ -84,13 +85,12 @@
             <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:w-9/12">
               make it <span class="outlined">&lt;real &#47;&gt;</span>
             </h2>
-            <div data-aos="fade-up" data-aos-duration="2000" class="c-line lg:w-7/12 c-line__lg">
-              <span class="c-line-ln hidden lg:block"></span>
+            <LineBlock data-aos="fade-up" data-aos-duration="2000" lg class="lg:w-7/12">
               <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">
                 Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Každý úspěšný projekt se stane úspěšným především proto, že se v něm spojuje nápad, vášeň, talent, zkušenosti, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace. Každý slabý článek z celku Vás může stát cenné prostředky a především zákazníky. Přečtěte si, co umíme nejlépe a proč je to důležité i pro Vás.              
               </p>
               <Button href="test/pointer">kontaktujte nás</Button>
-            </div>    
+            </LineBlock>    
           </div>
         </div> 
       </div>

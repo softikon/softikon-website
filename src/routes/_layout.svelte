@@ -7,6 +7,7 @@
   import Button from '../components/Button.svelte'
   import Footer from '../components/Footer.svelte'
   import Menu from '../components/Menu.svelte'
+  import LineBlock from '../components/LineBlock.svelte'
   import { animate } from '../helpers/intersectionObserver'
 
   import 'aos/dist/aos.css'
@@ -56,13 +57,12 @@
     <section class="relative py-64 text-white">
       <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
       <div class="w-10/12 mx-auto">
-        <div data-aos="fade-up" data-aos-duration="2000" class="c-line c-line__dark">
-          <span class="c-line-ln hidden lg:block"></span>
+        <LineBlock data-aos="fade-up" data-aos-duration="2000" dark>
           <p class="mb-8 text-2xl text-white font-bold uppercase">Make it happen</p>
           <h3 class="mb-0 font-bold text-4xl lg:text-6xl">let’s design better</h3>
           <h3 class="mb-16 font-bold">let’s work together</h3>
           <Button class="border-white" href="/#">SAY HELLO!</Button>
-        </div>
+        </LineBlock>
       </div>
     </section>
 
@@ -181,37 +181,6 @@ html, body, #root {
 .gradient-red {
   background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
 }
-
-.c-line {
-  position: relative;
-}
-
-@media (min-width: 1024px) {
-  .c-line {
-    padding-left: 12rem;
-  }
-}
-
-.c-line-ln {
-  position: absolute;
-  left: 0;
-  width: 8rem;
-  height: 1px;
-  background-color: rgba(17, 17, 17, 0.6);
-  top: 1rem;
-}
-
-.c-line__lg .c-line-ln {
-  top: 1.35rem;
-}
-
-.c-line__xl .c-line-ln {
-  top: 1.6rem;
-}  
-
-.c-line__dark .c-line-ln {
-  background-color: rgba(255, 255, 255, 0.8);
-}  
 
 h1 {
   font-size: 5rem;

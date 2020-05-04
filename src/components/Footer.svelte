@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import { fly } from 'svelte/transition'
   import { animate } from '../helpers/intersectionObserver'
+  import LineBlock from './LineBlock.svelte'
 
   let slideIndex = 0
   const slides = [
@@ -11,9 +12,11 @@
   ]
 
   onMount(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       slideIndex = (slideIndex + 1) % 3
     }, 4000)
+
+    return () => clearInterval(interval)
   })
 </script>
  
@@ -28,14 +31,12 @@
       {/if}
       {/each}
     </p>
-    <div class="c-line c-line__dark mb-24">
-      <span class="c-line-ln hidden lg:block"></span>
+    <LineBlock dark class="mb-24">
       <p class="mb-8 text-2xl font-semibold text-gray-100 uppercase">Kontakt</p>
       <p class="mb-4 text-teal-400 text-4xl font-semibold">info@softikon.eu</p>
       <p class="text-teal-400 text-4xl font-semibold">704 71 70 70</p>
-    </div>
-    <div class="c-line c-line__dark">
-      <span class="c-line-ln hidden lg:block"></span>
+    </LineBlock>
+    <LineBlock dark>
       <p class="mb-8 text-2xl font-semibold text-gray-100 uppercase">Explore</p>
       <ul class="font-semibold flex flex-col md:flex-row flex-wrap items-start md:items-center">
         <li><a class="text-gray-600 text-xl" href="#/index">Domů</a></li>
@@ -44,7 +45,7 @@
         <li class="hidden md:block"><span class="text-gray-900 mx-20">|</span></li>
         <li><a class="text-gray-600 text-xl" href="#/test">Autopublisher</a></li>
       </ul>
-    </div>
+    </LineBlock>
 
     <div class="absolute" style="bottom: 3rem;">
       <div class="flex flex-col">
