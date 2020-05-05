@@ -43,7 +43,7 @@
 
       <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
         <div class="menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
-            <span class="menu--text__anim">menu</span>
+            <span class="menu--text__anim">navigace</span>
             <span>zavřít</span>
         </div>
         <BurgerBar active={menuActive} />
@@ -59,8 +59,8 @@
       <div class="w-10/12 mx-auto">
         <LineBlock data-aos="fade-up" data-aos-duration="2000" dark>
           <p class="mb-8 text-2xl text-white font-bold uppercase">Make it happen</p>
-          <h3 class="mb-0 font-bold text-4xl lg:text-6xl">let’s design better</h3>
-          <h3 class="mb-16 font-bold">let’s work together</h3>
+          <h2 class="mb-0 font-bold outlined white">let’s design better</h2>
+          <h2 class="mb-16 font-bold">let’s work together</h2>
           <Button class="border-white" href="/#">SAY HELLO!</Button>
         </LineBlock>
       </div>
@@ -220,10 +220,16 @@ h2 {
 
 h3 {
   @apply tracking-tight;
-  font-size: 3.2rem;
+  font-size: 2.35rem;
   line-height: 1.15em;
   font-weight: 500;
   position: relative;
+}
+
+@media (min-width: 1024px) {
+  h3 {
+    font-size: 3.2rem;
+  }
 }
 
 .arrow {

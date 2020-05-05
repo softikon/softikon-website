@@ -33,7 +33,7 @@
     </div>
   </section>
 
-  <section class="relative" id="section-about">
+  <section class="relative flex" id="section-about">
     <div class="section-bg light" use:animate data-animate="slideScaleLeft"></div>
     <div class="c-circle">
       <svg class="c-circle-svg" viewBox="0 0 1820 1230" style="opacity: 1;">
@@ -47,19 +47,20 @@
       </svg>
     </div>
     <div class="flex justify-center lg:justify-end">
-      <div class="relative w-10/12 lg:w-11/12 pt-48">
+      <div class="flex flex-col relative w-10/12 lg:w-11/12 py-48">
         <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
           <span class="outlined">inteligentní</span><br />digitální řešení
         </h2>
-        <div class="flex flex-col md:flex-row">
-          <div class="flex md:w-3/6 lg:pr-48 self-center">
-            <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
-              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">No story told is better than the one you live by yourself. That's why we want your users to create their own stories through a user experience that meets their needs and fits their motivations and expectations. Our UX methodology and UI designs improve your product's perception of value and your audience's satisfaction.</p>
-              <Button href="softikon">jak to funguje?</Button>
+        <div class="flex flex-1 flex-col md:flex-row">
+          <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
+            <LineBlock class="mb-8" data-aos="fade-up" data-aos-duration="2000">
+              <h3 class="mb-8 text-3xl lg:text-3xl">Smart backend and data processing systems</h3>
+              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Effective data management is a pillar of any successful business. Our teams develop and build scalable backend systems, data processing pipelines, and workflows that will have your business-critical apps up and running…and running…and running.</p>
+              <Button class="mt-8" href="softikon">náš technologický stack</Button>
             </LineBlock>
           </div>
-          <div class="hidden md:flex items-end md:justify-end md:w-3/6">
-            <div class="md:w-full lg:w-5/6">
+          <div class="hidden md:flex items-center md:justify-end md:w-3/6">
+            <div class="md:w-full lg:w-5/6" data-aos="fade-up" data-aos-duration="2000">
               <Animation2 />
             </div>
           </div>
@@ -68,7 +69,7 @@
     </div>
   </section>
 
-  <section class="w-10/12 py-48 mx-auto">
+  <section class="w-10/12 pt-48 pb-24 mx-auto">
     <LineBlock data-aos="fade-up" data-aos-duration="2000" xl>
       <h3 style="text-rendering: optimizeLegibility;">Práce, na kterou jsme hrdí</h3>
     </LineBlock>
@@ -76,10 +77,10 @@
 
   <section id="showcase">
     <div class="w-full xl:w-10/12 mx-auto flex flex-col">
-      <Card to="#/" background="#0f041b" image="img/autopublisher-mock.png">
+      <Card to="softikon" background="#0f041b" image="img/autopublisher-mock.png">
         <span class="text-white" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
-        <a class="text-3xl text-white font-bold underline" href="/#">Přejít na web</a>
+        <a class="text-3xl text-white font-bold underline" href="autopublisher/">Přejít na web</a>
         <ul slot="labels">
           <li>Idea, Direction</li>
           <li>Electron App + Website</li>      
@@ -112,7 +113,7 @@
             </LineBlock>
           </div>
           <div class="md:flex md:w-4/6 flex-1 py-40 md:py-0">
-            <div class="w-full">
+            <div class="w-full" data-aos="fade-up" data-aos-duration="2000">
               <Animation />
             </div>
           </div>

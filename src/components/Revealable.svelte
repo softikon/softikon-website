@@ -100,7 +100,7 @@
     position:absolute;
     top:0;
     left:0;
-    background: #87FFA9;
+    background: #feebc8;
     animation:fx-in 2s cubic-bezier(.19,1,.22,1);
     animation-delay:inherit;
   }
