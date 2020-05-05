@@ -14,10 +14,10 @@
     }
   })
 </script>
-<div class="min-h-screen w-full mx-auto relative work flex flex-row">
+<div class="min-h-screen w-full mx-auto relative work flex">
   <div class="section-bg" style="background-color: {background};"></div>
-  <div class="w-8/12 mx-auto flex flex-row">
-    <div class="w-4/12 relative">
+  <div class="w-8/12 mx-auto flex flex-col-reverse lg:flex-row">
+    <div class="lg:w-4/12 py-20 lg:px-0 relative">
       <div class="card__sub text-gray-200">
         <slot name="sub"></slot>
       </div>
@@ -29,9 +29,9 @@
       </div>
     </div>
     {#if image}
-      <div class="w-8/12 flex flex-row items-center justify-center relative">
+      <div class="lg:w-8/12 flex flex-row items-center justify-center relative">
         <img class="card__img" src="{image}" alt="" />
-        <div class="card__labels text-2xl text-gray-500 font-medium leading-tight block">
+        <div class="card__labels text-xl lg:text-2xl text-gray-500 font-medium leading-tight block">
           <slot name="labels"></slot>
         </div>
       </div>
@@ -41,16 +41,11 @@
 
 <style>
   .card__sub {
-    position: absolute;
-    top: 85px;
     font-weight: 500;
     font-size: 1.5rem;
   }
 
   .card__title {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     font-weight: 400;
     @apply tracking-tight;    
   }
@@ -60,15 +55,28 @@
     max-width: 100%;
   }
 
-  .card__more {
-    position: absolute;
-    bottom: 85px;
-  }
-
   .card__labels {
     position: absolute;
     transform: translateX(100%) translateY(-20vh) rotate(90deg) translateZ(1px);
     transform-origin: left top;
     right: 0;
+  }
+
+  @media(min-width: 1024px) {
+    .card__sub {
+      position: absolute;
+      top: 85px;
+    }
+
+    .card__title {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);  
+    }
+
+    .card__more {
+      position: absolute;
+      bottom: 85px;
+    }
   }
 </style>
