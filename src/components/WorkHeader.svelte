@@ -16,21 +16,23 @@
 </script>
 <div class="min-h-screen w-full mx-auto relative work flex">
   <div class="section-bg" style="background-color: {background};"></div>
-  <div class="w-8/12 mx-auto flex flex-col-reverse lg:flex-row">
-    <div class="lg:w-4/12 py-20 lg:px-0 relative">
+  <div class="w-10/12 lg:w-9/12 xl:w-9/12 mx-auto flex flex-col-reverse justify-bottom pb-16 pt-64 lg:py-0 lg:flex-row lg:justify-start">
+    <div class="lg:w-5/12 py-20 lg:px-0 relative">
       <div class="card__sub text-gray-200">
         <slot name="sub"></slot>
       </div>
-      <div class="card__title text-gray-500 pr-20 text-3xl leading-relaxed">
+      <div class="card__title text-gray-500 pt-16 lg:pt-0 pr-0 lg:pr-16 text-3xl leading-loose">
         <slot name="title"></slot>
       </div>
-      <div class="card__more hidden md:block">
+      <div class="card__more hidden lg:block">
         <slot></slot>
       </div>
     </div>
     {#if image}
-      <div class="lg:w-8/12 flex flex-row items-center justify-center relative">
-        <img class="card__img" src="{image}" alt="" />
+      <div class="lg:w-7/12 flex flex-row relative self-center">
+        <div>
+          <img class="card__img" src="{image}" alt="" />
+        </div>
         <div class="card__labels text-xl lg:text-2xl text-gray-500 font-medium leading-tight block">
           <slot name="labels"></slot>
         </div>
@@ -57,7 +59,7 @@
 
   .card__labels {
     position: absolute;
-    transform: translateX(100%) translateY(-20vh) rotate(90deg) translateZ(1px);
+    transform: translateX(105%) translateY(30%) rotate(90deg) translateZ(1px);
     transform-origin: left top;
     right: 0;
   }
