@@ -20,7 +20,7 @@
         <h1 class="tracking-tighter">
           <Revealable>Perfection is made up of small things<span><span class="dot">.</span></span></Revealable>
         </h1>
-        <LineBlock class="mt-16 hidden md:block uppercase font-medium" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="1550" grey sm>
+        <LineBlock class="mt-16 hidden md:block uppercase font-medium" data-aos="fade-down" data-aos-duration="1500" data-aos-offset="0" data-aos-delay="1550" grey sm>
           <p class="text-gray-500 text-lg" style="text-rendering: optimizeLegibility;">Just not too many!</p>
         </LineBlock>
       </div>
@@ -77,7 +77,7 @@
 
   <section id="showcase">
     <div class="w-full xl:w-10/12 mx-auto flex flex-col">
-      <Card to="softikon" background="#0f041b" image="img/autopublisher-mock.png">
+      <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
         <span class="text-white" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
         <a class="text-3xl text-white font-bold underline" href="autopublisher/">Přejít na web</a>
