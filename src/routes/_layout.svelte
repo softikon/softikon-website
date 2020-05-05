@@ -9,6 +9,7 @@
   import Menu from '../components/Menu.svelte'
   import LineBlock from '../components/LineBlock.svelte'
   import { animate } from '../helpers/intersectionObserver'
+  import { isHeaderInverted } from '../store/ui'
 
   import 'aos/dist/aos.css'
 
@@ -32,7 +33,7 @@
 
   <div class="overflow-hidden">
     <header>
-      <a href="/" id="logo" class="p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={menuActive}>
+      <a href="/" id="logo" class="p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={$isHeaderInverted || menuActive}>
         <Logo />
         
         <div class="softikon flex">

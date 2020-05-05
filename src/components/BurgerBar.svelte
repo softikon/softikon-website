@@ -1,8 +1,10 @@
 <script>
+  import { isHeaderInverted } from '../store/ui'
+
   export let active = false
 </script>
 
-<div class="burger-bar relative" class:active>
+<div class="burger-bar relative" class:active class:invert={$isHeaderInverted && !active}>
   <span class="burger-bar-1 absolute top-0"></span>
   <span class="burger-bar-2 absolute" style="top: calc(50% - 0.2rem);"></span>
   <span class="burger-bar-3 absolute bottom-0"></span>
@@ -10,6 +12,7 @@
 
 <style>
   .burger-bar {
+    transition: filter .4s;
     width: 3rem;
     height: 2rem;
   }
