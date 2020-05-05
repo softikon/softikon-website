@@ -68,8 +68,8 @@
   }
 
   .card.selected .card__blur {
-    filter: blur(30px);
-    transition: filter 10s;
+    filter: blur(15px);
+    transition: filter 5s;
   }
 
   .card__link {
