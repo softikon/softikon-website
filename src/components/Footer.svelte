@@ -49,7 +49,7 @@
 
     <div class="absolute" style="bottom: 3rem;">
       <div class="flex flex-col">
-        <p class="text-gray-600 text-lg">&copy; 2020 Softikon s.r.o.</p>
+        <p class="text-gray-600 text-lg">&copy; 2020 Created with passion by Petr Máčal. This website's source code is fully public and open-sourced.</p>
       </div>
     </div>  
   </div>
