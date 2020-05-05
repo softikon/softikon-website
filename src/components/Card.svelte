@@ -1,41 +1,58 @@
 <script>
   import { animate } from '../helpers/intersectionObserver'
+  import { goto } from '@sapper/app'
 
   export let background = '#1d2b2a'
   export let image
   export let to
 
   let link
+  let selected
+  let viewport
+
+  const onClick = e => {
+    e.preventDefault()
+    viewport.scrollIntoView({ behavior: 'smooth' })
+    selected = !selected
+    setTimeout(() => {
+      goto(to)
+    }, 1000)
+  }
 </script>
 <div 
   class="card flex flex-col align-center justify-center"
+  class:selected
   use:animate
   data-animate="clipSlideLeft"
   data-opts="{JSON.stringify({threshold: 0 })}"
   data-selector=".card__link"
+  on:click={onClick}
 >
   <a bind:this={link} href="{to}" class="card__link">
     <div
       class="card__bg-container"
+      bind:this={viewport}
       style="background-color: {background};"
     >
     </div>
-    <div class="card__sub text-gray-200">
-      <slot name="sub"></slot>
-    </div>
-    <div class="card__title text-gray-500 text-3xl leading-relaxed">
-      <slot name="title"></slot>
-    </div>
-    <div class="card__more hidden md:block">
-      <slot></slot>
-    </div>
-    {#if image}
-      <div class="card__img">
-        <img class="card__img__inner" src="{image}" alt="" />
+    <div class="card__blur absolute inset-0">
+      <div class="card__sub text-gray-200">
+        <slot name="sub"></slot>
       </div>
-    {/if}
-    <div class="card__labels pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
-      <slot name="labels"></slot>
+      <div class="card__title text-gray-500 text-3xl leading-relaxed">
+        <slot name="title"></slot>
+      </div>
+      <div class="card__more hidden md:block">
+        <slot></slot>
+      </div>
+      {#if image}
+        <div class="card__img">
+          <img class="card__img__inner" src="{image}" alt="" />
+        </div>
+      {/if}
+      <div class="card__labels pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
+        <slot name="labels"></slot>
+      </div>
     </div>
   </a>
 </div>
@@ -46,8 +63,17 @@
     clip-path: inset(0 0 0 0);
   }
 
+  .card.selected {
+    clip-path: inset(-50vh -50vw -50vh -50vw);
+  }
+
+  .card.selected .card__blur {
+    filter: blur(30px);
+    transition: filter 10s;
+  }
+
   .card__link {
-    height: 40rem;
+    height: 45rem;
     position: relative;
     display: block;
     box-shadow: 0 10px 54px 0 rgba(0,0,0,.15);
@@ -56,11 +82,21 @@
 
   .card__link:hover {
     box-shadow: none;
+    transition-duration: .2s;
   }
 
   .card__link:hover .card__bg-container {
-    clip-path: inset(calc(((100vh - 38rem) / 2)) 0 calc(((100vh - 38rem) / 2)) 0);
-  }  
+    clip-path: inset(calc(((100vh - 43rem) / 2)) 0 calc(((100vh - 43rem) / 2)) 0);
+  }
+
+  .selected {
+    transform: translateZ(100%);
+    z-index: 99999;
+  }
+
+  .selected .card__bg-container {
+    clip-path: inset(0 0 0 0) !important;
+  }
 
   .card__bg-container {
     position: absolute;
@@ -69,7 +105,7 @@
     width: 100vw;
     height: 100vh;
     transform: translateX(-50%) translateY(-50%);
-    clip-path: inset(calc(((100vh - 40rem) / 2)) 0 calc(((100vh - 40rem) / 2)) 0);
+    clip-path: inset(calc(((100vh - 45rem) / 2)) 0 calc(((100vh - 45rem) / 2)) 0);
     transition: clip-path 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
 
@@ -139,8 +175,8 @@
 
   @media(min-width: 1024px) {
     .card__img {
-      transform: translateY(-60%);
-      right: 3rem;
+      transform: translateY(-40%);
+      right: 3.5rem;
       left: auto;
     }    
   }
