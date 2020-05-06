@@ -6,8 +6,10 @@
   export let background = '#1d2b2a'
   export let image
 
+  $: isDarkBg = getHexColorLuminosity(background) < 40
+
   onMount(() => {
-    isHeaderInverted.set(getHexColorLuminosity(background) < 40)
+    isHeaderInverted.set(isDarkBg)
 
     return () => {
       isHeaderInverted.set(false)
@@ -30,6 +32,9 @@
         <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
           <slot></slot>
         </div>
+      </div>
+      <div class="card__arrow-down-wrapper hidden lg:block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+        <div class="card__arrow-down" class:dark={isDarkBg}>↓</div>
       </div>
     </div>
     {#if image}
@@ -66,6 +71,35 @@
     transform: translateX(105%) translateY(30%) rotate(90deg) translateZ(1px);
     transform-origin: left top;
     right: 0;
+  }
+
+  .card__arrow-down-wrapper {
+    position: absolute;
+    bottom: 2rem;
+  }
+
+  .card__arrow-down.dark {
+    color: rgba(255,255,255,0.55);
+  }
+
+  .card__arrow-down {
+    content: '↓';
+    font-size: 4rem;
+    color: rgba(0,0,0,0.35);
+    display: block;
+    animation: slideDown 3s ease-in-out infinite;
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }    
+    to {
+      transform: translateY(0);
+    }
   }
 
   @media(min-width: 1024px) {
