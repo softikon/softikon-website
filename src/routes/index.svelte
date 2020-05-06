@@ -76,7 +76,7 @@
   </section>
 
   <section id="showcase">
-    <div class="w-full w-10/12 mx-auto flex flex-col">
+    <div class="w-10/12 mx-auto flex flex-col">
       <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
         <span class="text-white alternative-font text-4xl" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>

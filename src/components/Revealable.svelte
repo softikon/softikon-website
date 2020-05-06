@@ -47,8 +47,14 @@
       }, 50) || el.classList.add('show')
 
       ref2.appendChild(el)
-      group.forEach(e => {
+      group.forEach((e, i) => {
+        // TODO: get rid of this ugly checks
+        if (i === 0 || i === group.length - 1) {
+          if (e.textContent.trim() === '') return
+        }
+
         const cloned = e.cloneNode(true)
+        // TODO: get rid of this ugly checks
         if (cloned.textContent.trim() === '') {
           cloned.innerHTML = '&nbsp;'
         }

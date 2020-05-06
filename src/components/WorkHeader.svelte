@@ -20,7 +20,7 @@
   <div class="section-bg" style="background-color: {background};"></div>
   <div class="w-10/12 lg:w-9/12 xl:w-9/12 mx-auto flex flex-col-reverse justify-bottom pb-16 pt-64 lg:py-0 lg:flex-row lg:justify-start">
     <div class="lg:w-5/12 py-20 lg:px-0 relative">
-      <div class="card__sub text-gray-200" data-aos="fade-up" data-aos-duration="1000">
+      <div class="card__sub text-gray-200" data-aos="fade-up" data-aos-duration="2000">
         <slot name="sub"></slot>
       </div>
       <div class="card__title text-gray-500 pt-16 lg:pt-0 pr-0 lg:pr-16 text-3xl leading-loose">

@@ -50,7 +50,7 @@
           <img class="card__img__inner" src="{image}" alt="" />
         </div>
       {/if}
-      <div class="card__labels pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
+      <div class="card__labels hidden md:block pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
         <slot name="labels"></slot>
       </div>
     </div>
@@ -111,8 +111,8 @@
 
   .card__sub {
     position: absolute;
-    top: 85px;
-    left: 85px;
+    top: 80%;
+    left: 50%;
     font-weight: 500;
     font-size: 1.5rem;
   }
@@ -143,7 +143,7 @@
     transform: scale(1);
     transition: transform 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     will-change: transform;
-    max-width: 75vw;
+    max-width: 70vw;
   }
 
   .card__link:hover .card__img__inner {
@@ -164,9 +164,15 @@
     top: 0;
   }
 
+  @media(max-width: 767px) {
+  }
+
   @media(max-width: 1023px) {
-    .card__title, .card__sub, .card__more {
+    .card__title, .card__more {
       display: none;
+    }
+    .card__sub {
+      transform: translateX(-50%);
     }
   }
 
@@ -178,9 +184,40 @@
       transform: translateY(-40%);
       right: 3.5rem;
       left: auto;
-    }    
+    }
+
+    .card__img__inner {
+      max-width: 50vw;
+    }
+
+    .card__sub {
+      top: 85px;
+      left: 45px;
+    }
+
+    .card__title {
+      left: 45px; 
+    }
+
+    .card__more {
+      left: 45px;
+      bottom: 85px;
+    }
   }
 
   @media(min-width: 1280px) {
+    .card__sub {
+      top: 85px;
+      left: 85px;
+    }
+
+    .card__title {
+      left: 85px; 
+    }
+
+    .card__more {
+      left: 85px;
+      bottom: 85px;
+    }
   }
 </style>
