@@ -80,14 +80,14 @@
       <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
         <span class="text-white" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
-        <a class="text-3xl text-white font-bold underline" href="autopublisher/">Přejít na web</a>
+        <a class="text-3xl text-white font-bold underline" href="work/autopublisher">Více informací</a>
         <ul slot="labels">
           <li>Idea, Direction</li>
           <li>Electron App + Website</li>      
         </ul>
       </Card>
 
-      <Card to="#/" background="#d2dae5" image="img/betsense-mock.png">
+      <Card to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
         <span slot="sub" class="text-gray-600">Betsense</span>
         <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
         <div class="text-xl text-gray-500">Spouštíme Q3/2020</div>

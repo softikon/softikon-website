@@ -15,7 +15,8 @@
 
   onMount(() => {
     AOS.init({
-      once: true
+      once: true,
+      offset: 40
     })
   })
 
