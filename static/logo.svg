@@ -1,0 +1,15 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   id="softikon-logo"
+   version="1.1"
+   width="180"
+   height="200"
+   viewBox="0 0 560 645"
+>
+  <defs />
+  <g>
+    <clipPath id="mask">
+        <polygon points="130,0 0,160 0,485 270,645 560,485 560,160" />
+    </clipPath>
+  </g>
+</svg>

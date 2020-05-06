@@ -108,7 +108,7 @@
               &lt;jsme &#47;&gt; <span class="outlined">softikon</span>
             </h2>
             <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
-              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
+              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Jsme neortodoxní a nesourodá parta profesionálů, kteří milují své řešmeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
             </LineBlock>
           </div>
           <div class="md:flex md:w-4/6 flex-1 py-40 md:py-0">
