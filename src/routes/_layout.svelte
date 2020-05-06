@@ -90,6 +90,10 @@ html, body, #root {
   -webkit-font-smoothing: antialiased;
 }
 
+.alternative-font {
+  font-family: Staatliches;
+}
+
 
 .outlined {
   -webkit-text-fill-color: transparent;
