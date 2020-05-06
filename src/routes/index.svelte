@@ -78,12 +78,12 @@
   <section id="showcase">
     <div class="w-full xl:w-10/12 mx-auto flex flex-col">
       <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
-        <span class="text-white" slot="sub">Autopublisher</span>
+        <span class="text-white alternative-font text-4xl" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
         <a class="text-3xl text-white font-bold underline" href="work/autopublisher">Více informací</a>
         <ul slot="labels">
-          <li>Idea, Direction</li>
-          <li>Electron App + Website</li>      
+          <li>Nápad, implementace</li>
+          <li>Multiplatformní aplikace</li>
         </ul>
       </Card>
 
