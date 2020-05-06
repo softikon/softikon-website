@@ -16,7 +16,7 @@
 <article class="pt-64 lg:pt-64">
   <section class="w-10/12 pt-20 lg:pt-0 mx-auto pb-48">
     <div class="flex flex-wrap">
-      <div class="flex flex-col w-full md:w-3/6 md:pr-16"> 
+      <div class="flex flex-col w-full md:w-6/12"> 
         <h1 class="tracking-tighter">
           <Revealable>Perfection is made up of small things<span><span class="dot">.</span></span></Revealable>
         </h1>
@@ -24,7 +24,7 @@
           <p class="text-gray-500 text-lg" style="text-rendering: optimizeLegibility;">Just not too many!</p>
         </LineBlock>
       </div>
-      <div class="w-full md:w-3/6">
+      <div class="w-full md:w-6/12 md:pl-16">
         <p class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
           Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.
         </p>
@@ -49,13 +49,13 @@
     <div class="flex justify-center lg:justify-end">
       <div class="flex flex-col relative w-10/12 lg:w-11/12 py-48">
         <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
-          <span class="outlined">inteligentní</span><br />digitální řešení
+          <span class="outlined">inteligentní</span><br />data management
         </h2>
         <div class="flex flex-1 flex-col md:flex-row">
           <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
             <LineBlock class="mb-8" data-aos="fade-up" data-aos-duration="2000">
-              <h3 class="mb-8 text-3xl lg:text-3xl">Smart backend and data processing systems</h3>
-              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Effective data management is a pillar of any successful business. Our teams develop and build scalable backend systems, data processing pipelines, and workflows that will have your business-critical apps up and running…and running…and running.</p>
+              <h3 class="mb-8 text-3xl lg:text-3xl">Chytré backend systémy a zpracování dat</h3>
+              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Vtip je v přetvoření dat v informace a informace v užitek. Správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
               <Button class="mt-8" href="softikon">náš technologický stack</Button>
             </LineBlock>
           </div>
@@ -76,7 +76,7 @@
   </section>
 
   <section id="showcase">
-    <div class="w-full xl:w-10/12 mx-auto flex flex-col">
+    <div class="w-full w-10/12 mx-auto flex flex-col">
       <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
         <span class="text-white alternative-font text-4xl" slot="sub">Autopublisher</span>
         <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
@@ -88,12 +88,12 @@
       </Card>
 
       <Card to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
-        <span slot="sub" class="text-gray-600">Betsense</span>
+        <span slot="sub" class="text-gray-600 alternative-font text-4xl">Betsense</span>
         <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
         <div class="text-xl text-gray-500">Spouštíme Q3/2020</div>
         <ul slot="labels" class="text-gray-900">
-          <li>Idea, Direction</li>
-          <li>Electron App + Website</li>      
+          <li>Data-intensive computing</li>
+          <li>Inteligentní AI, 500+ mikroslužeb</li>
         </ul>
       </Card>
     </div>
