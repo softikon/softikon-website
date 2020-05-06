@@ -60,9 +60,9 @@
       <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
       <div class="w-10/12 mx-auto">
         <LineBlock data-aos="fade-up" data-aos-duration="2000" dark>
-          <p class="mb-8 text-2xl text-white font-bold uppercase">Make it happen</p>
-          <h2 class="mb-0 font-bold outlined white">let’s design better</h2>
-          <h2 class="mb-16 font-bold">let’s work together</h2>
+          <p class="mb-8 text-2xl text-white font-bold uppercase">This might work</p>
+          <h2 class="mb-0 font-bold outlined white">Máte zajímavý projekt?</h2>
+          <h2 class="mb-16 font-bold">Pojďme jej probrat!</h2>
           <Button class="border-white" href="/#">SAY HELLO!</Button>
         </LineBlock>
       </div>

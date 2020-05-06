@@ -55,7 +55,7 @@
           <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
             <LineBlock class="mb-8" data-aos="fade-up" data-aos-duration="2000">
               <h3 class="mb-8 text-3xl lg:text-3xl">Chytré backend systémy a zpracování dat</h3>
-              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Vtip je v přetvoření dat v informace a informace v užitek. Správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
+              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
               <Button class="mt-8" href="softikon">náš technologický stack</Button>
             </LineBlock>
           </div>
@@ -102,14 +102,13 @@
   <section class="relative pb-48">
     <div class="flex justify-center md:justify-end">
       <div class="relative w-10/12 md:w-11/12 pt-48">
-        <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:mb-48 lg:w-10/12" style="text-rendering: optimizeLegibility;">
-          bouráme hranice<br />a tvoříme <span class="outlined">historii</span>
-        </h2>
         <div class="flex flex-col md:flex-row">
-          <div class="flex md:w-2/6 md:mr-48">
+          <div class="flex md:w-2/6 md:mr-48 flex-col">
+            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+              &lt;jsme &#47;&gt; <span class="outlined">softikon</span>
+            </h2>
             <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Žádný brand se dnes neobejde bez dobrého příběhu. Neprodávejte svůj produkt jako v supermarketu. Prodávejte kvalitní řešení problému, o které zákazník opravdu stojí. A protože jedním z nejčastějších touchpointů se zákazníkem je právě digitální prostředí, jste u nás na správném místě ;)</p>
-              <Button href="softikon">projekty</Button>
             </LineBlock>
           </div>
           <div class="md:flex md:w-4/6 flex-1 py-40 md:py-0">
