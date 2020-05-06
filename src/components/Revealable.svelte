@@ -49,6 +49,9 @@
       ref2.appendChild(el)
       group.forEach(e => {
         const cloned = e.cloneNode(true)
+        if (cloned.textContent.trim() === '') {
+          cloned.innerHTML = '&nbsp;'
+        }
         if (group.length === 1) {
           const { display } = window.getComputedStyle(e)
           if (display === 'block') {
@@ -64,7 +67,7 @@
 
     animated = true
 
-    ref2.style.display = 'inline-block'
+    ref2.style.display = 'flex'
     ref.style.display = 'none'    
   }
 
@@ -85,7 +88,7 @@
   <span class="invisible" style="display: inline-block;" bind:this={ref}>
     <slot></slot>
   </span>
-  <span bind:this={ref2}></span>
+  <span bind:this={ref2} class="items-start flex-col"></span>
 </span>
 
 
