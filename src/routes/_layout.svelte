@@ -37,7 +37,7 @@
       <a href="/" id="logo" class="p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={$isHeaderInverted || menuActive}>
         <Logo />
         
-        <div class="softikon flex">
+        <div class="softikon flex" class:hide={!menuActive && y > 180}>
           <span>S</span><span>O</span><span>F</span><span>T</span>
           <span>I</span><span>K</span><span>O</span><span>N</span>
         </div>
@@ -328,9 +328,14 @@ h3 {
   .softikon {
     flex-direction: column-reverse;
     padding-top: 2rem;
+    transition: opacity 0.4s;
   }
   .softikon > span {
     animation: rotate-90 1s forwards ease;
+  }
+
+  .softikon.hide {
+    opacity: 0;    
   }
 }
 
