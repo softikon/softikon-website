@@ -1,0 +1,5 @@
+pipelines:
+  default:
+    - step:
+        script:
+          - git push --mirror git@github.com:softikon/softikon-website.git
