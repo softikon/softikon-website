@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import { animate } from '../helpers/intersectionObserver'
   import Revealable from '../components/Revealable.svelte'
   import Card from '../components/Card.svelte'
@@ -18,7 +17,7 @@
     <div class="flex flex-wrap">
       <div class="flex flex-col w-full md:w-6/12"> 
         <h1 class="tracking-tighter">
-          <Revealable>Perfection is made up of small things<span><span class="dot">.</span></span></Revealable>
+          <Revealable>Perfection is made up of small things<span><span class="softikon-dot">.</span></span></Revealable>
         </h1>
         <LineBlock class="mt-16 hidden md:block uppercase font-medium" data-aos="fade-down" data-aos-duration="1500" data-aos-offset="0" data-aos-delay="1550" grey sm>
           <p class="text-gray-500 text-lg" style="text-rendering: optimizeLegibility;">Just not too many!</p>
@@ -99,19 +98,19 @@
     </div>
   </section>
 
-  <section class="relative pb-48">
+  <section class="relative pb-48 md:mt-48">
     <div class="flex justify-center md:justify-end">
-      <div class="relative w-10/12 md:w-11/12 pt-48">
+      <div class="relative w-10/12 md:w-11/12 pt-24">
         <div class="flex flex-col md:flex-row">
-          <div class="flex md:w-2/6 md:mr-48 flex-col">
+          <div class="flex md:w-3/6 flex-col">
             <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:w-10/12" style="text-rendering: optimizeLegibility;">
-              &lt;jsme &#47;&gt; <span class="outlined">softikon</span>
+              Jsme digitální řemeslníci
             </h2>
             <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
-              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="text-rendering: optimizeLegibility;">Jsme neortodoxní a nesourodá parta profesionálů, kteří milují své řešmeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
+              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řešmeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
             </LineBlock>
           </div>
-          <div class="md:flex md:w-4/6 flex-1 py-40 md:py-0">
+          <div class="md:flex md:w-3/6 md:pl-24 flex-1 py-40 md:py-0">
             <div class="w-full" data-aos="fade-up" data-aos-duration="2000">
               <Animation />
             </div>
@@ -131,13 +130,6 @@
   #section-about {
     min-height: 1000px;
   }
-}
-
-.dot {
-  display: inline-block;
-  color: lightcoral;
-  animation: blink 1000ms steps(5, start) infinite;
-  font-weight: 800;
 }
 
 .c-circle {
@@ -177,11 +169,5 @@
 
 .c-circle-plus line {
     stroke: rgba(17, 17, 17, 0.5);
-}
-
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
 }
 </style>

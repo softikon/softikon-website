@@ -61,7 +61,7 @@
       <div class="w-10/12 mx-auto">
         <LineBlock data-aos="fade-up" data-aos-duration="2000" dark>
           <p class="mb-8 text-2xl text-white font-bold uppercase">This might work</p>
-          <h2 class="mb-0 font-bold outlined white">Máte zajímavý projekt?</h2>
+          <h2 class="mb-0 font-bold outlined white">Máte projekt?</h2>
           <h2 class="mb-16 font-bold">Pojďme jej probrat!</h2>
           <Button class="border-white" href="/#">SAY HELLO!</Button>
         </LineBlock>
@@ -94,6 +94,12 @@ html, body, #root {
   font-family: Staatliches;
 }
 
+.softikon-dot {
+  display: inline-block;
+  color: lightcoral;
+  animation: blink 1000ms steps(5, start) infinite;
+  font-weight: 800;
+}
 
 .outlined {
   -webkit-text-fill-color: transparent;
@@ -334,6 +340,12 @@ h3 {
   }
   to {
     transform: rotate(-90deg);
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
   }
 }
 </style>
