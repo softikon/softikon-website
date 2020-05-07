@@ -20,26 +20,26 @@
   <div class="section-bg" style="background-color: {background};"></div>
   <div class="w-10/12 lg:w-9/12 xl:w-9/12 mx-auto flex flex-col-reverse justify-bottom pb-16 pt-64 lg:py-0 lg:flex-row lg:justify-start">
     <div class="lg:w-5/12 py-20 lg:px-0 relative">
-      <div class="card__sub text-gray-200" data-aos="fade-up" data-aos-duration="2000">
+      <div class="card__sub text-gray-200" data-aos="fade-up">
         <slot name="sub"></slot>
       </div>
       <div class="card__title text-gray-500 pt-16 lg:pt-0 pr-0 lg:pr-16 text-3xl leading-loose">
-        <div data-aos="fade-up" data-aos-duration="2000">
+        <div data-aos="fade-up">
           <slot name="title"></slot>
         </div>
       </div>
       <div class="card__more hidden lg:block">
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+        <div data-aos="fade-up" data-aos-delay="100">
           <slot></slot>
         </div>
       </div>
-      <div class="card__arrow-down-wrapper hidden lg:block" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+      <div class="card__arrow-down-wrapper hidden lg:block" data-aos="fade-up" data-aos-delay="500">
         <div class="card__arrow-down" class:dark={isDarkBg}>↓</div>
       </div>
     </div>
     {#if image}
       <div class="lg:w-7/12 flex flex-row relative self-center">
-        <div data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <img class="card__img" src="{image}" alt="" />
         </div>
         <div class="card__labels text-xl lg:text-2xl text-gray-500 font-medium leading-tight block">

@@ -16,7 +16,8 @@
   onMount(() => {
     AOS.init({
       once: true,
-      offset: 40
+      offset: 40,
+      duration: 2000
     })
   })
 
@@ -59,7 +60,7 @@
     <section class="relative py-64 text-white">
       <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
       <div class="w-10/12 mx-auto">
-        <LineBlock data-aos="fade-up" data-aos-duration="2000" dark>
+        <LineBlock data-aos="fade-up" dark>
           <p class="mb-8 text-2xl text-white font-bold uppercase">This might work</p>
           <h2 class="mb-0 font-bold outlined white">Máte projekt?</h2>
           <h2 class="mb-16 font-bold">Pojďme jej probrat!</h2>

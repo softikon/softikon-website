@@ -22,7 +22,7 @@
           </h1>
 
           <div>
-            <ul class="flex flex-row flex-wrap" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="flex flex-row flex-wrap" data-aos="fade-up">
               <li class="flex mr-12 items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(80, 177, 170, 0.8)"></div>
                 <span class="font-semibold uppercase text-md">nápad</span>
@@ -82,10 +82,10 @@
       <div class="relative w-10/12 lg:w-11/12">
         <div class="flex flex-col lg:flex-row items-stretch">
           <div class="flex flex-col">
-            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:w-9/12">
+            <h2 data-aos="fade-up" class="mb-24 lg:w-9/12">
               make it <span class="outlined">&lt;real &#47;&gt;</span>
             </h2>
-            <LineBlock data-aos="fade-up" data-aos-duration="2000" lg class="lg:w-7/12">
+            <LineBlock data-aos="fade-up" lg class="lg:w-7/12">
               <p class="mb-16 leading-loose" style="font-size: 1.635rem; color: rgba(17, 17, 17, 0.8);">
                 Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Každý úspěšný projekt se stane úspěšným především proto, že se v něm spojuje nápad, vášeň, talent, zkušenosti, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace. Každý slabý článek z celku Vás může stát cenné prostředky a především zákazníky. Přečtěte si, co umíme nejlépe a proč je to důležité i pro Vás.              
               </p>

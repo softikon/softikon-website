@@ -24,10 +24,10 @@
         </LineBlock>
       </div>
       <div class="w-full md:w-6/12 md:pl-16">
-        <p class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
+        <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
           Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.
         </p>
-        <Button class="mt-16" href="softikon">náš přístup</Button>
+        <Button data-aos="fade-up" class="mt-16" href="softikon">náš přístup</Button>
       </div>
     </div>
   </section>
@@ -46,20 +46,22 @@
       </svg>
     </div>
     <div class="flex justify-center lg:justify-end">
-      <div class="flex flex-col relative w-10/12 lg:w-11/12 py-48">
-        <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+      <div class="flex flex-col relative w-10/12 lg:w-11/12 pt-48">
+        <h2 data-aos="fade-up" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
           <span class="outlined">inteligentní</span><br />data management
         </h2>
         <div class="flex flex-1 flex-col md:flex-row">
           <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
-            <LineBlock class="mb-8" data-aos="fade-up" data-aos-duration="2000">
+            <LineBlock class="mb-8" data-aos="fade-up">
               <h3 class="mb-8 text-3xl lg:text-3xl">Chytré backend systémy a zpracování dat</h3>
-              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
+              <p class="leading-loose text-gray-800 text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
+              <h3 class="mb-8 text-3xl lg:text-3xl">Aplikace pro reálný svět</h3>
+              <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
               <Button class="mt-8" href="softikon">náš technologický stack</Button>
             </LineBlock>
           </div>
           <div class="hidden md:flex items-center md:justify-end md:w-3/6">
-            <div class="md:w-full lg:w-5/6" data-aos="fade-up" data-aos-duration="2000">
+            <div class="md:w-full lg:w-5/6" data-aos="fade-up">
               <Animation2 />
             </div>
           </div>
@@ -69,8 +71,8 @@
   </section>
 
   <section class="w-10/12 pt-48 pb-24 mx-auto">
-    <LineBlock data-aos="fade-up" data-aos-duration="2000" xl>
-      <h3 style="text-rendering: optimizeLegibility;">Práce, na kterou jsme hrdí</h3>
+    <LineBlock data-aos="fade-up" xl>
+      <h3 style="text-rendering: optimizeLegibility;">Vybíráme z oblíbených projektů</h3>
     </LineBlock>
   </section>
 
@@ -103,15 +105,15 @@
       <div class="relative w-10/12 md:w-11/12 pt-24">
         <div class="flex flex-col md:flex-row">
           <div class="flex md:w-3/6 flex-col">
-            <h2 data-aos="fade-up" data-aos-duration="2000" class="mb-24 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+            <h2 data-aos="fade-up" class="mb-24 lg:w-10/12" style="text-rendering: optimizeLegibility;">
               Jsme digitální řemeslníci
             </h2>
-            <LineBlock data-aos="fade-up" data-aos-duration="2000" lg>
+            <LineBlock data-aos="fade-up" lg>
               <p class="mb-16 leading-loose text-gray-800 text-2xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řešmeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
             </LineBlock>
           </div>
           <div class="md:flex md:w-3/6 md:pl-24 flex-1 py-40 md:py-0">
-            <div class="w-full" data-aos="fade-up" data-aos-duration="2000">
+            <div class="w-full" data-aos="fade-up">
               <Animation />
             </div>
           </div>
@@ -128,7 +130,7 @@
 
 @media(min-width: 1024px) {
   #section-about {
-    min-height: 1000px;
+    min-height: 1100px;
   }
 }
 
