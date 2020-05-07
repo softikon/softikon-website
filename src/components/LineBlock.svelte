@@ -69,11 +69,11 @@
   }  
 
   .c-line__dark .c-line-ln {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.55);
   }
 
   .c-line__grey .c-line-ln {
-    background-color: rgba(17, 17, 17, 0.35);
+    background-color: rgba(17, 17, 17, 0.25);
   }
 </style>
   
