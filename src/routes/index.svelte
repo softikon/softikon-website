@@ -27,7 +27,7 @@
         <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
           Perfekcionismus skloubený s uživatelskou jednoduchostí a velkou přidanou hodnotou je motorem pokroku a inovací v jakémkoliv oboru. Každý projekt, na kterém pracujeme, bereme jako výzvu a zároveň možnost dokázat, že v digitálním světě není nic nemožné.
         </p>
-        <Button data-aos="fade-up" class="mt-16" href="softikon">náš přístup</Button>
+        <Button data-aos="fade-up" class="mt-16" href="about">náš přístup</Button>
       </div>
     </div>
   </section>
@@ -57,7 +57,7 @@
               <p class="leading-loose text-gray-800 text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
               <h3 class="mb-8 text-3xl lg:text-3xl">Aplikace pro reálný svět</h3>
               <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
-              <Button class="mt-8" href="softikon">náš technologický stack</Button>
+              <Button class="mt-8" href="about#stack">náš technologický stack</Button>
             </LineBlock>
           </div>
           <div class="hidden md:flex items-center md:justify-end md:w-3/6">

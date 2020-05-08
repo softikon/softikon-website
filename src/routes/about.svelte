@@ -10,46 +10,49 @@
   <title>Inteligentní digitální řešení | Softikon.eu</title>
 </svelte:head>
 
-<article>
-  <section id="process" class="relative">
-    <div class="flex justify-center lg:justify-end">
-      <div class="relative w-10/12 lg:w-11/12 pt-64 lg:pt-48">
-        <div class="flex flex-col">
-          <h1 class="mb-24 lg:w-10/12 tracking-tighter">
-            <Revealable>
-              <span class="block font-normal">Úspěch</span> není dílem náhody<span class="font-normal text-teal-400">.</span>
-            </Revealable>
+<article class="pt-48">
+  <section class="pb-48 relative" id="process">
+    <div class="w-10/12 mx-auto flex flex-wrap">
+      <div class="flex flex-col w-full md:w-6/12">
+          <h1 class="tracking-tighter">
+            <span>
+              <Revealable><span class="block font-normal">Úspěch</span> není dílem náhody<span><span class="softikon-dot">.</span></span></Revealable>
+            </span>
           </h1>
 
-          <div>
+          <div class="mt-20">
             <ul class="flex flex-row flex-wrap" data-aos="fade-up">
-              <li class="flex mr-12 items-center justify-start">
+              <li class="w-2/6 flex items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(80, 177, 170, 0.8)"></div>
                 <span class="font-semibold uppercase text-md">nápad</span>
               </li>
-              <li class="flex mr-12 items-center justify-start">
+              <li class="w-2/6 flex items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(245, 122, 115, 0.8)"></div>
                 <span class="font-semibold uppercase text-md">průzkum</span>
               </li>
-              <li class="flex mr-12 items-center justify-start">
+              <li class="w-2/6 flex items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(255, 181, 102, 0.8)"></div>
                 <span class="font-semibold uppercase text-md">design</span>
               </li>
-              <li class="flex mr-12 items-center justify-start">
+              <li class="w-2/6 flex items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(67, 192, 230, 0.8)"></div>
                 <span class="font-semibold uppercase text-md">vývoj</span>
               </li>
-              <li class="flex mr-12 items-center justify-start">
+              <li class="w-2/6 flex items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(96, 102, 106, 0.8)"></div>
                 <span class="font-semibold uppercase text-md">deploy</span>
               </li>
-              <li class="flex mr-12 items-center justify-start">
+              <li class="w-2/6 flex items-center justify-start">
                 <div class="mr-8 chart-dot" style="background: rgba(158, 101, 151, 0.8"></div>
                 <span class="font-semibold uppercase text-md">analytika</span>
               </li>
             </ul>
           </div>
-        </div> 
+      </div>
+      <div class="w-full md:w-6/12 md:pl-16">
+        <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-16 lg:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
+          Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Každý úspěšný projekt se stane úspěšným především proto, že se v něm spojuje nápad, vášeň, talent, zkušenosti, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace.
+        </p>
       </div>
     </div>
 
