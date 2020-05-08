@@ -46,7 +46,7 @@
       </svg>
     </div>
     <div class="flex justify-center lg:justify-end">
-      <div class="flex flex-col relative w-10/12 lg:w-11/12 pt-48">
+      <div class="flex flex-col relative w-10/12 lg:w-11/12 pt-48 pb-48 lg:pb-24">
         <h2 data-aos="fade-up" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
           <span class="outlined">inteligentní</span><br />data management
         </h2>
@@ -109,7 +109,7 @@
               Jsme digitální řemeslníci
             </h2>
             <LineBlock data-aos="fade-up" lg>
-              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řešmeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
+              <p class="mb-16 leading-loose text-gray-800 text-2xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řemeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
             </LineBlock>
           </div>
           <div class="md:flex md:w-3/6 md:pl-24 flex-1 py-40 md:py-0">
@@ -125,7 +125,7 @@
 
 <style>
 #section-about {
-  min-height: 720px;
+  min-height: 900px;
 }
 
 @media(min-width: 1024px) {
