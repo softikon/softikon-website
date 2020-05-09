@@ -93,16 +93,16 @@
 
   <div class="flex min-h-screen relative">
     <div class="section-bg light"></div>
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 z-10">
       <Scroller>
         <div class="absolute flex items-center" style="top:0; bottom:0;">
           <ul class="flex flex-col">
             {#each [1,2,3,4] as item}
-              <li class="pagination px-12 py-4 font-bold" class:active={item === currentItem + 1}>{item}</li>
+              <li class="pagination px-4 lg:px-12 py-4 font-bold" class:active={item === currentItem + 1}>{item}</li>
             {/each}
           </ul>
         </div>
-        <div class="relative w-10/12 mx-auto h-screen flex flex-col justify-center">
+        <div class="relative w-8/12 lg:w-10/12 mx-auto h-screen flex flex-col justify-center">
           <ul class="flex items-center flex-col w-full">
             <li class="item" class:current={currentItem === 0}>
               <LineBlock xl class="lg:w-7/12">
