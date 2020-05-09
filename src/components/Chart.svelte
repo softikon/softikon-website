@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import { sineInOut } from 'svelte/easing'
   import { tweened } from 'svelte/motion'
+  import observer, { isIntersecting } from '../helpers/intersectionObserver'
 
   export let fillStyle = 'rgba(0,0,0,0.5)'
   export let id
@@ -68,7 +69,16 @@
     isBrowser = true
     setSize()
     context = canvas.getContext('2d')
-    startAnimation()
+    let animated = false
+    
+    observer().observe(canvas)
+    const unsunscribe = isIntersecting(canvas)(ratio => {
+      // TODO: NONSENSE HERE NOW
+      if(!animated && ratio > 0.5) {
+        startAnimation()
+        animated = true
+      }
+    })
 
     const resizeHandler = () => {
       setSize()
@@ -80,6 +90,7 @@
     return () => {
       window.removeEventListener('resize', resizeHandler)
       window.cancelAnimationFrame(nextFrame)
+      unsunscribe()
     }
   })
 
