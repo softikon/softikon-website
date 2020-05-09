@@ -23,6 +23,12 @@
   })
 </script>
 
-<div bind:this={el} class="top-0 w-full" class:fixed class:absolute={!fixed} class:bottom-0={finished} class:top-auto={finished}>
+<div bind:this={el} class="top-0 w-full" class:fixed class:absolute={!fixed} class:bottom-0={finished} class:top-unset={finished}>
   <slot></slot>
 </div>
+
+<style>
+  .top-unset {
+    top: unset;
+  }
+</style>

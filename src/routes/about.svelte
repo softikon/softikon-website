@@ -163,7 +163,7 @@
   .box {
     transition: all 1s;
     opacity: 0.38;
-    filter: blur(2px)
+    filter: blur(1px)
   }
 
   .box.active {
@@ -174,7 +174,7 @@
   .item {
     position: absolute;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.69s;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
