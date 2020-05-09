@@ -192,7 +192,7 @@ html, body, #root {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   position: relative;
   line-height: 1.2em;
   font-weight: 700;
@@ -200,7 +200,7 @@ h1 {
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 4.4rem;
+    font-size: 6rem;
   }
 }
 

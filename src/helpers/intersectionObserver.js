@@ -8,6 +8,7 @@ const opts = {
 const map = new WeakMap()
 
 const emitter = new EventEmitter()
+emitter.setMaxListeners(0)
 
 const createObserver = () => {
   let observer

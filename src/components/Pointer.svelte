@@ -121,8 +121,8 @@
 <div bind:this={rootEl} class={className}>
 {#if $pointer}
   <div bind:this={cursorEl} class="cursor events-none {$classes.join(' ')}">
-    <div class="pointer pointer-base" style="transform: translate(-50%, -50%) translate({$cursor.x}px, {$cursor.y}px);"></div>
-    <div class="pointer pointer-outline" style="transform: translate(-50%, -50%) translate({$pointer.x}px, {$pointer.y}px);"></div>
+    <div class="pointer pointer-base" style="transform: translate(-50%, -50%) translate({$cursor.x || 0}px, {$cursor.y || 0}px);"></div>
+    <div class="pointer pointer-outline" style="transform: translate(-50%, -50%) translate({$pointer.x || 0}px, {$pointer.y || 0}px);"></div>
   </div>
 
   {#if debug}
