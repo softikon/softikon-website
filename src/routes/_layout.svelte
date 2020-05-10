@@ -198,9 +198,19 @@ h1 {
   font-weight: 700;
 }
 
+h1.h1--sub {
+  font-size: calc(10/12 * 18vw);
+  line-height: 1em;
+}
+
 @media (min-width: 768px) {
   h1 {
     font-size: 6rem;
+  }
+
+  h1.h1--sub {
+    font-size: calc(10/12 * 14vw);
+    line-height: 1em;
   }
 }
 

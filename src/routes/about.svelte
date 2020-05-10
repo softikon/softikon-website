@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte'
   import Chart from '../components/Chart.svelte'
   import dataPoints from '../components/dataPoints.json'
   import Revealable from '../components/Revealable.svelte'
@@ -9,10 +10,24 @@
 
   const items = [...Array(17).keys()].map(i => ({ title: `&#xe${900 + i};`, cat: (Math.random() * 3) | 0 }))
   let currentItem = 0
+  let interval
+
+  const setItemManually = i => {
+    currentItem = i
+    stopInterval()
+  }
   
-  setInterval(() => {
-    currentItem = (currentItem + 1) % 4
-  }, 5000)
+  const stopInterval = () => {
+    clearInterval(interval)
+  }
+
+  onMount(() => {
+    interval = setInterval(() => {
+      currentItem = (currentItem + 1) % 4
+    }, 5000)
+
+    return stopInterval
+  })
 </script>
 
 <svelte:head>
@@ -20,7 +35,7 @@
 </svelte:head>
 
 <article>
-  <section class="absolute top-0 w-full pb-8">
+  <section class="absolute top-0 w-full pb-8 overflow-hidden">
     <div class="flex">
       <div class="charts-shadow relative flex-1">
         <Chart delay="0" id="discover" dataPoints={dataPoints.discover} fillStyle="rgba(233,30,99, 0.8)" />
@@ -33,38 +48,38 @@
     </div>
   </section>
 
-  <section class="w-11/12 absolute" style="top: 11.6rem; right: 1rem;">
+  <section class="w-11/12 absolute" style="top: 15vh; right: 1rem;">
     <ul class="flex flex-row" data-aos="fade-down">
       <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="mr-8 chart-dot" style="background: rgba(233,30,99, 0.8)"></div>
-        <span class="font-semibold uppercase text-md">nápad</span>
+        <div class="chart-dot" style="background: rgba(233,30,99, 0.8)"></div>
+        <span>nápad</span>
       </li>
       <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="mr-8 chart-dot" style="background: rgba(244,67,54, 0.8)"></div>
-        <span class="font-semibold uppercase text-md">průzkum</span>
+        <div class="chart-dot" style="background: rgba(244,67,54, 0.8)"></div>
+        <span>průzkum</span>
       </li>
       <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="mr-8 chart-dot" style="background: rgba(255,152,0, 0.8)"></div>
-        <span class="font-semibold uppercase text-md">design</span>
+        <div class="chart-dot" style="background: rgba(255,152,0, 0.8)"></div>
+        <span>design</span>
       </li>
       <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="mr-8 chart-dot" style="background: rgba(255,235,59, 0.8)"></div>
-        <span class="font-semibold uppercase text-md">vývoj</span>
+        <div class="chart-dot" style="background: rgba(255,235,59, 0.8)"></div>
+        <span>vývoj</span>
       </li>
       <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="mr-8 chart-dot" style="background: rgba(205,220,57, 0.8)"></div>
-        <span class="font-semibold uppercase text-md">deploy</span>
+        <div class="chart-dot" style="background: rgba(205,220,57, 0.8)"></div>
+        <span>deploy</span>
       </li>
       <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="mr-8 chart-dot" style="background: rgba(0,150,136, 0.8"></div>
-        <span class="font-semibold uppercase text-md">analytika</span>
+        <div class="chart-dot" style="background: rgba(0,150,136, 0.8"></div>
+        <span>analytika</span>
       </li>
     </ul>
   </section>
   <section class="pb-16 flex items-end relative min-h-screen">
     <div class="w-10/12 mx-auto flex flex-wrap">
       <div class="flex flex-col w-full md:w-6/12">
-          <h1 style="line-height:1em;font-size: 16rem;" class="alternative-font">
+          <h1 class="h1--sub alternative-font">
             <span>
               <Revealable><span class="block">Make</span> it &lt;real&gt;</Revealable>
             </span>
@@ -82,10 +97,10 @@
     <div class="section-bg light"></div>
     <div class="absolute inset-0 z-10">
       <Scroller>
-        <div class="absolute flex items-center" style="top:0; bottom:0;">
+        <div class="absolute flex items-center" style="z-index: 100; top:0; bottom:0;">
           <ul class="flex flex-col">
             {#each [1,2,3,4] as item, index}
-              <li class="pagination px-4 lg:px-12 py-4 font-bold" class:active={index === currentItem}>{item}</li>
+              <li class="pagination px-4 lg:px-12 py-8 font-bold" on:click={() => setItemManually(index)} class:active={index === currentItem}>{item}</li>
             {/each}
           </ul>
         </div>
@@ -182,28 +197,35 @@
   }
 
   .charts-shadow {
-    height: 6rem;
-    transform: scaleY(-1) skewX(-20deg) translateY(1px) translateX(2.25rem);    
+    height: 12vh;
+    transform: scaleY(-1);    
   }
 
   .chart-dot {
-    width: 5rem;
-    height: 0.4rem;
+    max-width: 7.5rem;
+    flex-grow: 1;
+    height: 0.75rem;
     border-radius: 20px;  
   }
 
   .chart-item {
-    transform: rotate(90deg);
+    transform: rotate(90deg) translateY(-6vw);
+    transform-origin: left;
+    @apply text-sm;
+  }
+
+  @media(min-width: 768px) {
+    .chart-item {
+      @apply text-xl;
+    }
+
+    .chart-item > span {
+      @apply ml-4;
+    }
   }
 
   .chart-item > span {
     transform: rotate(-90deg);
-  }
-
-  @media(min-width: 1024px) {
-    .charts-shadow {
-      height: 5rem;
-      transform: scaleY(-1);    
-    }
+    @apply text-gray-600;
   }
 </style>
