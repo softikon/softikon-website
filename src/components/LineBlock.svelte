@@ -2,12 +2,13 @@
   export let sm = false
   export let lg = false
   export let xl = false
+  export let xxl = false
   export let dark = false
   export let grey = false
 </script>
 
 <div {...$$restProps}>
-  <div class="c-line" class:c-line__sm={sm} class:c-line__lg={lg} class:c-line__xl={xl} class:c-line__dark={dark} class:c-line__grey={grey}>
+  <div class="c-line" class:c-line__sm={sm} class:c-line__lg={lg} class:c-line__xl={xl} class:c-line__2xl={xxl} class:c-line__dark={dark} class:c-line__grey={grey}>
     <span class="c-line-ln hidden md:block"></span>
     <slot></slot>
   </div>
@@ -67,6 +68,10 @@
   .c-line__xl .c-line-ln {
     top: 1.6rem;
   }  
+
+  .c-line__2xl .c-line-ln {
+    top: 2.45rem;
+  }
 
   .c-line__dark .c-line-ln {
     background-color: rgba(255, 255, 255, 0.55);

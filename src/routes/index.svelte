@@ -71,7 +71,7 @@
   </section>
 
   <section class="w-10/12 pt-48 pb-24 mx-auto">
-    <LineBlock data-aos="fade-up" xl>
+    <LineBlock data-aos="fade-up" xxl>
       <h3 style="text-rendering: optimizeLegibility;">Vybíráme z oblíbených projektů</h3>
     </LineBlock>
   </section>

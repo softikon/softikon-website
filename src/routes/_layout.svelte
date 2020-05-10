@@ -233,7 +233,7 @@ h2 {
 
 h3 {
   @apply tracking-tight;
-  font-size: 2.35rem;
+  font-size: 3rem;
   line-height: 1.15em;
   font-weight: 500;
   position: relative;
@@ -241,7 +241,7 @@ h3 {
 
 @media (min-width: 1024px) {
   h3 {
-    font-size: 3.2rem;
+    font-size: 4.2rem;
   }
 }
 
