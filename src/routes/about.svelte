@@ -24,47 +24,47 @@
     <div class="flex">
       <div class="charts-shadow relative flex-1">
         <Chart delay="0" id="discover" dataPoints={dataPoints.discover} fillStyle="rgba(233,30,99, 0.8)" />
-        <Chart delay="500" id="design" dataPoints={dataPoints.design} fillStyle="rgba(244,67,54, 0.8)" />
-        <Chart delay="1000" id="implement" dataPoints={dataPoints.implement} fillStyle="rgba(255,152,0, 0.8)" />
-        <Chart delay="1500" id="develop" dataPoints={dataPoints.develop} fillStyle="rgba(255,235,59, 0.8)" />
-        <Chart delay="2000" id="deliver" dataPoints={dataPoints.deliver} fillStyle="rgba(205,220,57, 0.8)" />
-        <Chart delay="2500" id="analytics" dataPoints={dataPoints.analytics} fillStyle="rgba(0,150,136, 0.8)" />
+        <Chart delay="400" id="design" dataPoints={dataPoints.design} fillStyle="rgba(244,67,54, 0.8)" />
+        <Chart delay="800" id="implement" dataPoints={dataPoints.implement} fillStyle="rgba(255,152,0, 0.8)" />
+        <Chart delay="1200" id="develop" dataPoints={dataPoints.develop} fillStyle="rgba(255,235,59, 0.8)" />
+        <Chart delay="1600" id="deliver" dataPoints={dataPoints.deliver} fillStyle="rgba(205,220,57, 0.8)" />
+        <Chart delay="2000" id="analytics" dataPoints={dataPoints.analytics} fillStyle="rgba(0,150,136, 0.8)" />
       </div>
     </div>
   </section>
 
-  <section class="w-11/12 absolute" style="top: 13.6rem; right: 0;">
-            <ul class="flex flex-row" data-aos="fade-up">
-              <li class="w-2/6 flex items-center justify-start">
-                <div class="mr-8 chart-dot" style="background: rgba(233,30,99, 0.8)"></div>
-                <span class="font-semibold uppercase text-md">nápad</span>
-              </li>
-              <li class="w-2/6 flex items-center justify-start">
-                <div class="mr-8 chart-dot" style="background: rgba(244,67,54, 0.8)"></div>
-                <span class="font-semibold uppercase text-md">průzkum</span>
-              </li>
-              <li class="w-2/6 flex items-center justify-start">
-                <div class="mr-8 chart-dot" style="background: rgba(255,152,0, 0.8)"></div>
-                <span class="font-semibold uppercase text-md">design</span>
-              </li>
-              <li class="w-2/6 flex items-center justify-start">
-                <div class="mr-8 chart-dot" style="background: rgba(255,235,59, 0.8)"></div>
-                <span class="font-semibold uppercase text-md">vývoj</span>
-              </li>
-              <li class="w-2/6 flex items-center justify-start">
-                <div class="mr-8 chart-dot" style="background: rgba(205,220,57, 0.8)"></div>
-                <span class="font-semibold uppercase text-md">deploy</span>
-              </li>
-              <li class="w-2/6 flex items-center justify-start">
-                <div class="mr-8 chart-dot" style="background: rgba(0,150,136, 0.8"></div>
-                <span class="font-semibold uppercase text-md">analytika</span>
-              </li>
-            </ul>
+  <section class="w-11/12 absolute" style="top: 11.6rem; right: 1rem;">
+    <ul class="flex flex-row" data-aos="fade-down">
+      <li class="chart-item w-1/6 flex items-center justify-start">
+        <div class="mr-8 chart-dot" style="background: rgba(233,30,99, 0.8)"></div>
+        <span class="font-semibold uppercase text-md">nápad</span>
+      </li>
+      <li class="chart-item w-1/6 flex items-center justify-start">
+        <div class="mr-8 chart-dot" style="background: rgba(244,67,54, 0.8)"></div>
+        <span class="font-semibold uppercase text-md">průzkum</span>
+      </li>
+      <li class="chart-item w-1/6 flex items-center justify-start">
+        <div class="mr-8 chart-dot" style="background: rgba(255,152,0, 0.8)"></div>
+        <span class="font-semibold uppercase text-md">design</span>
+      </li>
+      <li class="chart-item w-1/6 flex items-center justify-start">
+        <div class="mr-8 chart-dot" style="background: rgba(255,235,59, 0.8)"></div>
+        <span class="font-semibold uppercase text-md">vývoj</span>
+      </li>
+      <li class="chart-item w-1/6 flex items-center justify-start">
+        <div class="mr-8 chart-dot" style="background: rgba(205,220,57, 0.8)"></div>
+        <span class="font-semibold uppercase text-md">deploy</span>
+      </li>
+      <li class="chart-item w-1/6 flex items-center justify-start">
+        <div class="mr-8 chart-dot" style="background: rgba(0,150,136, 0.8"></div>
+        <span class="font-semibold uppercase text-md">analytika</span>
+      </li>
+    </ul>
   </section>
   <section class="pb-16 flex items-end relative min-h-screen">
     <div class="w-10/12 mx-auto flex flex-wrap">
       <div class="flex flex-col w-full md:w-6/12">
-          <h1 style="line-height:1em;font-size: 18rem;" class="alternative-font">
+          <h1 style="line-height:1em;font-size: 16rem;" class="alternative-font">
             <span>
               <Revealable><span class="block">Make</span> it &lt;real&gt;</Revealable>
             </span>
@@ -181,27 +181,28 @@
     z-index:2
   }
 
-  #process .charts {
-    height: 10rem;
-  }
-
   .charts-shadow {
     height: 6rem;
     transform: scaleY(-1) skewX(-20deg) translateY(1px) translateX(2.25rem);    
   }
 
   .chart-dot {
-    width: 1rem;
-    height: 1rem;  
+    width: 5rem;
+    height: 0.4rem;
+    border-radius: 20px;  
+  }
+
+  .chart-item {
+    transform: rotate(90deg);
+  }
+
+  .chart-item > span {
+    transform: rotate(-90deg);
   }
 
   @media(min-width: 1024px) {
-    #process .charts {
-      height: 10rem;
-    }
-
     .charts-shadow {
-      height: 8rem;
+      height: 5rem;
       transform: scaleY(-1);    
     }
   }
