@@ -48,7 +48,7 @@
     </div>
   </section>
 
-  <section class="w-11/12 absolute" style="top: 15vh; right: 1rem;">
+  <section class="w-11/12 absolute" style="top: 11vh; right: 1rem;">
     <ul class="flex flex-row" data-aos="fade-down">
       <li class="chart-item w-1/6 flex items-center justify-start">
         <div class="chart-dot" style="background: rgba(233,30,99, 0.8)"></div>
@@ -95,9 +95,9 @@
 
   <div class="flex min-h-screen relative">
     <div class="section-bg light"></div>
-    <div class="absolute inset-0 z-10">
+    <div class="absolute inset-0">
       <Scroller>
-        <div class="absolute flex items-center" style="z-index: 100; top:0; bottom:0;">
+        <div class="absolute flex items-center" style="top:0; bottom:0;">
           <ul class="flex flex-col">
             {#each [1,2,3,4] as item, index}
               <li class="pagination px-4 lg:px-12 py-8 font-bold" on:click={() => setItemManually(index)} class:active={index === currentItem}>{item}</li>
@@ -197,15 +197,14 @@
   }
 
   .charts-shadow {
-    height: 12vh;
+    height: 11vh;
     transform: scaleY(-1);    
   }
 
   .chart-dot {
-    max-width: 7.5rem;
+    max-width: 4rem;
     flex-grow: 1;
-    height: 0.75rem;
-    border-radius: 20px;  
+    height: 2px;
   }
 
   .chart-item {
