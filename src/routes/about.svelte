@@ -8,7 +8,7 @@
   import Scroller from '../components/Scroller.svelte'
   import { animate } from '../helpers/intersectionObserver'
 
-  const items = [...Array(17).keys()].map(i => ({ title: `&#xe${900 + i};`, cat: (Math.random() * 3) | 0 }))
+  const items = [...Array(30).keys()].map(i => ({ title: `&#xe9${i.toString(16).padStart(2,0)};`, cat: (Math.random() * 3) | 0 }))
   let currentItem = 0
   let interval
 
@@ -35,75 +35,36 @@
 </svelte:head>
 
 <article>
-  <section class="absolute top-0 w-full pb-8 overflow-hidden">
-    <div class="flex">
-      <div class="charts-shadow relative flex-1">
-        <Chart delay="0" id="discover" dataPoints={dataPoints.discover} fillStyle="rgba(233,30,99, 0.8)" />
-        <Chart delay="400" id="design" dataPoints={dataPoints.design} fillStyle="rgba(244,67,54, 0.8)" />
-        <Chart delay="800" id="implement" dataPoints={dataPoints.implement} fillStyle="rgba(255,152,0, 0.8)" />
-        <Chart delay="1200" id="develop" dataPoints={dataPoints.develop} fillStyle="rgba(255,235,59, 0.8)" />
-        <Chart delay="1600" id="deliver" dataPoints={dataPoints.deliver} fillStyle="rgba(205,220,57, 0.8)" />
-        <Chart delay="2000" id="analytics" dataPoints={dataPoints.analytics} fillStyle="rgba(0,150,136, 0.8)" />
-      </div>
-    </div>
-  </section>
-
-  <section class="w-11/12 absolute" style="top: 11vh; right: 1rem;">
-    <ul class="flex flex-row" data-aos="fade-down">
-      <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="chart-dot" style="background: rgba(233,30,99, 0.8)"></div>
-        <span>nápad</span>
-      </li>
-      <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="chart-dot" style="background: rgba(244,67,54, 0.8)"></div>
-        <span>průzkum</span>
-      </li>
-      <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="chart-dot" style="background: rgba(255,152,0, 0.8)"></div>
-        <span>design</span>
-      </li>
-      <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="chart-dot" style="background: rgba(255,235,59, 0.8)"></div>
-        <span>vývoj</span>
-      </li>
-      <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="chart-dot" style="background: rgba(205,220,57, 0.8)"></div>
-        <span>deploy</span>
-      </li>
-      <li class="chart-item w-1/6 flex items-center justify-start">
-        <div class="chart-dot" style="background: rgba(0,150,136, 0.8"></div>
-        <span>analytika</span>
-      </li>
-    </ul>
-  </section>
   <section class="pb-16 flex items-end relative min-h-screen">
-    <div class="w-10/12 mx-auto flex flex-wrap">
-      <div class="flex flex-col w-full md:w-6/12">
+    <div class="w-10/12 mx-auto flex flex-wrap flex-col">
+      <div class="flex flex-col w-full md:w-9/12">
           <h1 class="h1--sub alternative-font">
             <span>
               <Revealable><span class="block">Make</span> it &lt;real&gt;</Revealable>
             </span>
           </h1>
       </div>
-      <div class="w-full md:w-6/12 md:pl-16">
-        <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
+      <div class="w-full md:w-9/12">
+        <p data-aos="fade-up" class="tracking-tight pt-16 leading-loose font-medium text-3xl md:text-2xl text-gray-600">
           Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Každý úspěšný projekt se stane úspěšným především proto, že se v něm spojuje nápad, vášeň, talent, zkušenosti, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace.
         </p>
       </div>
     </div>
   </section>
 
-  <div class="flex min-h-screen relative">
+  <div class="flex min-h-screen relative" style="padding-top: 15vh;">
     <div class="section-bg light"></div>
+    <div class="absolute inset-y-0 w-24 z-20">
+      <Scroller autoWidth>
+        <ul class="h-screen flex flex-col justify-center">
+          {#each [1,2,3,4] as item, index}
+            <li class="pagination px-4 lg:px-12 py-8 font-bold" on:click={() => setItemManually(index)} class:active={index === currentItem}>{item}</li>
+          {/each}
+        </ul>
+      </Scroller>
+    </div>
     <div class="absolute inset-0">
       <Scroller>
-        <div class="absolute flex items-center" style="top:0; bottom:0;">
-          <ul class="flex flex-col">
-            {#each [1,2,3,4] as item, index}
-              <li class="pagination px-4 lg:px-12 py-8 font-bold" on:click={() => setItemManually(index)} class:active={index === currentItem}>{item}</li>
-            {/each}
-          </ul>
-        </div>
         <div class="relative w-8/12 lg:w-10/12 mx-auto h-screen flex flex-col justify-center">
           <ul class="flex items-center flex-col w-full">
             <li class="item" class:current={currentItem === 0}>
@@ -147,9 +108,9 @@
       </Scroller>
     </div>
     <div style="margin-left: auto;">
-      <ul class="flex flex-col flex-wrap my-24" style="width: calc(28rem * 2); height: calc(28rem * 9 + 25rem);">
+      <ul class="technologies flex flex-col flex-wrap my-24">
         {#each items as item, index}
-          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex mb-12 mr-12 items-center justify-center" class:active={item.cat === currentItem} class:mt-24={(index+1)%10 === 0}>
+          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem} class:mt-24={(index+1)%15 === 0}>
             {@html item.title}
           </li>
         {/each}
@@ -167,9 +128,21 @@
   .box {
     transition: all 1s;
     opacity: 0.3;
-    width: 25rem;
-    height: 25rem;
+    width: 12rem;
+    height: 12rem;
     @apply shadow-md;
+    @apply mb-8;
+    @apply mr-8;
+    z-index: -1;
+  }
+
+  @media(min-width: 1024px) {
+    .box {
+      width: 25rem;
+      height: 25rem;
+      @apply mb-12;
+      @apply mr-12;
+    }
   }
 
   .box.active {
@@ -190,6 +163,18 @@
 
   .item.current {
     opacity: 1;
+  }
+
+  .technologies {
+    width: calc(14rem * 2);
+    height: calc(14rem * 15);    
+  }
+
+  @media(min-width: 1024px) {
+    .technologies {
+      width: calc(28rem * 2);
+      height: calc(28rem * 15);      
+    }
   }
 
   :global(canvas#discover), :global(canvas#deliver) {
