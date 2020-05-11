@@ -14,20 +14,7 @@
 
   const setItemManually = i => {
     currentItem = i
-    stopInterval()
   }
-  
-  const stopInterval = () => {
-    clearInterval(interval)
-  }
-
-  onMount(() => {
-    interval = setInterval(() => {
-      currentItem = (currentItem + 1) % 4
-    }, 5000)
-
-    return stopInterval
-  })
 </script>
 
 <svelte:head>
@@ -58,29 +45,29 @@
       <Scroller autoWidth>
         <ul class="h-screen flex flex-col justify-center">
           {#each [1,2,3,4] as item, index}
-            <li class="pagination px-4 lg:px-12 py-8 font-bold" on:click={() => setItemManually(index)} class:active={index === currentItem}>{item}</li>
+            <li class="cursor-pointer pagination px-4 lg:px-12 py-8 font-bold" on:click={() => setItemManually(index)} class:active={index === currentItem}>{item}</li>
           {/each}
         </ul>
       </Scroller>
     </div>
     <div class="absolute inset-0">
-      <Scroller>
+      <Scroller length="4" on:itemChanged={({detail}) => setItemManually(detail)}>
         <div class="relative w-8/12 lg:w-10/12 mx-auto h-screen flex flex-col justify-center">
           <ul class="flex items-center flex-col w-full">
             <li class="item" class:current={currentItem === 0}>
               <LineBlock xxl class="lg:w-7/12">
-                <h3 class="mb-12"><strong>Programujeme</strong><br>vyladěné<br>aplikace a weby</h3>
+                <h3 class="mb-12"><strong>Programujeme</strong><br>technologicky vytříbené<br><strong>aplikace</strong> a <strong>weby</strong></h3>
                 <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
-                  Každý programovací jazyk a návazný ekosystém má své silné stránky. Pro každý projekt proto pečlivě vybíráme vhodnou technologií, která nezklame.
+                  Každý programovací jazyk je natolik silný, jako jeho návazný ekosystém a framework, který společně tvoří. Pro každý projekt proto pečlivě vybíráme kombinaci vhodných technologií, která v rámci zvoleného use-case přináší velkou přidanou hodnotu nepřipouští mnoho kompormisů. Extenzivně využíváme Javascript runtime a pro AOT kompilaci do nativního kódu jsme si oblíbili Dart.
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
               </LineBlock>
             </li>
             <li class="item" class:current={currentItem === 1}>
               <LineBlock xxl class="lg:w-7/12">
-                <h3 class="mb-12">Specializace na<br><strong>full-stack</strong><br>vývoj</h3>
+                <h3 class="mb-12">Mobile-first<br><strong>nativní a hybrid</strong><br>PWA a AMP aplikace</h3>
                 <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
-                  Máme zkušenosti s desítkami projektů. Každý z nás si právem může říkat full-stack vývojář.
+                  Dlouhodobě propagujeme mobile-first kulturu a přístup. Žijeme v době, kdy už se neptáme, zda uživatel mobilní zařízení vlastní, ale spíše, kolik jich má. Navrhujeme výkonné aplikace, které poběží všude, kde to dává smysl. Máme rádi Kotlin, Swift a Flutter (Dart).
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
               </LineBlock>
