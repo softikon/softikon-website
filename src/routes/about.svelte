@@ -8,7 +8,39 @@
   import Scroller from '../components/Scroller.svelte'
   import { animate } from '../helpers/intersectionObserver'
 
-  const items = [...Array(30).keys()].map(i => ({ title: `&#xe9${i.toString(16).padStart(2,0)};`, cat: (Math.random() * 3) | 0 }))
+  const items = [
+    { title: '&#xe90d;', cat: 0 },
+    { title: '&#xe90c;', cat: 0 },
+    { title: '&#xe909;', cat: 0 },
+    { title: '&#xe908;', cat: 0 },
+    { title: '&#xe912;', cat: 0 },
+    { title: '&#xe910;', cat: 0 },
+    { title: '&#xe913;', cat: 0 },
+    { title: '&#xe916;', cat: 1 },    
+    { title: '&#xe915;', cat: 1 },
+    { title: '&#xe914;', cat: 1 },
+    { title: '&#xe911;', cat: 1 },
+    { title: '&#xe905;', cat: 1 },
+    { title: '&#xe91c;', cat: 1 },
+    { title: '&#xe919;', cat: 1 },
+    { title: '&#xe917;', cat: 2 },
+    { title: '&#xe918;', cat: 2 },
+    { title: '&#xe904;', cat: 2 },
+    { title: '&#xe906;', cat: 2 },
+    { title: '&#xe907;', cat: 2 },
+    { title: '&#xe90b;', cat: 2 },
+    { title: '&#xe90e;', cat: 2 },
+    { title: '&#xe91d;', cat: 2 },
+    { title: '&#xe903;', cat: 3 },
+    { title: '&#xe902;', cat: 3 },
+    { title: '&#xe901;', cat: 3 },
+    { title: '&#xe91a;', cat: 3 },
+    { title: '&#xe91b;', cat: 3 },
+    { title: '&#xe900;', cat: 3 },
+    { title: '&#xe90a;', cat: 3 },
+    { title: '&#xe90f;', cat: 3 },
+  ]
+
   let currentItem = 0
   let interval
 
@@ -96,8 +128,13 @@
     </div>
     <div style="margin-left: auto;">
       <ul class="technologies flex flex-col flex-wrap my-24">
-        {#each items as item, index}
-          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem} class:mt-24={(index+1)%15 === 0}>
+        {#each items.filter((_, i) => i % 2 === 0) as item, index}
+          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem}>
+            {@html item.title}
+          </li>
+        {/each}
+        {#each items.filter((_, i) => i % 2 === 1) as item, index}
+          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem} class:mt-24={index === 0}>
             {@html item.title}
           </li>
         {/each}
