@@ -10,10 +10,14 @@
   import LineBlock from '../components/LineBlock.svelte'
   import { animate } from '../helpers/intersectionObserver'
   import { isHeaderInverted } from '../store/ui'
+  import { isMobile as checkIsMobile } from '../helpers/isMobile'
 
   import 'aos/dist/aos.css'
 
+  let isMobile = false
+
   onMount(() => {
+    isMobile = checkIsMobile()
     AOS.init({
       once: true,
       offset: 40,
@@ -31,7 +35,9 @@
     <Menu on:close={() => menuActive = false } />
   {/if}
 
+  {#if !isMobile}
   <Pointer />
+  {/if}
 
   <div class="overflow-hidden">
     <header>

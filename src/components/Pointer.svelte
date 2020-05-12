@@ -1,6 +1,5 @@
 <script context="module">
   import { readable, get, writable, derived } from 'svelte/store'
-  import { isMobile } from '../helpers/isMobile'
 
   // The state is inititally null (we know nothing about the cursor capabilities during onload)
   const state = readable(null, set => {
@@ -79,7 +78,6 @@
   }
 
   onMount(() => {
-    if (isMobile()) return
     cursor = derived(state, $coords => $coords && ({
       x: $coords.x - rootEl.offsetParent.offsetLeft + scrollLeft(),
       y: $coords.y - rootEl.offsetParent.offsetTop + scrollTop(),
