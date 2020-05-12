@@ -110,8 +110,12 @@
     top:0;
     left:0;
     background: #feebc8;
-    animation:fx-in 2s cubic-bezier(.19,1,.22,1);
+    animation:fx-in 1.65s cubic-bezier(.19,1,.22,1);
     animation-delay:inherit;
+  }
+
+  .is-browser :global(.revealable.animate.leaving:after), .is-browser :global(.revealable.show.leaving:after) {
+    animation:fx-out 1.65s cubic-bezier(.19,1,.22,1);
   }
 
   .is-browser :global(.revealable > span) {
@@ -124,7 +128,12 @@
 
   .is-browser :global(.revealable.animate > span) {
     visibility: visible;
-    animation: opacity 2s linear;
+    animation: opacity 1.65s linear;
+    animation-fill-mode: forwards;
+  }
+
+  .is-browser :global(.revealable.animate.leaving > span), .is-browser :global(.revealable.show.leaving > span) {
+    animation: opacity-reverse 1.65s linear;
     animation-fill-mode: forwards;
   }
 
@@ -140,6 +149,21 @@
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes opacity-reverse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    50.1% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
     }
   }
 </style>

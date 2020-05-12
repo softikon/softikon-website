@@ -1,4 +1,6 @@
 <script>
+  import Link from './Link.svelte'
+
   const defaultClasses = [
     'inline-block',
     'border',
@@ -18,6 +20,6 @@
   $: classes = [...new Set([...defaultClasses, ...className.split(' ')])].join(' ')
 </script>
 
-<a rel="prefetch" href="/#" {...$$restProps} class="{classes}">
+<Link {...$$restProps} class="{classes}">
   <slot></slot>
-</a>
+</Link>

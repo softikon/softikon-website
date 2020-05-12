@@ -8,9 +8,9 @@
 
   const items = [
     { title: 'Domů', path: '/' },
-    { title: 'Náš přístup', path: '/softikon' },
-    { title: 'Projekty', path: '/projekty' },
-    { title: 'Kontakt', path: '/kontakt' }
+    { title: 'Náš přístup', path: '/about' },
+    { title: 'Projekty', path: '/work' },
+    { title: 'Kontakt', path: '/contact' }
   ]
 
   $: currentItem = items.find(i => i.path === $page.path) || {}
@@ -35,7 +35,7 @@
 
 <style>
   .menu-item {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   @media(min-width: 1024px) {
