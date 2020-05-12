@@ -152,8 +152,8 @@
   .box {
     transition: all 1s;
     opacity: 0.3;
-    width: 12rem;
-    height: 12rem;
+    width: 14rem;
+    height: 14rem;
     @apply shadow-md;
     @apply mb-8;
     @apply mr-8;
@@ -190,8 +190,8 @@
   }
 
   .technologies {
-    width: calc(14rem * 2);
-    height: calc(14rem * 15);    
+    width: calc(16rem * 2);
+    height: calc(16rem * 15);    
   }
 
   @media(min-width: 1024px) {
