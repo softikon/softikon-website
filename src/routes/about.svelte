@@ -74,18 +74,18 @@
             </li>
             <li class="item" class:current={currentItem === 2}>
               <LineBlock xxl class="lg:w-7/12">
-                <h3 class="mb-12"><strong>Full-Cycle</strong><br>Custom Software<br>Development</h3>
+                <h3 class="mb-12"><strong>Datový management</strong><br>Strojové účení<br>Výkonné systémy</h3>
                 <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
-                  From ideation through prototyping to delivery & maintenance, we execute the full development cycle to create businesses-oriented solutions.
+                  Na datech nám velmi záleží a jsou naší specialitou. Extenzivně se zabýváme jejich efektivním dolováním, transformací, ukládáním, analýzou a distribucí. Vytváříme modely a flow pro machine learning. Tvoříme spolehlivé a škálovatelné distribuované systémy s vysokou dostupností.
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
               </LineBlock>
             </li>
             <li class="item" class:current={currentItem === 3}>
               <LineBlock xxl class="lg:w-7/12">
-                <h3 class="mb-12"><strong>Responsive</strong><br>Web & Mobile App<br>Development</h3>
+                <h3 class="mb-12">Agilní vývoj<br><strong>CI a CD pipelines</strong><br>Kontejnerizace</h3>
                 <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
-                  Syndicode writes high-performing backend along with client-oriented fronted and outstanding design. Applications we create work smoothly on both web and mobile.
+                  Kontejnerizace nám umožňuje efektivní vývoj, testování a nasazování všech částí systému. Naplno využíváme principy DevOps a nástoje pro Continuous Integration (CI) a Continuous Delivery (CD). Každý commit vyvolá posloupnost atomických operací, díky kterým se můžeme naplno soustředit na vývoj. Při vývoji se inspirujeme v agilním manifestu.
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
               </LineBlock>
