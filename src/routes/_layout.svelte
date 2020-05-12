@@ -35,7 +35,7 @@
 
   <div class="overflow-hidden">
     <header>
-      <a href="/" id="logo" class="p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={$isHeaderInverted || menuActive}>
+      <a href="/" id="logo" class="transform origin-top-left scale-75 md:scale-100 p-16 fixed left-0 top-0 z-20 flex items-center flex-col" class:invert={$isHeaderInverted || menuActive}>
         <Logo />
         
         <div class="softikon flex" class:hide={!menuActive && y > 180}>
@@ -44,8 +44,8 @@
         </div>
       </a>
 
-      <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
-        <div class="menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
+      <a on:click|preventDefault={() => { menuActive = !menuActive }} href="#menu" class="transform origin-top-right scale-75 md:scale-100 flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
+        <div class="hidden md:block menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
             <span class="menu--text__anim">navigace</span>
             <span>zavřít</span>
         </div>
@@ -192,14 +192,14 @@ html, body, #root {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 5rem;
   position: relative;
   line-height: 1.2em;
   font-weight: 700;
 }
 
 h1.h1--sub {
-  font-size: calc(10/12 * 18vw);
+  font-size: calc(10/12 * 20vw);
   line-height: 1em;
 }
 
@@ -229,7 +229,7 @@ h1.h1--sub {
 
 h2 {
   @apply tracking-tight;
-  font-size: 4.8rem;
+  font-size: 4rem;
   line-height: 1.15em;
   font-weight: 700;
   position: relative;
@@ -243,7 +243,7 @@ h2 {
 
 h3 {
   @apply tracking-tight;
-  font-size: 3rem;
+  font-size: 2.45rem;
   line-height: 1.15em;
   font-weight: 500;
   position: relative;

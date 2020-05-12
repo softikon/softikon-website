@@ -3,10 +3,13 @@
     'inline-block',
     'border',
     'border-current',
-    'px-12',
-    'py-6',
+    'px-8',
+    'lg:px-12',
+    'py-4',
+    'lg:py-6',
     'font-semibold',
-    'text-2xl'
+    'text-xl',
+    'lg:text-2xl'
   ]
 
   let classes

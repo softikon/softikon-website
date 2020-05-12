@@ -55,7 +55,7 @@
 
 <article>
   <section class="pb-16 flex items-end relative min-h-screen">
-    <div class="w-10/12 mx-auto flex flex-wrap flex-col">
+    <div class="w-10/12 pt-64 md:pt-0 mx-auto flex flex-wrap flex-col">
       <div class="flex flex-col w-full md:w-9/12">
           <h1 class="h1--sub alternative-font">
             <span>
@@ -64,7 +64,7 @@
           </h1>
       </div>
       <div class="w-full md:w-9/12">
-        <p data-aos="fade-up" class="tracking-tight pt-16 leading-loose font-medium text-3xl md:text-2xl text-gray-600">
+        <p data-aos="fade-up" class="tracking-tight pt-16 leading-loose font-medium text-2xl text-gray-600">
           Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Každý úspěšný projekt se stane úspěšným především proto, že se v něm spojuje nápad, vášeň, talent, zkušenosti, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace.
         </p>
       </div>
@@ -89,7 +89,7 @@
             <li class="item" class:current={currentItem === 0}>
               <LineBlock xxl class="lg:w-7/12">
                 <h3 class="mb-12"><strong>Programujeme</strong><br>technologicky vytříbené<br><strong>aplikace</strong> a <strong>weby</strong></h3>
-                <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
                   Každý programovací jazyk je natolik silný, jako jeho návazný ekosystém a framework, který společně tvoří. Pro každý projekt proto pečlivě vybíráme kombinaci vhodných technologií, která v rámci zvoleného use-case přináší velkou přidanou hodnotu nepřipouští mnoho kompormisů. Extenzivně využíváme Javascript runtime a pro AOT kompilaci do nativního kódu jsme si oblíbili Dart.
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
@@ -98,7 +98,7 @@
             <li class="item" class:current={currentItem === 1}>
               <LineBlock xxl class="lg:w-7/12">
                 <h3 class="mb-12">Mobile-first<br><strong>nativní a hybrid</strong><br>PWA a AMP aplikace</h3>
-                <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
                   Dlouhodobě propagujeme mobile-first kulturu a přístup. Žijeme v době, kdy už se neptáme, zda uživatel mobilní zařízení vlastní, ale spíše, kolik jich má. Navrhujeme výkonné aplikace, které poběží všude, kde to dává smysl. Máme rádi Kotlin, Swift a Flutter (Dart).
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
@@ -107,7 +107,7 @@
             <li class="item" class:current={currentItem === 2}>
               <LineBlock xxl class="lg:w-7/12">
                 <h3 class="mb-12"><strong>Datový management</strong><br>Strojové účení<br>Výkonné systémy</h3>
-                <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
                   Na datech nám velmi záleží a jsou naší specialitou. Extenzivně se zabýváme jejich efektivním dolováním, transformací, ukládáním, analýzou a distribucí. Vytváříme modely a flow pro machine learning. Tvoříme spolehlivé a škálovatelné distribuované systémy s vysokou dostupností.
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
@@ -116,7 +116,7 @@
             <li class="item" class:current={currentItem === 3}>
               <LineBlock xxl class="lg:w-7/12">
                 <h3 class="mb-12">Agilní vývoj<br><strong>CI a CD pipelines</strong><br>Kontejnerizace</h3>
-                <p class="mb-16 leading-loose text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
                   Kontejnerizace nám umožňuje efektivní vývoj, testování a nasazování všech částí systému. Naplno využíváme principy DevOps a nástoje pro Continuous Integration (CI) a Continuous Delivery (CD). Každý commit vyvolá posloupnost atomických operací, díky kterým se můžeme naplno soustředit na vývoj. Při vývoji se inspirujeme v agilním manifestu.
                 </p>
                 <Button href="test/pointer">kontaktujte nás</Button>
@@ -129,12 +129,12 @@
     <div style="margin-left: auto;">
       <ul class="technologies flex flex-col flex-wrap my-24">
         {#each items.filter((_, i) => i % 2 === 0) as item, index}
-          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem}>
+          <li style="font-family: icomoon;" class="box bg-white text-4xl lg:text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem}>
             {@html item.title}
           </li>
         {/each}
         {#each items.filter((_, i) => i % 2 === 1) as item, index}
-          <li style="font-family: icomoon;" class="box bg-white text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem} class:mt-24={index === 0}>
+          <li style="font-family: icomoon;" class="box bg-white text-4xl lg:text-6xl text-gray-600 flex items-center justify-center" class:active={item.cat === currentItem} class:mt-16={index === 0} class:lg:mt-24={index === 0}>
             {@html item.title}
           </li>
         {/each}
@@ -152,8 +152,8 @@
   .box {
     transition: all 1s;
     opacity: 0.3;
-    width: 14rem;
-    height: 14rem;
+    width: 20vw;
+    height: 20vw;
     @apply shadow-md;
     @apply mb-8;
     @apply mr-8;
@@ -162,8 +162,8 @@
 
   @media(min-width: 1024px) {
     .box {
-      width: 25rem;
-      height: 25rem;
+      width: 18vw;
+      height: 18vw;      
       @apply mb-12;
       @apply mr-12;
     }
@@ -190,14 +190,14 @@
   }
 
   .technologies {
-    width: calc(16rem * 2);
-    height: calc(16rem * 15);    
+    width: calc((20vw + 2rem) * 2);
+    height: calc(((20vw + 2rem) * 15) + 4rem);
   }
 
   @media(min-width: 1024px) {
     .technologies {
-      width: calc(28rem * 2);
-      height: calc(28rem * 15);      
+    width: calc((18vw + 3rem) * 2);
+    height: calc(((18vw + 3rem) * 15) + 6rem);  
     }
   }
 
