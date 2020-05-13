@@ -22,13 +22,12 @@
       <div class="w-10/12 mx-auto flex flex-col">
         <LineBlock data-aos="fade-up" class="mb-8">
           <h3 class="mb-8 text-3xl lg:text-3xl">Komerční produkty</h3>
-          <p class="leading-loose text-gray-800 text-xl lg:text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
         </LineBlock>
         <LineBlock noLine>
           <div class="flex">
-            <div class="w-3/6 pr-12">
+            <div class="w-full md:w-3/6 md:pr-6 lg:pr-12">
               <div data-aos="fade-up">
-                <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
+                <Card data-concise="true" to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
                   <span class="text-white alternative-font text-4xl" slot="sub">Autopublisher</span>
                   <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
                   <a class="text-3xl text-white font-bold underline" href="work/autopublisher">Více informací</a>
@@ -40,9 +39,9 @@
               </div>
             </div>
 
-            <div class="w-3/6 pt-24 pl-12">
+            <div class="w-full md:w-3/6 md:pt-24 md:pl-6 lg:pl-12">
               <div data-aos="fade-up">
-                <Card concise to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
+                <Card data-concise="true" to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
                   <span slot="sub" class="text-gray-600 alternative-font text-4xl">Betsense</span>
                   <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
                   <div class="text-xl text-gray-500">Spouštíme Q3/2020</div>

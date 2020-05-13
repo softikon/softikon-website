@@ -28,6 +28,7 @@
   class:selected
   use:animate
   data-animate="clipSlideLeft"
+  data-concise={$$props['data-concise']}
   data-opts="{JSON.stringify({threshold: 0 })}"
   data-selector=".card__link"
   on:click={onClick}
@@ -147,7 +148,11 @@
     transform: scale(1);
     transition: transform 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
     will-change: transform;
-    max-width: 70vw;
+    max-width: 70%;
+  }
+
+  :global([data-concise=true]).card .card__link:hover .card__img__inner {
+    transform: scale(1.05)
   }
 
   .card__link:hover .card__img__inner {
@@ -168,7 +173,14 @@
     top: 0;
   }
 
-  @media(max-width: 767px) {
+  :global([data-concise=true]).card .card__title,
+    :global([data-concise=true]).card .card__more,
+    :global([data-concise=true]).card .card__labels {
+      display: none;
+  }
+
+  :global([data-concise=true]).card .card__sub {
+      transform: translateX(-50%);
   }
 
   @media(max-width: 1023px) {
@@ -184,42 +196,42 @@
   }
 
   @media(min-width: 1024px) {
-    .card__img {
+    .card:not([data-concise=true]) .card__img {
       transform: translateY(-40%);
       right: 3.5rem;
       left: auto;
     }
 
-    .card__img__inner {
+    .card:not([data-concise=true]) .card__img__inner {
       max-width: 50vw;
     }
 
-    .card__sub {
+    .card:not([data-concise=true]) .card__sub {
       top: 85px;
       left: 45px;
     }
 
-    .card__title {
+    .card:not([data-concise=true]) .card__title {
       left: 45px; 
     }
 
-    .card__more {
+    .card:not([data-concise=true]) .card__more {
       left: 45px;
       bottom: 85px;
     }
   }
 
   @media(min-width: 1280px) {
-    .card__sub {
+    .card:not([data-concise=true]) .card__sub {
       top: 85px;
       left: 85px;
     }
 
-    .card__title {
+    .card:not([data-concise=true]) .card__title {
       left: 85px; 
     }
 
-    .card__more {
+    .card:not([data-concise=true]) .card__more {
       left: 85px;
       bottom: 85px;
     }
