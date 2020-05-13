@@ -31,9 +31,8 @@
   data-concise={$$props['data-concise']}
   data-opts="{JSON.stringify({threshold: 0 })}"
   data-selector=".card__link"
-  on:click={onClick}
 >
-  <a bind:this={link} href="{to}" class="card__link">
+  <a rel="prefetch" on:click={onClick} bind:this={link} href="{to}" class="card__link">
     <div
       class="card__bg-container"
       bind:this={viewport}
@@ -66,10 +65,16 @@
   .card {
     height: 55rem;
     clip-path: inset(0 0 0 0);
+    position: relative;
+  }
+
+  :global([data-concise=true]).card {
+    height: 45rem !important;
   }
 
   .card.selected {
     clip-path: inset(-50vh -50vw -50vh -50vw);
+    z-index: 99999;
   }
 
   .card.selected .card__blur {
@@ -95,7 +100,6 @@
   }
 
   .selected {
-    transform: translateZ(100%);
     z-index: 99999;
   }
 
