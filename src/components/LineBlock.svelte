@@ -5,11 +5,12 @@
   export let xxl = false
   export let dark = false
   export let grey = false
+  export let noLine = false
 </script>
 
 <div {...$$restProps}>
   <div class="c-line" class:c-line__sm={sm} class:c-line__lg={lg} class:c-line__xl={xl} class:c-line__2xl={xxl} class:c-line__dark={dark} class:c-line__grey={grey}>
-    <span class="c-line-ln hidden md:block"></span>
+    <span class="c-line-ln hidden" class:hide={noLine} class:md:block={!noLine}></span>
     <slot></slot>
   </div>
 </div>
