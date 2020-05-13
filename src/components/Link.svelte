@@ -1,3 +1,3 @@
-<a el="prefetch" href="/#" {...$$restProps}>
+<a el="prefetch" sapper-noscroll href="/#" {...$$restProps}>
   <slot></slot>
 </a>

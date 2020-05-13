@@ -15,6 +15,13 @@
     return () => {
       return {
         duration: $isPageTransitionInterrupted ? 0 : params.duration,
+        tick(t, u) {
+          if (u === 1) {
+            window.scrollTo({
+              top: 0
+            })
+          }
+        }
       }
     }
   }
