@@ -1,7 +1,7 @@
 {
   "short_name": "Softikon",
   "name": "Softikon. Digital. Intelligently.",
-  "description": "Great design is a force of nature",
+  "description": "Perfection is made up of small things.",
   "icons": [
     {
       "src": "/img/icons/icons-48.png",
@@ -19,7 +19,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "/img/icons/icon-500.png",
+      "src": "/img/icons/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
