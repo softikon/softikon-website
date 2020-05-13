@@ -67,7 +67,7 @@
         </div>
         <div class="w-full md:w-9/12">
           <p data-aos="fade-up" class="tracking-tight pt-16 leading-loose font-medium text-2xl text-gray-600">
-            Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Každý úspěšný projekt se stane úspěšným především proto, že se v něm spojuje nápad, vášeň, talent, zkušenosti, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace.
+            Nechat za sebe mluvit odvedenou práci není klišé. Naopak. Úspěšné produkty se staly úspěšným především proto, že se v nich spojuje nápad, vášeň, talent, zkušenosti, lidé, velká přidaná hodnota, precizní technické zpracování a od počátku perfektní, promyšlená strategie a komunikace. Jedině tak se z projektu úspěšný produkt.
           </p>
         </div>
       </div>
@@ -91,7 +91,7 @@
               <li class="item" class:current={currentItem === 0}>
                 <LineBlock xxl class="lg:w-7/12">
                   <h3 class="mb-12"><strong>Programujeme</strong><br>technologicky vytříbené<br><strong>aplikace</strong> a <strong>weby</strong></h3>
-                  <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                  <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Každý programovací jazyk je natolik silný, jako jeho návazný ekosystém a framework, který společně tvoří. Pro každý projekt proto pečlivě vybíráme kombinaci vhodných technologií, která v rámci zvoleného use-case přináší velkou přidanou hodnotu nepřipouští mnoho kompormisů. Extenzivně využíváme Javascript runtime a pro AOT kompilaci do nativního kódu jsme si oblíbili Dart.
                   </p>
                   <Button href="test/pointer">kontaktujte nás</Button>
@@ -100,7 +100,7 @@
               <li class="item" class:current={currentItem === 1}>
                 <LineBlock xxl class="lg:w-7/12">
                   <h3 class="mb-12">Mobile-first<br><strong>nativní a hybrid</strong><br>PWA a AMP aplikace</h3>
-                  <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                  <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Dlouhodobě propagujeme mobile-first kulturu a přístup. Žijeme v době, kdy už se neptáme, zda uživatel mobilní zařízení vlastní, ale spíše, kolik jich má. Navrhujeme výkonné aplikace, které poběží všude, kde to dává smysl. Máme rádi Kotlin, Swift a Flutter (Dart).
                   </p>
                   <Button href="test/pointer">kontaktujte nás</Button>
@@ -109,7 +109,7 @@
               <li class="item" class:current={currentItem === 2}>
                 <LineBlock xxl class="lg:w-7/12">
                   <h3 class="mb-12"><strong>Datový management</strong><br>Strojové účení<br>Výkonné systémy</h3>
-                  <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                  <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Na datech nám velmi záleží a jsou naší specialitou. Extenzivně se zabýváme jejich efektivním dolováním, transformací, ukládáním, analýzou a distribucí. Vytváříme modely a flow pro machine learning. Tvoříme spolehlivé a škálovatelné distribuované systémy s vysokou dostupností.
                   </p>
                   <Button href="test/pointer">kontaktujte nás</Button>
@@ -118,7 +118,7 @@
               <li class="item" class:current={currentItem === 3}>
                 <LineBlock xxl class="lg:w-7/12">
                   <h3 class="mb-12">Agilní vývoj<br><strong>CI a CD pipelines</strong><br>Kontejnerizace</h3>
-                  <p class="mb-16 leading-loose text-lg md:text-2xl" style="color: rgba(17, 17, 17, 0.8);">
+                  <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Kontejnerizace nám umožňuje efektivní vývoj, testování a nasazování všech částí systému. Naplno využíváme principy DevOps a nástoje pro Continuous Integration (CI) a Continuous Delivery (CD). Každý commit vyvolá posloupnost atomických operací, díky kterým se můžeme naplno soustředit na vývoj. Při vývoji se inspirujeme v agilním manifestu.
                   </p>
                   <Button href="test/pointer">kontaktujte nás</Button>
