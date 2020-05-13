@@ -1,5 +1,6 @@
 <script>
   import { animate } from '../helpers/intersectionObserver'
+  import { isPageTransitionInterrupted } from '../store/ui'
   import { goto } from '@sapper/app'
 
   export let background = '#1d2b2a'
@@ -12,10 +13,13 @@
 
   const onClick = e => {
     e.preventDefault()
+    isPageTransitionInterrupted.set(true)
     viewport.scrollIntoView({ behavior: 'smooth' })
     selected = !selected
     setTimeout(() => {
-      goto(to)
+      goto(to).then(() => {
+        isPageTransitionInterrupted.set(false)
+      })
     }, 1000)
   }
 </script>

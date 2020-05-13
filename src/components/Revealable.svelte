@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte'
+  import { animate } from '../helpers/intersectionObserver'
   let browser = false
   let ref, ref2
   let animated = false
@@ -22,9 +23,15 @@
     })
   }
 
+  let actionHandlers = []
+
   const process = () => {
     ref.style.display = 'inline-block'
     ref2.style.display = 'none'
+
+    actionHandlers.forEach(a => a())
+    actionHandlers = []
+
     const els = Array.from(ref.childNodes).reduce(([{ x, y }, nodes, complete], node, i, ref) => {
       let res
       if (x > node.offsetLeft || y < node.offsetTop - 20) {
@@ -42,9 +49,12 @@
     els.forEach(group => {
       const el = document.createElement('span')
       el.classList.add('revealable')
-      !animated && setTimeout(() => {
-        el.classList.add('animate')
-      }, 50) || el.classList.add('show')
+      el.dataset.opts = JSON.stringify({ threshold: 0 })
+      if (!animated) {
+        actionHandlers.push(animate(el).destroy)
+      } else {
+        el.classList.add('show')
+      }
 
       ref2.appendChild(el)
       group.forEach((e, i) => {
@@ -85,6 +95,8 @@
     process()
 
     return () => {
+      actionHandlers.forEach(e => e())
+      actionHandlers = null
       window.removeEventListener('resize', process)
     }
   })
@@ -115,7 +127,7 @@
   }
 
   .is-browser :global(.revealable.animate.leaving:after), .is-browser :global(.revealable.show.leaving:after) {
-    animation:fx-out 1.65s cubic-bezier(.19,1,.22,1);
+    animation:fx-out .4s cubic-bezier(.19,1,.22,1);
   }
 
   .is-browser :global(.revealable > span) {
@@ -133,7 +145,7 @@
   }
 
   .is-browser :global(.revealable.animate.leaving > span), .is-browser :global(.revealable.show.leaving > span) {
-    animation: opacity-reverse 1.65s linear;
+    animation: opacity-reverse .4s linear;
     animation-fill-mode: forwards;
   }
 

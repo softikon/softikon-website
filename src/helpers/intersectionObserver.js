@@ -43,7 +43,7 @@ export const animate = node => {
   }
 
   const observer = new IntersectionObserver(entries => {
-    entries[0].isIntersecting && node.classList.add('animate')
+    entries.some(e => e.isIntersecting) && node.classList.add('animate')
   }, {
     threshold: 0.05,
     ...opts
