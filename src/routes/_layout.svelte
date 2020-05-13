@@ -82,5 +82,36 @@
 
 
 <style lang="scss" global>
- @import "../styles/global.scss";
+  @import "../styles/global.scss";
+
+  .invert {
+    filter: invert(1);
+  }  
+
+  .menu--text {
+    transition: opacity .4s;
+    overflow: hidden;
+    height: 2rem;
+    opacity: 1;
+  }
+
+  .menu--text.hide {
+    opacity: 0;
+  }
+
+  .menu--text > span {
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+  }
+
+  .menu--text__anim {
+    margin-top: 0;
+    transition: all .4s;
+  }
+
+  .menu--text.menuActive .menu--text__anim {
+    margin-top: -2rem;
+  }
+
 </style>
