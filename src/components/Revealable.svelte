@@ -127,7 +127,7 @@
   }
 
   .is-browser :global(.revealable.animate.leaving:after), .is-browser :global(.revealable.show.leaving:after) {
-    animation:fx-out .4s cubic-bezier(.19,1,.22,1);
+    animation:fx-out .75s cubic-bezier(.19,1,.22,1);
   }
 
   .is-browser :global(.revealable > span) {
@@ -145,7 +145,7 @@
   }
 
   .is-browser :global(.revealable.animate.leaving > span), .is-browser :global(.revealable.show.leaving > span) {
-    animation: opacity-reverse .4s linear;
+    animation: opacity-reverse .75s linear;
     animation-fill-mode: forwards;
   }
 

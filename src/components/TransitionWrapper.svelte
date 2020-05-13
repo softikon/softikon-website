@@ -4,7 +4,7 @@
   function test(transition, params) {
     Array.from(document.querySelectorAll('[data-aos]')).forEach(a => {
       window.requestAnimationFrame(() => {
-        a.dataset.aosDuration = 400
+        a.dataset.aosDuration = 750
         window.requestAnimationFrame(() => {
           a.classList.remove('aos-animate')
         })
@@ -20,6 +20,6 @@
   }
 </script>
 
-<div out:test={{duration: 500}}>
+<div out:test={{duration: 800}}>
   <slot></slot>
 </div>
