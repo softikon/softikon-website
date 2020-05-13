@@ -12,6 +12,7 @@
 
 <svelte:head>
   <title>Inteligentní digitální řešení | Softikon.eu</title>
+  <meta name="description" content="Tvůrci, dodavatelé a provozovatelé inteligentních digitálních řešení business-critical problémů, která jednoduše fungují.">
 </svelte:head>
 
 <TransitionWrapper>
