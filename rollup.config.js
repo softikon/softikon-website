@@ -27,12 +27,14 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
       extensions: ['svelte'],
     },
   ],
-  whitelist: ['html', 'body']
+  // TODO: is :global the correct keyword?
+  whitelist: ['html', 'body', ':global']
 })
 
 const postcssPlugins = {
   dev: [
     require('tailwindcss')(tailwindConfig),
+    purgecss,
   ],
   prod: [
     require('tailwindcss')(tailwindConfig),
