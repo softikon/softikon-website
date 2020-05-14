@@ -43,13 +43,13 @@ export const animate = node => {
   }
 
   const observer = new IntersectionObserver(entries => {
-    entries.some(e => e.isIntersecting) && node.classList.add('animate')
+    entries.some(e => e.isIntersecting) && (node.dataset.selector ? node.querySelector(node.dataset.selector) : node).classList.add('animate')
   }, {
     threshold: 0.05,
     ...opts
   })
 
-  observer.observe(node.dataset.selector ? node.querySelector(node.dataset.selector) : node)
+  observer.observe(node)
 
   return {
     destroy() {
