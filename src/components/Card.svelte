@@ -6,6 +6,7 @@
   export let background = '#1d2b2a'
   export let image
   export let to
+  export let id = null
 
   let link
   let selected
@@ -23,42 +24,41 @@
     }, 1000)
   }
 </script>
-<div 
-  class="card flex flex-col align-center justify-center"
-  class:selected
-  use:animate
-  data-animate="clipSlideLeft"
-  data-concise={$$props['data-concise']}
-  data-opts="{JSON.stringify({threshold: 0 })}"
-  data-selector=".card__link"
->
-  <a rel="prefetch" on:click={onClick} bind:this={link} href="{to}" class="card__link">
-    <div
-      class="card__bg-container"
-      bind:this={viewport}
-      style="background-color: {background};"
-    >
-    </div>
-    <div class="card__blur absolute inset-0">
-      <div class="card__sub text-gray-200">
-        <slot name="sub"></slot>
+<div class="card__wrapper" use:animate data-selector=".card" {id}>
+  <div 
+    class="card flex flex-col align-center justify-center"
+    class:selected
+    data-concise={$$props['data-concise']}
+    data-animate="clipSlideLeft"
+  >
+    <a rel="prefetch" on:click={onClick} bind:this={link} href="{to}" class="card__link">
+      <div
+        class="card__bg-container"
+        bind:this={viewport}
+        style="background-color: {background};"
+      >
       </div>
-      <div class="card__title text-gray-500 text-3xl leading-relaxed">
-        <slot name="title"></slot>
-      </div>
-      <div class="card__more hidden md:block">
-        <slot></slot>
-      </div>
-      {#if image}
-        <div class="card__img">
-          <img class="card__img__inner" src="{image}" alt="" />
+      <div class="card__blur absolute inset-0">
+        <div class="card__sub text-gray-200">
+          <slot name="sub"></slot>
         </div>
-      {/if}
-      <div class="card__labels hidden md:block pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
-        <slot name="labels"></slot>
+        <div class="card__title text-gray-500 text-3xl leading-relaxed">
+          <slot name="title"></slot>
+        </div>
+        <div class="card__more hidden md:block">
+          <slot></slot>
+        </div>
+        {#if image}
+          <div class="card__img">
+            <img class="card__img__inner" src="{image}" alt="" />
+          </div>
+        {/if}
+        <div class="card__labels hidden md:block pt-16 pl-20 text-2xl text-gray-500 font-medium leading-tight block">
+          <slot name="labels"></slot>
+        </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>
 
 <style>
@@ -69,17 +69,21 @@
   }
 
   :global([data-concise=true]).card {
-    height: 45rem !important;
+    height: 100vh !important;
   }
 
   .card.selected {
     clip-path: inset(-50vh -50vw -50vh -50vw);
-    z-index: 99999;
+    z-index: 40;
   }
 
   .card.selected .card__blur {
     filter: blur(15px);
     transition: filter 5s;
+  }
+
+  :global([data-concise=true]).card .card__link {
+    height: 100vh;
   }
 
   .card__link {
@@ -99,8 +103,13 @@
     clip-path: inset(calc(((100vh - 43rem) / 2)) 0 calc(((100vh - 43rem) / 2)) 0);
   }
 
+  :global([data-concise=true]).card .card__link:hover .card__bg-container,
+   :global([data-concise=true]).card .card__link .card__bg-container {
+    clip-path: inset(0 0 0 0) !important;
+  }
+
   .selected {
-    z-index: 99999;
+    z-index: 40;
   }
 
   .selected .card__bg-container {

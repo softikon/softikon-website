@@ -59,7 +59,7 @@
         </div>
       </Link>
 
-      <div on:click={() => { menuActive = !menuActive }} class="cursor-pointer transform origin-top-right scale-75 md:scale-100 flex items-center p-16 pt-24 fixed right-0 top-0 z-20">
+      <div on:click={() => { menuActive = !menuActive }} class="cursor-pointer transform origin-top-right scale-75 md:scale-100 flex items-center p-16 pt-24 fixed right-0 top-0 z-50">
         <div class="hidden md:block menu--text text-gray-600 pr-4" class:menuActive class:hide={!menuActive && y > 180}>
             <span class="menu--text__anim">navigace</span>
             <span>zavřít</span>

@@ -22,7 +22,8 @@
         tick(t, u) {
           if (u === 1) {
             window.scrollTo({
-              top: 0
+              top: 0,
+              left: 0
             })
 
             // TODO FIX: this expression call is a workaround for the case when clip-path on page being replaced

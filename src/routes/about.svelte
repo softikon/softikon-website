@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <div class="flex min-h-screen relative" style="padding-top: 15vh;">
+    <section class="flex min-h-screen relative" style="padding-top: 15vh;">
       <div class="section-bg light"></div>
       <div class="absolute inset-y-0 w-24 z-20">
         <Scroller autoWidth>
@@ -94,7 +94,7 @@
                   <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Každý programovací jazyk je natolik silný, jako jeho návazný ekosystém a framework, který společně tvoří. Pro každý projekt proto pečlivě vybíráme kombinaci vhodných technologií, která v rámci zvoleného use-case přináší velkou přidanou hodnotu nepřipouští mnoho kompormisů. Extenzivně využíváme Javascript runtime a pro AOT kompilaci do nativního kódu jsme si oblíbili Dart.
                   </p>
-                  <Button href="test/pointer">kontaktujte nás</Button>
+                  <Button href="contact">kontaktujte nás</Button>
                 </LineBlock>
               </li>
               <li class="item" class:current={currentItem === 1}>
@@ -103,7 +103,7 @@
                   <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Dlouhodobě propagujeme mobile-first kulturu a přístup. Žijeme v době, kdy už se neptáme, zda uživatel mobilní zařízení vlastní, ale spíše, kolik jich má. Navrhujeme výkonné aplikace, které poběží všude, kde to dává smysl. Máme rádi Kotlin, Swift a Flutter (Dart).
                   </p>
-                  <Button href="test/pointer">kontaktujte nás</Button>
+                  <Button href="contact">kontaktujte nás</Button>
                 </LineBlock>
               </li>
               <li class="item" class:current={currentItem === 2}>
@@ -112,7 +112,7 @@
                   <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Na datech nám velmi záleží a jsou naší specialitou. Extenzivně se zabýváme jejich efektivním dolováním, transformací, ukládáním, analýzou a distribucí. Vytváříme modely a flow pro machine learning. Tvoříme spolehlivé a škálovatelné distribuované systémy s vysokou dostupností.
                   </p>
-                  <Button href="test/pointer">kontaktujte nás</Button>
+                  <Button href="contact">kontaktujte nás</Button>
                 </LineBlock>
               </li>
               <li class="item" class:current={currentItem === 3}>
@@ -121,7 +121,7 @@
                   <p class="mb-16 leading-loose text-lg md:text-2xl lg:pr-48" style="color: rgba(17, 17, 17, 0.8);">
                     Kontejnerizace nám umožňuje efektivní vývoj, testování a nasazování všech částí systému. Naplno využíváme principy DevOps a nástoje pro Continuous Integration (CI) a Continuous Delivery (CD). Každý commit vyvolá posloupnost atomických operací, díky kterým se můžeme naplno soustředit na vývoj. Při vývoji se inspirujeme v agilním manifestu.
                   </p>
-                  <Button href="test/pointer">kontaktujte nás</Button>
+                  <Button href="contact">kontaktujte nás</Button>
                 </LineBlock>
               </li>
             </ul>
@@ -142,7 +142,7 @@
           {/each}
         </ul>
       </div>
-    </div>
+    </section>
   </article>
 </TransitionWrapper>
 
@@ -190,6 +190,7 @@
 
   .item.current {
     opacity: 1;
+    z-index: 2;
   }
 
   .technologies {
