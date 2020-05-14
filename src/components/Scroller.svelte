@@ -5,27 +5,28 @@
   let distance
   let el
   let fixed
-  let currentItem = 1
 
   const dispatch = createEventDispatcher()
 
   export let autoWidth = false
   export let length = 1
+  export let currentItem = 0
 
-  $: fixed = distance === 0 || ((distance < 0) && Math.abs(distance - $viewportHeight) <= el.offsetHeight)
+  $: fixed = distance === 0 || ((distance < 0) && Math.floor(Math.abs(distance - $viewportHeight)) <= el.offsetHeight)
   $: {
     const innerDistanceRatio = fixed && (Math.abs(distance) / (el.offsetHeight - $viewportHeight))
     if (innerDistanceRatio) {
-      currentItem = Math.floor(innerDistanceRatio * 100 / (100 / length))
+      currentItem = Math.floor((innerDistanceRatio >= 1 ? (innerDistanceRatio - 0.001) : innerDistanceRatio) * 100 / (100 / length))
     }
   }
   $: dispatch('itemChanged', currentItem)
+  $: dispatch('stateChanged', fixed)
   $: finished = distance < 0 && !fixed
 
   onMount(() => {
     el = el.parentElement.parentElement
     const check = () => {
-      distance = el.offsetTop - window.scrollY
+      distance = Math.floor(el.offsetTop - window.scrollY)
     }
     window.addEventListener('scroll', check)
     check()
