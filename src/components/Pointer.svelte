@@ -8,9 +8,15 @@
       y: e.clientY
     })
 
-    const scrollHandler = e => set({
-      ...get(state)
-    })
+    const scrollHandler = e => {
+      // If the state is null, do nothing
+      const currentState = get(state)
+      if (currentState) {
+        set({
+          ...currentState
+        })
+      }
+    }
 
     if (typeof window !== 'undefined') {
       window.addEventListener('mousemove', mouseMoveHandler)
