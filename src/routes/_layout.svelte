@@ -9,9 +9,13 @@
   import Menu from '../components/Menu.svelte'
   import Link from '../components/Link.svelte'
   import LineBlock from '../components/LineBlock.svelte'
+  import LoadingProgress from '../components/LoadingProgress.svelte'
   import { animate } from '../helpers/intersectionObserver'
   import { isHeaderInverted } from '../store/ui'
   import { isMobile as checkIsMobile } from '../helpers/isMobile'
+  import { stores } from '@sapper/app'
+
+  const { preloading } = stores()
 
   let isMobile = false
 
@@ -32,6 +36,10 @@
 <div id="container" class="font-body">
   {#if menuActive}
     <Menu on:close={() => menuActive = false } />
+  {/if}
+
+  {#if $preloading}
+    <LoadingProgress />
   {/if}
 
   {#if !isMobile}
