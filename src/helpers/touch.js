@@ -1,7 +1,6 @@
 import Events from 'events'
 
 const events = new Events()
-let listeners = []
 
 let coords = {
   x: null,
@@ -47,8 +46,13 @@ const handleTouchMove = e => {
 }
 
 export const install = () => {
-  listeners.push(document.addEventListener('touchstart', handleTouchStart, false))
-  listeners.push(document.addEventListener('touchmove', handleTouchMove, false))
+  document.addEventListener('touchstart', handleTouchStart, false)
+  document.addEventListener('touchmove', handleTouchMove, false)
+
+  return () => {
+    document.removeEventListener('touchstart', handleTouchStart)
+    document.removeEventListener('touchmove', handleTouchMove)
+  }
 }
 
 export default events
