@@ -14,7 +14,6 @@ const getCoordsFromTouchEvent = t => ({
 })
 
 const handleTouchStart = e => {
-  console.log('handleTouchStart', getCoordsFromTouchEvent(e.touches[0]))
   coords = getCoordsFromTouchEvent(e.touches[0])
 }
 

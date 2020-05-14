@@ -1,4 +1,5 @@
  <script>
+  import { onMount } from 'svelte'
   import Card from '../../components/Card.svelte'
   import Revealable from '../../components/Revealable.svelte'
   import LineBlock from '../../components/LineBlock.svelte'
@@ -6,12 +7,24 @@
   import Scroller from '../../components/Scroller.svelte'
   import Button from '../../components/Button.svelte'
   import { animate } from '../../helpers/intersectionObserver'
+  import touchEvents, { install as installTouchEvents } from '../../helpers/touch'
 
   let currentItem = 0
+  const items = 2
 
   const setItemManually = (index) => {
     currentItem = index
   }
+
+  const swipeLeft = () => setItemManually((currentItem + 1) % items)
+  const swipeRight = () => setItemManually((currentItem - 1) < 0 ? (items - 1) : (currentItem - 1))
+
+  onMount(() => {
+    installTouchEvents()
+  })
+
+  touchEvents.on('swipeLeft', swipeLeft)
+  touchEvents.on('swipeRight', swipeRight)
  </script>
 
 <TransitionWrapper>
