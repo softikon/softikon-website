@@ -1,8 +1,12 @@
 <script>
+  import { tick } from 'svelte'
   import { isPageTransitionInterrupted } from '../store/ui'
+  import { refresh as AOSRefresh } from '../helpers/aos'
 
-  function test(transition, params) {
-    Array.from(document.querySelectorAll('[data-aos]')).forEach(a => {
+  let ref
+
+  function animateOut(node, params) {
+    Array.from(ref.querySelectorAll('[data-aos]')).forEach(a => {
       window.requestAnimationFrame(() => {
         a.dataset.aosDuration = 750
         window.requestAnimationFrame(() => {
@@ -10,7 +14,7 @@
         })
       })
     })
-    Array.from(document.querySelectorAll('.animate, .show')).forEach(a => a.classList.add('leaving'))
+    Array.from(ref.querySelectorAll('.animate, .show')).forEach(a => a.classList.add('leaving'))
 
     return () => {
       return {
@@ -20,6 +24,12 @@
             window.scrollTo({
               top: 0
             })
+
+            // TODO FIX: this expression call is a workaround for the case when clip-path on page being replaced
+            // with new one prevents AOS from observing aos-powered animated elements correctly
+            window.requestAnimationFrame(() => {
+              AOSRefresh()
+            })
           }
         }
       }
@@ -27,6 +37,6 @@
   }
 </script>
 
-<div out:test={{duration: 800}}>
+<div bind:this={ref} out:animateOut={{duration: 800}}>
   <slot></slot>
 </div>
