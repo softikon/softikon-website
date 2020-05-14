@@ -11,7 +11,7 @@
     <LineBlock dark class="mb-24">
       <p class="mb-8 text-2xl font-bold text-white uppercase">Kontakt</p>
       <p class="mb-4 text-teal-500 text-5xl font-medium">info@softikon.eu</p>
-      <p class="text-teal-500 text-5xl font-medium">+420 704 480 909</p>
+      <p class="text-teal-500 text-5xl font-medium">+420 777 480 909</p>
     </LineBlock>
     <LineBlock dark>
       <p class="mb-8 text-2xl font-bold text-white uppercase">Explore</p>
