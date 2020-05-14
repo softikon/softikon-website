@@ -21,7 +21,7 @@
       <div class="flex flex-wrap">
         <div class="flex flex-col w-full md:w-6/12"> 
           <h1 class="tracking-tighter">
-            <Revealable>Digitální řemeslníci s rozumem<span><span class="softikon-dot">.</span></span></Revealable>
+            <Revealable>Digitální řemeslníci <span class="block">s rozumem<span class="softikon-dot">.</span></span></Revealable>
           </h1>
           <LineBlock class="mt-16 hidden md:block uppercase font-medium" data-aos="fade-down" data-aos-duration="1500" data-aos-offset="0" data-aos-delay="1550" grey sm>
             <p class="text-gray-500 text-lg" style="text-rendering: optimizeLegibility;">Píšeme software pro lidi, ne pro stroje</p>
@@ -31,7 +31,7 @@
           <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
             Věříme, že jistá míra rozumné lenosti zformovala dnešní digitalizovanou společnost. Je katalizátorem kreativity a ta je motorem pokroku a inovací v každém oboru. Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů, která přináší velkou přidanou hodnotu.
           </p>
-          <Button data-aos="fade-up" class="mt-16" href="about">projekty - co jsme vytvořili</Button>
+          <Button data-aos="fade-up" class="mt-16" href="work">mrkněte, co jsme vytvořili</Button>
         </div>
       </div>
     </section>
@@ -61,7 +61,7 @@
                 <p class="leading-loose text-gray-800 text-xl lg:text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
                 <h3 class="mb-8 text-3xl lg:text-3xl">Aplikace pro reálný svět</h3>
                 <p class="leading-loose text-gray-800 text-xl lg:text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
-                <Button class="mt-8" href="about#stack">naše odbornost - co umíme</Button>
+                <Button class="mt-8" href="about">naše odbornost - co umíme</Button>
               </LineBlock>
             </div>
             <div class="hidden md:flex items-center md:justify-end md:w-3/6">

@@ -34,7 +34,7 @@
   }
 </script>
 
-<div class="flex z-20 fixed top-0 left-0 w-screen" out:finishProgress>
+<div class="flex z-50 fixed top-0 left-0 w-screen" out:finishProgress|local>
   <progress class="w-screen" value={$progress}></progress>
 </div>
 

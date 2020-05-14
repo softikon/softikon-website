@@ -84,7 +84,7 @@
   }
 
   onMount(() => {
-    cursor = derived(state, $coords => $coords && ({
+    cursor = derived(state, $coords => $coords && rootEl && ({
       x: $coords.x - rootEl.offsetParent.offsetLeft + scrollLeft(),
       y: $coords.y - rootEl.offsetParent.offsetTop + scrollTop(),
     }))

@@ -2,8 +2,7 @@ import { writable, readable } from 'svelte/store'
 
 export const isHeaderInverted = writable(false)
 export const isPageTransitionInterrupted = writable(false)
-export const viewportHeight = readable(
-  null, set => {
+export const viewportHeight = readable(null, set => {
   const handler = () => {
     set(window.innerHeight)
   }
