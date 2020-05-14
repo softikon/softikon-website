@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte'
-  import AOS from 'aos'
+  import { init as AOSInit } from '../helpers/aos'
   import Pointer from '../components/Pointer.svelte'
   import BurgerBar from '../components/BurgerBar.svelte'
   import Logo from '../components/Logo.svelte'
@@ -21,7 +21,7 @@
 
   onMount(() => {
     isMobile = checkIsMobile()
-    AOS.init({
+    AOSInit({
       once: true,
       offset: 40,
       duration: 2000
