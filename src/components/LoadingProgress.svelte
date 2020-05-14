@@ -1,13 +1,14 @@
 <script>
   import { onMount } from 'svelte'
-  import { writable } from 'svelte/store'
+  import { tweened } from 'svelte/motion'
+  import { cubicOut } from 'svelte/easing'
 
-  const progress = writable(0)
+  const progress = tweened(0, {
+    duration: 1000,
+    easing: cubicOut
+  })
 
   let i = 1, nextTick
-
-  // TODO: I wanted to use tailwinds bg-black utility, but it's purged with purgecss
-  $: style = `width: ${$progress * 100}%; background-color: #000;`
 
   const tick = () => {
     nextTick = setTimeout(() => {
@@ -24,7 +25,7 @@
     tick()
   })
 
-  const finishProgress = (name, args) => {
+  const finishProgress = (node, args) => {
     clear()
     progress.set(1)
     return {
@@ -33,12 +34,24 @@
   }
 </script>
 
-<div class="h-2 flex fixed top-0 left-0 w-screen" out:finishProgress>
-  <div class="progress bg-blue-500" {style}></div>
+<div class="flex z-20 fixed top-0 left-0 w-screen" out:finishProgress>
+  <progress class="w-screen" value={$progress}></progress>
 </div>
 
 <style>
-  .progress {
-    transition: width 1s ease-in
-  }
+progress {
+	background-color: rgba(0,0,0,0.01);
+	border: 0;
+	height: 6px;
+}
+progress::-webkit-progress-bar {
+	background-color: rgba(0,0,0,0.01);
+}
+progress::-webkit-progress-value {
+  background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+  border-radius: 0 5px 5px 0;
+}
+progress::-moz-progress-bar {
+	background: linear-gradient(25deg,#d64c7f,#ee4758 50%);
+}
 </style>
