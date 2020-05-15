@@ -2,16 +2,7 @@
   import Link from './Link.svelte'
 
   const defaultClasses = [
-    'inline-block',
-    'border',
-    'border-current',
-    'px-8',
-    'lg:px-12',
-    'py-4',
-    'lg:py-6',
-    'font-semibold',
-    'text-xl',
-    'lg:text-2xl'
+    'text-3xl',
   ]
 
   let classes
@@ -20,6 +11,41 @@
   $: classes = [...new Set([...defaultClasses, ...className.split(' ')])].join(' ')
 </script>
 
-<Link {...$$restProps} class="{classes}">
-  <slot></slot>
-</Link>
+<div class:btn={true} class="{classes}">
+  <Link {...$$restProps}>
+    <slot></slot>
+  </Link>
+</div>
+
+<style>
+  .btn {
+    color: crimson;
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  .btn :global(a) {
+    border-bottom: 1px solid;
+    padding: 0.1rem 0;
+  }
+
+  .btn:after {
+    content: '→';
+    font: inherit;
+    padding-left: 2rem;
+    color: inherit;
+    animation: move 3s linear infinite;
+  }
+
+  @keyframes move {
+    from {
+      padding-left: 2rem;
+    }
+    50% {
+      padding-left: 1rem;
+    }
+    to {
+      padding-left: 2rem;
+    }
+  }
+</style>

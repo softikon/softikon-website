@@ -79,7 +79,7 @@
           <p class="mb-8 text-2xl text-white font-bold uppercase">This might work</p>
           <h2 class="mb-0 font-bold outlined white">Máte projekt?</h2>
           <h2 class="mb-16 font-bold">Pojďme jej probrat!</h2>
-          <Button class="border-white" href="/#">SAY HELLO!</Button>
+          <Button class="text-white" href="/#">SAY HELLO!</Button>
         </LineBlock>
       </div>
     </section>

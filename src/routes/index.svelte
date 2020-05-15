@@ -52,15 +52,15 @@
       <div class="flex justify-center lg:justify-end">
         <div class="flex flex-col relative w-10/12 lg:w-11/12 pt-48 pb-48 lg:pb-24">
           <h2 data-aos="fade-up" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
-            <span class="outlined">inteligentní</span><br />data management
+            <span class="outlined">inteligentní</span><br class="hidden md:block" /> data management
           </h2>
           <div class="flex flex-1 flex-col md:flex-row">
             <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
               <LineBlock class="mb-8" data-aos="fade-up">
                 <h3 class="mb-8 text-3xl lg:text-3xl">Chytré backend systémy a zpracování dat</h3>
-                <p class="leading-loose text-gray-800 text-xl lg:text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
+                <p class="leading-loose text-gray-800 text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
                 <h3 class="mb-8 text-3xl lg:text-3xl">Aplikace pro reálný svět</h3>
-                <p class="leading-loose text-gray-800 text-xl lg:text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
+                <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
                 <Button class="mt-8" href="about">naše odbornost - co umíme</Button>
               </LineBlock>
             </div>
@@ -76,7 +76,7 @@
       </div>
     </section>
 
-    <section class="w-10/12 pt-48 pb-24 mx-auto">
+    <section class="w-10/12 pt-48 pb-8 mx-auto">
       <LineBlock data-aos="fade-up" xxl>
         <h3 style="text-rendering: optimizeLegibility;">Co se nám povedlo</h3>
       </LineBlock>
@@ -114,11 +114,11 @@
               <h2 data-aos="fade-up" class="mb-24 lg:w-10/12" style="text-rendering: optimizeLegibility;">
                 Jsme digitální řemeslníci
               </h2>
-              <LineBlock data-aos="fade-up" lg>
-                <p class="mb-16 leading-loose text-gray-800 text-xl lg:text-2xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řemeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
+              <LineBlock data-aos="fade-up" xl>
+                <p class="mb-16 leading-loose text-gray-700 text-3xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řemeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
               </LineBlock>
             </div>
-            <div class="md:flex md:w-3/6 md:pl-24 flex-1 py-40 md:py-0">
+            <div class="hide lg:flex lg:w-3/6 md:pl-24 flex-1 py-40 md:py-0">
               <div class="w-full" data-aos="fade-up">
                 <InViewport>
                   <Animation />
