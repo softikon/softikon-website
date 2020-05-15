@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     fontFamily: {
-      body: ['Montserrat']
+      body: ['Euclid Circular A']
     },
     extend: {},
   },
