@@ -42,7 +42,7 @@
         <div class="card__sub text-gray-200">
           <slot name="sub"></slot>
         </div>
-        <div class="card__title text-gray-500 text-3xl leading-relaxed">
+        <div class="card__title text-gray-500 text-4xl leading-relaxed">
           <slot name="title"></slot>
         </div>
         <div class="card__more hidden md:block">
@@ -188,7 +188,8 @@
 
   :global([data-concise=true]).card .card__title,
     :global([data-concise=true]).card .card__more,
-    :global([data-concise=true]).card .card__labels {
+    :global([data-concise=true]).card .card__labels,
+    :global([data-concise=true]).card .card__sub {
       display: none;
   }
 

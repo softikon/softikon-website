@@ -85,9 +85,9 @@
     <section id="showcase">
       <div class="w-10/12 mx-auto flex flex-col">
         <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
-          <span class="text-white alternative-font text-4xl" slot="sub">Autopublisher</span>
+          <span class="text-white lowercase text-4xl" slot="sub">Autopublisher.</span>
           <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
-          <a class="text-3xl text-white font-bold underline" href="work/autopublisher">Více informací</a>
+          <Button href="work/autopublisher" class="text-white">Více informací</Button>
           <ul slot="labels">
             <li>Nápad, implementace</li>
             <li>Multiplatformní aplikace</li>
@@ -95,9 +95,9 @@
         </Card>
 
         <Card to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
-          <span slot="sub" class="text-gray-600 alternative-font text-4xl">Betsense</span>
-          <span slot="title" class="text-gray-900">Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.</span>
-          <div class="text-xl text-gray-500">Spouštíme Q3/2020</div>
+          <span slot="sub" class="text-gray-600 lowercase text-4xl">Betsense.</span>
+          <span slot="title" class="text-gray-900">Prémiový kurzový realtime hub, který se pyšní extra nízkou datovou latencí.</span>
+          <Button href="work/betsense" class="text-gray-900">Více informací</Button>
           <ul slot="labels" class="text-gray-900">
             <li>Data-intensive computing</li>
             <li>Inteligentní AI, 500+ mikroslužeb</li>

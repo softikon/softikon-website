@@ -70,7 +70,7 @@
             <ul class="flex items-center flex-col relative w-5/12">
               <li class="item" class:current={currentItem === 0}>
                 <LineBlock data-aos="fade-right">
-                  <h4 class="font-bold text-lg uppercase leading-loose">Komerční produkt</h4>
+                  <h4 class="font-bold text-xl uppercase leading-loose mb-8">Autopublisher</h4>
                   <p class="mb-16 leading-loose text-xl md:text-4xl" style="color: rgba(17, 17, 17, 0.8);">
                     Specializovaný software pro autobazary, který šetří čas a peníze.
                   </p>
@@ -79,7 +79,7 @@
               </li>
               <li class="item" class:current={currentItem === 1}>
                 <LineBlock data-aos="fade-right">
-                  <h4 class="font-bold text-lg uppercase leading-loose">SAAS</h4>
+                  <h4 class="font-bold text-xl uppercase leading-loose mb-8">Betsense</h4>
                   <p class="mb-16 leading-loose text-xl md:text-4xl" style="color: rgba(17, 17, 17, 0.8);">
                     Prémiový realtime hub pro sázkové kanceláře i sázkaře, který se pyšní nejnižší datovou latencí ve svém oboru.
                   </p>

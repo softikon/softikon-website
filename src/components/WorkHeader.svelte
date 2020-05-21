@@ -42,7 +42,7 @@
         <div data-aos="fade-up" data-aos-delay="200">
           <img class="card__img" src="{image}" alt="" />
         </div>
-        <div class="card__labels text-xl lg:text-2xl text-gray-500 font-medium leading-tight block">
+        <div class="card__labels text-xl lg:text-2xl text-gray-500 font-medium leading-relaxed block">
           <slot name="labels"></slot>
         </div>
       </div>
