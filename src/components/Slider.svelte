@@ -7,9 +7,9 @@
   let container
   let items = 0
   let isBrowser = false
-  let offset = 0
+  let offsetCache = []
 
-  $: offset = isBrowser && (offset + container.children[currentItemIndex].getBoundingClientRect().x - container.parentElement.getBoundingClientRect().x)
+  $: offset = isBrowser && offsetCache[currentItemIndex]
 
   const next = () => {
     currentItemIndex = (currentItemIndex + 1) % items
@@ -25,6 +25,12 @@
 
   onMount(() => {
     isBrowser = true
+    // Precompute offset of each child in slider
+    // This is because we need exact x coordinate because transition may be in progress when computing each time for the currentItem
+    offsetCache = Array.from(container.children).map(el =>
+      el.getBoundingClientRect().x - container.parentElement.getBoundingClientRect().x
+    )
+
     // TODO: refactor this into svelte action directive instead
     const uninstall = installTouchEvents(container)
     items = container.children.length
