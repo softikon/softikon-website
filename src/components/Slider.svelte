@@ -8,6 +8,7 @@
   let items = 0
   let isBrowser = false
   let offsetCache = []
+  let offset = 0
 
   $: offset = isBrowser && offsetCache[currentItemIndex]
 
@@ -23,13 +24,19 @@
   touchEvents.on('swipeLeft', next)
   touchEvents.on('swipeRight', previous)
 
+  const createOffsetCache = () => {
+    offsetCache = Array.from(container.children).map((el, i, a) =>
+      -a[0].getBoundingClientRect().x + el.getBoundingClientRect().x
+    )
+  }
+
   onMount(() => {
     isBrowser = true
-    // Precompute offset of each child in slider
+    // Precompute offset for each child in slider
     // This is because we need exact x coordinate because transition may be in progress when computing each time for the currentItem
-    offsetCache = Array.from(container.children).map(el =>
-      el.getBoundingClientRect().x - container.parentElement.getBoundingClientRect().x
-    )
+    createOffsetCache()
+
+    window.addEventListener('resize', createOffsetCache)
 
     // TODO: refactor this into svelte action directive instead
     const uninstall = installTouchEvents(container)
@@ -37,6 +44,7 @@
 
     return () => {
       uninstall()
+      window.removeEventListener('resize', createOffsetCache)
     }
   })
 </script>
