@@ -35,12 +35,14 @@
   })
 </script>
 
-<div class="slider relative">
-  <div bind:this={container} style="transform: translateX({-1 * offset}px); width: 60000px;" class="slider__slide overflow-hidden flex flex-row">
-    <slot></slot>
+<div class="slider relative" data-aos="fade-up">
+  <div class="slider__container">
+    <div bind:this={container} style="transform: translateX({-1 * offset}px); width: 60000px;" class="slider__slide overflow-hidden flex flex-row">
+      <slot></slot>
+    </div>
+    <div on:click={next} class="arrow arrow-right"><span>&#8594;</span></div>
+    <div on:click={previous} class="arrow arrow-left"><span>&#8592;</span></div>
   </div>
-  <div on:click={next} class="arrow arrow-right"><span>&#8594;</span></div>
-  <div on:click={previous} class="arrow arrow-left"><span>&#8592;</span></div>
 </div>
 
 <style>
@@ -48,13 +50,18 @@
     user-select: none;
   }
 
+  .slider__container {
+    width: 100vw;
+    overflow: hidden; 
+  }
+
   .slider__slide {
     transition: transform .5s ease;
   }
 
   .arrow {
-    width: 6rem;
-    height: 6rem;
+    width: 7.5rem;
+    height: 7.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
