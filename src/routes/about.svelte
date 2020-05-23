@@ -59,9 +59,9 @@
     <section class="pb-16 flex items-end relative min-h-screen">
       <div class="w-10/12 pt-64 md:pt-0 mx-auto flex flex-wrap flex-col">
         <div class="flex flex-col w-full md:w-9/12">
-            <h1 class="h1--sub alternative-font">
+            <h1 class="h1--sub uppercase">
               <span>
-                <Revealable><span class="block">Make</span> it &lt;real&gt;</Revealable>
+                <Revealable><span class="block">Make</span> it <span class="outlined">&lt;real&gt;</span></Revealable>
               </span>
             </h1>
         </div>

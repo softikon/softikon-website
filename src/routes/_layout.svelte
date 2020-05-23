@@ -15,7 +15,7 @@
   import { isMobile as checkIsMobile } from '../helpers/isMobile'
   import { stores } from '@sapper/app'
 
-  const { preloading } = stores()
+  const { preloading, page } = stores()
 
   let isMobile = false
 
@@ -72,6 +72,7 @@
       <slot></slot>
     </main>
 
+    {#if $page.path !== '/contact'}
     <section class="relative py-64 text-white">
       <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
       <div class="w-10/12 mx-auto">
@@ -83,6 +84,7 @@
         </LineBlock>
       </div>
     </section>
+    {/if}
 
     <Footer />
   </div>
