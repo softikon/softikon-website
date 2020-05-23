@@ -45,13 +45,13 @@ const handleTouchMove = e => {
   }
 }
 
-export const install = () => {
-  document.addEventListener('touchstart', handleTouchStart, false)
-  document.addEventListener('touchmove', handleTouchMove, false)
+export const install = el => {
+  el.addEventListener('touchstart', handleTouchStart, false)
+  el.addEventListener('touchmove', handleTouchMove, false)
 
   return () => {
-    document.removeEventListener('touchstart', handleTouchStart)
-    document.removeEventListener('touchmove', handleTouchMove)
+    el.removeEventListener('touchstart', handleTouchStart)
+    el.removeEventListener('touchmove', handleTouchMove)
   }
 }
 

@@ -10,6 +10,8 @@
   import { animate } from '../../helpers/intersectionObserver'
   import touchEvents, { install as installTouchEvents } from '../../helpers/touch'
 
+  let el
+
   // This is little bit complex - refactor maybe?
   // currentItem is binded to Scroller for getting the actual focused item when scroll and is the source of truth
   // store contains state that is set manually and currentItem and scroller handler subscribes for the value
@@ -40,20 +42,21 @@
         })
       }
     })
-    const uninstall = installTouchEvents()
+    const uninstall = installTouchEvents(el)
     return () => {
       uninstall()
       unsubscribe()
     }
   })
 
+  // TODO: possible memory leak after the component is destoyed
   touchEvents.on('swipeLeft', next)
   touchEvents.on('swipeRight', previous)
  </script>
 
 <TransitionWrapper>
   <article>
-    <section class="flex min-h-screen relative">
+    <section bind:this={el} class="flex min-h-screen relative">
       <div class="section-bg light"></div>
       <div class="absolute inset-y-0 right-0 w-24" style="z-index: 1;">
         <Scroller autoWidth>
