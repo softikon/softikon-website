@@ -38,7 +38,7 @@
 
     <section>
       <div class="py-48 flex w-10/12 lg:w-10/12 mx-auto flex-col">
-        <LineBlock>
+        <LineBlock data-aos="fade-up">
           <div class="text-2xl font-semibold uppercase text-gray-500">Softikon hrdě představuje</div>
           <p class="mt-12 mb-24 leading-relaxed text-4xl md:text-6xl">Autopublisher. Software, díky kterému naši klienti z řad prodejců vozidel jednoduše <strong>získají tísíce potenciálních kupujících a ušetří přitom stovky hodin práce</strong> jinak strávených ručním zveřejňováním inzerce.</p>
           <Button href={url}>Stáhnout pro Windows</Button>
@@ -48,19 +48,19 @@
     
     <section class="overflow-hidden bg-gray-200">
       <div class="w-full lg:w-10/12 mx-auto py-48">
-        <LineBlock class="mb-24 w-10/12 lg:w-full mx-auto">
+        <LineBlock class="mb-24 w-10/12 lg:w-full mx-auto" data-aos="fade-up">
           <div class="text-2xl font-semibold uppercase text-gray-700">Screenshoty / ukázka programu</div>
         </LineBlock>
         <Slider>
-          <img src="img/autopublisher/dashboard-unauthorized.png" alt="" />
-          <img src="img/autopublisher/login.png" alt="" />
-          <img src="img/autopublisher/dashboard.png" alt="" />
-          <img src="img/autopublisher/list.png" alt="" />
-          <img src="img/autopublisher/edit-profile.png" alt="" />
-          <img src="img/autopublisher/settings-text.png" alt="" />
-          <img src="img/autopublisher/control.png" alt="" />
-          <img src="img/autopublisher/bulk-publish.png" alt="" />
-          <img src="img/autopublisher/advanced-removal-1.png" alt="" />
+          <img draggable="false" src="img/autopublisher/dashboard-unauthorized.png" alt="" />
+          <img draggable="false" src="img/autopublisher/login.png" alt="" />
+          <img draggable="false" src="img/autopublisher/dashboard.png" alt="" />
+          <img draggable="false" src="img/autopublisher/list.png" alt="" />
+          <img draggable="false" src="img/autopublisher/edit-profile.png" alt="" />
+          <img draggable="false" src="img/autopublisher/settings-text.png" alt="" />
+          <img draggable="false" src="img/autopublisher/control.png" alt="" />
+          <img draggable="false" src="img/autopublisher/bulk-publish.png" alt="" />
+          <img draggable="false" src="img/autopublisher/advanced-removal-1.png" alt="" />
         </Slider>
       </div>
     </section>
@@ -70,7 +70,7 @@
 <style>
   img {
     max-width: 85vw;
-    margin-right: 2rem;
+    margin-right: 3rem;
     width: 100%;
     height: 100%;
   }
