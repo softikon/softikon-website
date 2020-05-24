@@ -29,7 +29,7 @@
         </div>
         <div class="w-full md:w-6/12 md:pl-16">
           <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-relaxed text-3xl lg:text-4xl xl:text-5xl text-gray-600 font-medium">
-            Jistá míra rozumné lenosti je katalyzátorem kreativity a ta je motorem pokroku a inovací v každém oboru. <span class="text-gray-700">Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů, která přináší velkou přidanou hodnotu.</span>
+            Jistá míra rozumné lenosti je katalyzátorem kreativity a ta je motorem pokroku a inovací v každém oboru. <span class="text-gray-700">Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů</span>, která přináší velkou přidanou hodnotu.
           </p>
           <div data-aos="fade-up">
             <Button class="mt-16 primary" href="work">mrkněte, co jsme vytvořili</Button>

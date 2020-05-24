@@ -13,7 +13,7 @@
   $: classes = [...new Set([...defaultClasses, ...className.split(' ')])].join(' ')
 </script>
 
-<div class:btn={true} class:hover={active} class="{classes}">
+<div class="{classes}" class:btn={true} class:hover={active}>
   <Link {...$$restProps}>
     <slot></slot>
   </Link>
@@ -33,9 +33,9 @@
     padding: 0.1rem 0;
   }
 
-  .btn.hover:before, .btn:hover:before {
-    padding-right: 1.75rem;
-    padding-left: 2.25rem;
+  :global(.btn.hover):before, .btn:hover:before {
+    padding-right: 1.75rem !important;
+    padding-left: 2.25rem !important;
   }
 
   .btn:before {
