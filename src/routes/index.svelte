@@ -28,8 +28,8 @@
           </LineBlock>
         </div>
         <div class="w-full md:w-6/12 md:pl-16">
-          <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-relaxed font-medium text-3xl lg:text-4xl xl:text-5xl text-gray-600">
-            Věříme, že jistá míra rozumné lenosti zformovala dnešní digitalizovanou společnost. Je katalyzátorem kreativity a ta je motorem pokroku a inovací v každém oboru. Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů, která přináší velkou přidanou hodnotu.
+          <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-relaxed text-3xl lg:text-4xl xl:text-5xl text-gray-600 font-medium">
+            Jistá míra rozumné lenosti je katalyzátorem kreativity a ta je motorem pokroku a inovací v každém oboru. <span class="text-gray-700">Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů, která přináší velkou přidanou hodnotu.</span>
           </p>
           <div data-aos="fade-up">
             <Button class="mt-16 primary" href="work">mrkněte, co jsme vytvořili</Button>
@@ -40,20 +40,20 @@
 
     <section id="showcase">
       <div class="w-10/12 mx-auto flex flex-col">
-        <Card to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
+        <Card let:hovered={active} to="work/autopublisher" background="#0f041b" image="img/autopublisher-mock.png">
           <span class="text-white lowercase text-4xl" slot="sub">Autopublisher.</span>
           <span slot="title">Specializovaný software pro autobazary, který šetří čas a peníze.</span>
-          <Button href="work/autopublisher" class="text-white">Více informací</Button>
+          <Button href="work/autopublisher" class="text-white" {active}>Více informací</Button>
           <ul slot="labels">
             <li>Nápad, implementace</li>
             <li>Multiplatformní aplikace</li>
           </ul>
         </Card>
 
-        <Card to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
+        <Card let:hovered={active} to="work/betsense" background="#d2dae5" image="img/betsense-mock.png">
           <span slot="sub" class="text-gray-600 lowercase text-4xl">Betsense.</span>
           <span slot="title" class="text-gray-900">Prémiový kurzový realtime hub, který se pyšní extra nízkou datovou latencí.</span>
-          <Button href="work/betsense" class="text-gray-900">Více informací</Button>
+          <Button href="work/betsense" class="text-gray-900" {active}>Více informací</Button>
           <ul slot="labels" class="text-gray-900">
             <li>Data-intensive computing</li>
             <li>Inteligentní AI, 500+ mikroslužeb</li>

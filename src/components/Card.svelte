@@ -11,6 +11,15 @@
   let link
   let selected
   let viewport
+  let hovered
+
+  const onMouseenter = e => {
+    hovered = true
+  }
+
+  const onMouseleave = e => {
+    hovered = false
+  }
 
   const onClick = e => {
     e.preventDefault()
@@ -24,7 +33,7 @@
     }, 1000)
   }
 </script>
-<div class="card__wrapper" use:animate data-selector=".card" {id}>
+<div class="card__wrapper" use:animate data-selector=".card" {id} on:mouseenter={onMouseenter} on:mouseleave={onMouseleave}>
   <div 
     class="card flex flex-col align-center justify-center"
     class:selected
@@ -46,7 +55,7 @@
           <slot name="title"></slot>
         </div>
         <div class="card__more hidden md:block">
-          <slot></slot>
+          <slot {hovered}></slot>
         </div>
         {#if image}
           <div class="card__img">
@@ -91,7 +100,7 @@
     position: relative;
     display: block;
     box-shadow: 0 10px 54px 0 rgba(0,0,0,.15);
-    transition: box-shadow 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: box-shadow 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
 
   .card__link:hover {
@@ -124,7 +133,7 @@
     height: 100vh;
     transform: translateX(-50%) translateY(-50%);
     clip-path: inset(calc(((100vh - 45rem) / 2)) 0 calc(((100vh - 45rem) / 2)) 0);
-    transition: clip-path 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: clip-path 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
 
   .card__sub {
@@ -151,7 +160,7 @@
     left: 0;
     right: 0;
     transform: translateY(-50%);
-    transition: all 1.5s;
+    transition: all 0.8s;
     will-change: transform;
   }
 
@@ -159,7 +168,7 @@
     display: block;
     margin: 0 auto;
     transform: scale(1);
-    transition: transform 0.9s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition: transform 0.5s ease-in-out;
     will-change: transform;
     max-width: 70%;
   }
