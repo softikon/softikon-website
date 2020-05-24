@@ -19,33 +19,28 @@
 
 <style>
   .btn {
-    color: crimson;
     display: inline-block;
     font-weight: 600;
   }
 
+  .btn.primary {
+    color: crimson;
+  }
+
   .btn :global(a) {
-    border-bottom: 1px solid;
     padding: 0.1rem 0;
   }
 
-  .btn:after {
-    content: '→';
-    font: inherit;
-    padding-left: 2rem;
-    color: inherit;
-    animation: move 3s linear infinite;
+  .btn:hover:before {
+    padding-right: 1.75rem;
+    padding-left: 2.25rem;
   }
 
-  @keyframes move {
-    from {
-      padding-left: 2rem;
-    }
-    50% {
-      padding-left: 1rem;
-    }
-    to {
-      padding-left: 2rem;
-    }
+  .btn:before {
+    font-size: 1.5em;
+    content: '→';
+    padding-right: 3rem;
+    color: inherit;
+    transition: padding .45s ease;
   }
 </style>

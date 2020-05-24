@@ -41,7 +41,7 @@
         <LineBlock data-aos="fade-up">
           <div class="text-2xl font-semibold uppercase text-gray-500">Softikon hrdě představuje</div>
           <p class="mt-12 mb-24 leading-relaxed text-4xl md:text-6xl">Autopublisher. Software, díky kterému naši klienti z řad prodejců vozidel jednoduše <strong>získají tísíce potenciálních kupujících a ušetří přitom stovky hodin práce</strong> jinak strávených ručním zveřejňováním inzerce.</p>
-          <Button href={url}>Stáhnout pro Windows</Button>
+          <Button class="primary" href={url}>Stáhnout pro Windows</Button>
         </LineBlock>
       </div>    
     </section>

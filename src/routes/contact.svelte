@@ -12,20 +12,11 @@
 
 <TransitionWrapper>
   <article>
-    <section class="pb-16 flex items-center relative min-h-screen">
-      <div class="w-10/12 pt-64 md:pt-0 mx-auto flex flex-wrap flex-col">
-        <div class="flex flex-col w-full md:w-9/12">
-            <h1 class="h1--sub uppercase">
-              <span>
-                <Revealable>Say <span class="outlined">hello</span></Revealable>
-              </span>
-            </h1>
-        </div>
-        <div class="w-full md:w-9/12">
-          <p data-aos="fade-up" class="tracking-tight pt-16 leading-loose font-medium text-6xl text-gray-600">
-            A simple hello can lead to a million things.
-          </p>
-        </div>
+    <section class="flex items-center min-h-screen relative">
+      <div class="w-10/12 md:pt-0 mx-auto flex flex-wrap flex-col">
+        <p data-aos="fade-up" class="tracking-tight leading-loose font-medium text-4xl md:text-5xl lg:text-6xl text-gray-600">
+          A simple hello can lead to a million things.
+        </p>
       </div>
     </section>
   </article>

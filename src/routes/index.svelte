@@ -28,58 +28,14 @@
           </LineBlock>
         </div>
         <div class="w-full md:w-6/12 md:pl-16">
-          <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-loose font-medium text-3xl md:text-2xl lg:text-3xl xl:text-4xl text-gray-600">
-            Věříme, že jistá míra rozumné lenosti zformovala dnešní digitalizovanou společnost. Je katalizátorem kreativity a ta je motorem pokroku a inovací v každém oboru. Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů, která přináší velkou přidanou hodnotu.
+          <p data-aos="fade-up" class="tracking-tight pt-16 md:pt-48 leading-relaxed font-medium text-3xl lg:text-4xl xl:text-5xl text-gray-600">
+            Věříme, že jistá míra rozumné lenosti zformovala dnešní digitalizovanou společnost. Je katalyzátorem kreativity a ta je motorem pokroku a inovací v každém oboru. Baví nás věci zjednodušovat a stavíme inteligentní řešení business-critical problémů, která přináší velkou přidanou hodnotu.
           </p>
-          <Button data-aos="fade-up" class="mt-16" href="work">mrkněte, co jsme vytvořili</Button>
+          <div data-aos="fade-up">
+            <Button class="mt-16 primary" href="work">mrkněte, co jsme vytvořili</Button>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="relative flex" id="section-about">
-      <div class="section-bg light" use:animate data-animate="slideScaleLeft"></div>
-      <div class="c-circle">
-        <svg class="c-circle-svg" viewBox="0 0 1820 1230" style="opacity: 1;">
-          <circle class="c-circle-item" cx="535.8" cy="535.8" r="529.5" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="535.7999877929688 535.7999877929688" transform="matrix(-0.17364,-0.9848,0.9848,-0.17364,101.18069722481926,1156.5006613095434)"></circle>
-          <circle class="c-circle-item" cx="1284.8" cy="694.8" r="529" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="1284.800048828125 694.7999877929688" transform="matrix(-0.17364,-0.9848,0.9848,-0.17364,823.6588212022089,2080.731788672624)"></circle>
-          <g class="c-circle-plus">
-            <circle cx="985.8" cy="257.8" r="32" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="985.7999877929688 257.79998779296875" transform="matrix(0.93969,-0.34202,0.34202,0.93969,-28.721775081229453,352.7106947406122)"></circle>
-            <line x1="986.3" y1="244.3" x2="986.3" y2="271.3" style="stroke-dashoffset: 1e-05; stroke-dasharray: none;"></line>
-            <line x1="972.3" y1="258.3" x2="999.3" y2="258.3" style="stroke-dashoffset: 1e-05; stroke-dasharray: none;"></line>
-          </g>
-        </svg>
-      </div>
-      <div class="flex justify-center lg:justify-end">
-        <div class="flex flex-col relative w-10/12 lg:w-11/12 pt-48 pb-48 lg:pb-24">
-          <h2 data-aos="fade-up" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
-            <span class="outlined">inteligentní</span><br class="hidden md:block" /> data management
-          </h2>
-          <div class="flex flex-1 flex-col md:flex-row">
-            <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
-              <LineBlock class="mb-8" data-aos="fade-up">
-                <h3 class="mb-8 text-3xl lg:text-3xl">Chytré backend systémy a zpracování dat</h3>
-                <p class="leading-loose text-gray-800 text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
-                <h3 class="mb-8 text-3xl lg:text-3xl">Aplikace pro reálný svět</h3>
-                <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
-                <Button class="mt-8" href="about">naše odbornost - co umíme</Button>
-              </LineBlock>
-            </div>
-            <div class="hidden md:flex items-center md:justify-end md:w-3/6">
-              <div class="md:w-full lg:w-5/6" data-aos="fade-up">
-                <InViewport>
-                  <Animation2 />
-                </InViewport>
-              </div>
-            </div>
-          </div> 
-        </div>
-      </div>
-    </section>
-
-    <section class="w-10/12 pt-48 pb-8 mx-auto">
-      <LineBlock data-aos="fade-up" xxl>
-        <h3 style="text-rendering: optimizeLegibility;">Co se nám povedlo</h3>
-      </LineBlock>
     </section>
 
     <section id="showcase">
@@ -106,22 +62,38 @@
       </div>
     </section>
 
-    <section class="relative pb-48 md:mt-48">
-      <div class="flex justify-center md:justify-end">
-        <div class="relative w-10/12 md:w-11/12 pt-24">
-          <div class="flex flex-col md:flex-row">
-            <div class="flex md:w-3/6 flex-col">
-              <h2 data-aos="fade-up" class="mb-24 lg:w-10/12" style="text-rendering: optimizeLegibility;">
-                Jsme digitální řemeslníci
-              </h2>
-              <LineBlock data-aos="fade-up" xl>
-                <p class="mb-16 leading-loose text-gray-700 text-3xl" style="max-width: 400px; text-rendering: optimizeLegibility;">Jsme neortodoxní parta profesionálů, kteří jsou zapálení pro své řemeslo. Nezáleží nám na tom, zda spolupracujeme s jednotlivcem nebo korporací. Pracujeme agilně a bez zbytečné byrokracie. Pro sebe a své klienty tvoříme, dodáváme a provozujeme inteligentní digitální řešení business-critical problémů, která jednoduše fungují.</p>
+    <section class="relative flex mt-64" id="section-about">
+      <div class="section-bg light" use:animate data-animate="slideScaleLeft"></div>
+      <div class="c-circle">
+        <svg class="c-circle-svg" viewBox="0 0 1820 1230" style="opacity: 1;">
+          <circle class="c-circle-item" cx="535.8" cy="535.8" r="529.5" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="535.7999877929688 535.7999877929688" transform="matrix(-0.17364,-0.9848,0.9848,-0.17364,101.18069722481926,1156.5006613095434)"></circle>
+          <circle class="c-circle-item" cx="1284.8" cy="694.8" r="529" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="1284.800048828125 694.7999877929688" transform="matrix(-0.17364,-0.9848,0.9848,-0.17364,823.6588212022089,2080.731788672624)"></circle>
+          <g class="c-circle-plus">
+            <circle cx="985.8" cy="257.8" r="32" style="stroke-dashoffset: 1e-05; stroke-dasharray: none; transform-origin: 0px 0px 0px;" data-svg-origin="985.7999877929688 257.79998779296875" transform="matrix(0.93969,-0.34202,0.34202,0.93969,-28.721775081229453,352.7106947406122)"></circle>
+            <line x1="986.3" y1="244.3" x2="986.3" y2="271.3" style="stroke-dashoffset: 1e-05; stroke-dasharray: none;"></line>
+            <line x1="972.3" y1="258.3" x2="999.3" y2="258.3" style="stroke-dashoffset: 1e-05; stroke-dasharray: none;"></line>
+          </g>
+        </svg>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        <div class="flex flex-col relative w-10/12 lg:w-11/12 pt-48 pb-48 lg:pb-24">
+          <h2 data-aos="fade-up" class="mb-24 md:mb-0 lg:w-10/12" style="text-rendering: optimizeLegibility;">
+            <span class="outlined">inteligentní</span><br class="hidden md:block" /> data management
+          </h2>
+          <div class="flex flex-1 flex-col md:flex-row">
+            <div class="flex flex-col md:w-3/6 lg:pr-48 self-center">
+              <LineBlock class="mb-8" data-aos="fade-up">
+                <h3 class="mb-8 text-3xl lg:text-3xl">Chytré backend systémy a zpracování dat</h3>
+                <p class="leading-loose text-gray-800 text-2xl mb-16" style="text-rendering: optimizeLegibility;">Vtip spočívá v přetvoření dat v informace a informace v užitek. Věříme, že správně navržený datový management je základním pilířem každého úspěšného byznysu. Víme, jak jsou data důležitá a jejich efektivnímu zpracování, škálování a distribuci věnujeme maximální úsílí. Jsme tvůrci backend systémů, na které je spolehnutí.</p>
+                <h3 class="mb-8 text-3xl lg:text-3xl">Aplikace pro reálný svět</h3>
+                <p class="leading-loose text-gray-800 text-2xl mb-8" style="text-rendering: optimizeLegibility;">Volba technologie je od začátku tuhý boj. Žijeme v době cross-platformové, která hraje na silnou strunu sdílené codebase. Výkonem však neoslní. Svedli jsme již spoustu technologických bitev. Výsledkem budiž naše aplikace, na které jsme hrdí.</p>
+                <Button class="mt-8 primary" href="about">naše odbornost - co umíme</Button>
               </LineBlock>
             </div>
-            <div class="hide lg:flex lg:w-3/6 md:pl-24 flex-1 py-40 md:py-0">
-              <div class="w-full" data-aos="fade-up">
+            <div class="hidden md:flex items-center md:justify-end md:w-3/6">
+              <div class="md:w-full lg:w-5/6" data-aos="fade-up">
                 <InViewport>
-                  <Animation />
+                  <Animation2 />
                 </InViewport>
               </div>
             </div>

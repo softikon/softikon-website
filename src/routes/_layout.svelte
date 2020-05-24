@@ -72,7 +72,7 @@
       <slot></slot>
     </main>
 
-    {#if $page.path !== '/contact'}
+    {#if !$page.path.match('contact')}
     <section class="relative py-64 text-white">
       <div class="section-bg gradient-red" use:animate data-animate="slideScaleLeft"></div>
       <div class="w-10/12 mx-auto">
@@ -80,7 +80,7 @@
           <p class="mb-8 text-2xl text-white font-bold uppercase">This might work</p>
           <h2 class="mb-0 font-bold outlined white">Máte projekt?</h2>
           <h2 class="mb-16 font-bold">Pojďme jej probrat!</h2>
-          <Button class="text-white" href="contact">SAY HELLO!</Button>
+          <Button class="text-white text-4xl" href="contact">SAY HELLO!</Button>
         </LineBlock>
       </div>
     </section>
