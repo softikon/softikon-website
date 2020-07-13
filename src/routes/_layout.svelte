@@ -10,6 +10,7 @@
   import Link from '../components/Link.svelte'
   import LineBlock from '../components/LineBlock.svelte'
   import LoadingProgress from '../components/LoadingProgress.svelte'
+  import GoogleAnalytics from '../components/GoogleAnalytics.svelte'
   import { animate } from '../helpers/intersectionObserver'
   import { isHeaderInverted } from '../store/ui'
   import { isMobile as checkIsMobile } from '../helpers/isMobile'
@@ -33,6 +34,9 @@
 </script>
 
 <svelte:window bind:scrollY={y}></svelte:window>
+
+<GoogleAnalytics id="UA-172522941-1" />
+
 <div id="container" class="font-body">
   {#if menuActive}
     <Menu on:close={() => menuActive = false } />
