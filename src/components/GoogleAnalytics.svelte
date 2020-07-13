@@ -2,7 +2,6 @@
   import { stores } from '@sapper/app'
   import { onMount } from 'svelte'
 
-  // UA-172522941-1
   export let id
 
   const { page } = stores()
