@@ -1,0 +1,4 @@
+- name: Build
+  uses: truewebartisans/actions-sapper@master
+  with:
+    build_mode: "export"
