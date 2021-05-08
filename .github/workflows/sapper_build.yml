@@ -1,17 +1,26 @@
-name: Build Sapper and Deploy to GitHub Pages
-
-on: [push]
-
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
 jobs:
-  build_deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Build Sapper
-        uses: truewebartisans/actions-sapper@master
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@master
-        with:
-          publish_dir: __sapper__/export
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Use Node.js '12.x'
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+    - run: npm run export
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: __sapper__/export/sapper
