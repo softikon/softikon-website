@@ -1,0 +1,32 @@
+{
+  "short_name": "Softikon",
+  "name": "Softikon. Digital. Intelligently.",
+  "description": "Perfection is made up of small things.",
+  "icons": [
+    {
+      "src": "/img/icons/icons-48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/img/icons/icons-96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/img/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#111",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#111"
+}
